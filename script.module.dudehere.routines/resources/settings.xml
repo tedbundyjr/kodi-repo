@@ -1,3 +1,0 @@
-<settings>
-	<setting id="enable_playback_service" type="bool" label="Enable Playback Service" default="true"/>
-</settings>

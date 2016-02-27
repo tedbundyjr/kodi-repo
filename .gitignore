@@ -1,2 +1,5 @@
+plugin.*
+script.*
+metadata.*
 vepg.*
 *.zip.*
