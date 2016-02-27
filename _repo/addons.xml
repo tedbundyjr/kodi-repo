@@ -1826,7 +1826,7 @@ http://www.hometheater.co.il</description>
 
 <addon
   id="plugin.video.SportsDevil"
-  version="2"
+  version="2016.2.1"
   name="SportsDevil"
   provider-name="SportsDevil">
   <requires>
