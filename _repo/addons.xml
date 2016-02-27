@@ -1129,7 +1129,7 @@
 
 <addon id="plugin.video.Ares-Streams"
        name="Ares-Streams"
-       version="1.1.1"
+       version="1.2.1"
        provider-name="Ares Project">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1153,7 +1153,7 @@
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en"> Join us at http://ares-project.com/community/forums/</summary>
-    <description lang="en">We Thank You All!</description>
+    <description lang="en">We Thank You All! Remember to check out our other addons.</description>
     <platform>all</platform>
   </extension>
 </addon>
@@ -1557,7 +1557,7 @@ Turns your XBMC into an instant free on-demand media-center. Stream and download
   </extension>
 </addon>
 
-<addon id="plugin.video.md9movies" name="9Movies" version="1.0.5" provider-name="Mucky Duck">
+<addon id="plugin.video.md9movies" name="9Movies" version="1.0.7" provider-name="Mucky Duck">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
 	<import addon="script.module.addon.common" />
@@ -1727,9 +1727,10 @@ Turns your XBMC into an instant free on-demand media-center. Stream and download
 	</extension>
 </addon>
 
-<addon id="plugin.video.playlistLoader" name="Playlist Loader" version="1.0.6" provider-name="Avigdor">
+<addon id="plugin.video.playlistLoader" name="Playlist Loader" version="1.0.9" provider-name="Avigdor">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="repository.xbmc-israel" />
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
@@ -2478,7 +2479,7 @@ provider-name="bog.gob">
   </extension>
 </addon>
 
-<addon id="repository.mdrepo" name="Mucky Ducks Repo" version="1.0.1" provider-name="Mucky Duck">
+<addon id="repository.mdrepo" name="Mucky Ducks Repo" version="1.0.2" provider-name="Mucky Duck">
 	<extension point="xbmc.addon.repository" name="Mucky Ducks Repo">
 		<info compressed="false">https://raw.githubusercontent.com/mucky-duck/mdrepo/master/addons.xml</info>
 		<checksum>https://raw.githubusercontent.com/mucky-duck/mdrepo/master/addons.xml.md5</checksum>
@@ -2730,11 +2731,11 @@ Addons Included
 	</extension>
 </addon>
 
-    <addon id="repository.vms" name="vms" version="1.0.4" provider-name="tedbundyjr">
+    <addon id="repository.vms" name="VMS repo" version="1.0.5" provider-name="tedbundyjr">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
-        <extension point="xbmc.addon.repository" name="vms">
+        <extension point="xbmc.addon.repository" name="VMS repo">
             <info compressed="false">http://kodi.vms.my/_repo/addons.xml</info>
             <checksum>http://kodi.vms.my/_repo/addons.xml.md5</checksum>
             <datadir zip="true">http://kodi.vms.my/_repo/</datadir>
@@ -2744,6 +2745,19 @@ Addons Included
             <summary>Compilation of used addons</summary>
             <description>Best plugin in single repository.</description>
             <platform>all</platform>
+    </extension>
+</addon>
+
+<addon id="repository.xbmc-israel" name=".[COLOR blue]XBMC Israeli [/COLOR][COLOR white] Streaming Sites[/COLOR]" version="1.0.4" provider-name="cubicle-vdo">
+    <extension point="xbmc.addon.repository" name="XBMC Israeli streaming repo for streaming sites">
+        <info compressed="false">https://raw.githubusercontent.com/cubicle-vdo/xbmc-israel/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/cubicle-vdo/xbmc-israel/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/cubicle-vdo/xbmc-israel/master/repo</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>XBMC Israeli Streaming Sites</summary>
+        <description>Download and install addons for XBMC Israeli streaming repo for streaming sites</description>
+        <platform>all</platform>
     </extension>
 </addon>
 
@@ -3288,7 +3302,7 @@ Addons Included
 
 <addon id="script.module.metahandler"
      name="metahandler"
-     version="2.9.0"
+     version="2.9.1"
      provider-name="Eldorado">
   <requires>
     <import addon="xbmc.python" version="2.1.0" />
