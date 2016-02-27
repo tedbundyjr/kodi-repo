@@ -1,0 +1,9 @@
+v1.0 - Initial Release
+v1.1 - Fixed https issue
+v1.2 - Fixed urlu
+v1.3 - Moved REPO to GitHub
+v1.4 - Fixed new GitHub url
+v1.5 - Finished GitHUB changes
+v1.6 - Fixed GitHUB changes
+v1.7 - Fixed https
+v1.8 - Fixed raw in address

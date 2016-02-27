@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="162"
+   name=""
+   committed-date="2010-12-25T07:22:18.716816Z"
+   url="https://sparetime.googlecode.com/svn/trunk/addons/repository.googlecode.sparetime"
+   last-author="edzrol@gmail.com"
+   kind="dir"
+   uuid="47edcafa-6e21-1d09-f535-ea325a38b22d"
+   repos="https://sparetime.googlecode.com/svn"
+   revision="170"/>
+<entry
+   committed-rev="162"
+   name="addon.xml"
+   text-time="2010-12-25T12:39:27.000000Z"
+   committed-date="2010-12-25T07:22:18.716816Z"
+   checksum="db4d95d2136b4c87c0d69831fee7fba6"
+   last-author="edzrol@gmail.com"
+   kind="file"
+   prop-time="2010-12-25T12:39:27.000000Z"/>
+<entry
+   committed-rev="153"
+   name="icon.png"
+   text-time="2010-12-25T12:39:27.000000Z"
+   committed-date="2010-12-25T06:07:02.610359Z"
+   checksum="c075ba44abfb60a66b71ac8e39987468"
+   last-author="edzrol@gmail.com"
+   kind="file"
+   prop-time="2010-12-25T12:39:27.000000Z"/>
+</wc-entries>

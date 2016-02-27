@@ -1,0 +1,14 @@
+v1.0.4
+- Fix: ZIP file format
+
+v1.0.3
+- Add changelog.txt
+
+v1.0.2
+- New icon
+
+v1.0.1
+- Correct an error in version 1.0.0
+
+v1.0.0
+- Initial release

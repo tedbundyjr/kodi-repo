@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.eleazar" name="Eleazar's XBMC Add-on Repository" version="1.3" provider-name="eleazarcoding">
+	<extension point="xbmc.addon.repository" name="Eleazar's XBMC Addon Repository">
+		<info compressed="false">https://offshoregit.com/eleazarcoding/eleazar-xbmc/raw/master/addons.xml</info>
+		<checksum>https://offshoregit.com/eleazarcoding/eleazar-xbmc/raw/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://offshoregit.com/eleazarcoding/eleazar-xbmc/raw/master/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Eleazar's XBMC Add-on Repository</summary>
+		<description>Eleazar's XBMC Add-on Repository. Please visit www.xbmchub.com for assistance with this add-on.</description>
+		<platform>all</platform>
+	    <forum>http://www.xbmchub.com/forums/eleazars-xbmc-add-repository/</forum>
+	    <website>http://www.xbmchub.com/</website>
+	</extension>
+</addon>
+

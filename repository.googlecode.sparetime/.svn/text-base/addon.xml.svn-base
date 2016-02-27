@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.googlecode.sparetime" name="nixa addons" version="1.0" provider-name="nixa">
+	<extension point="xbmc.addon.repository" name="nixa add-on repository">
+		<info compressed="false">http://sparetime.googlecode.com/svn/trunk/addons/addons.xml</info>
+		<checksum>http://sparetime.googlecode.com/svn/trunk/addons/addons.xml.md5</checksum>
+		<datadir zip="false">http://sparetime.googlecode.com/svn/trunk/addons</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Install video addons from http://sparetime.googlecode.com</summary>
+		<description>Download and install video addons from nixa repository.</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+
+

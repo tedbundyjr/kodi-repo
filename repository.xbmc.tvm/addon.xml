@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.xbmc.tvm" name="TvM Add-ons" version="1.0" provider-name="TvM">
+	<extension point="xbmc.addon.repository" name="TvM">
+		<info compressed="false">http://repository-xbmc-tvm.googlecode.com/git/addons.xml</info>
+		<checksum>http://repository-xbmc-tvm.googlecode.com/git/addons.xml.md5</checksum>
+		<datadir zip="true">http://repository-xbmc-tvm.googlecode.com/git/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>TvM XBMC Add-ons</summary>
+		<description>TvM - XBMC Add-ons repository</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+

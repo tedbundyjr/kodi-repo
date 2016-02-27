@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.The_Silencer" name="The_Silencer's KODI Addons" version="1.8" provider-name="The_Silencer">
+	<extension point="xbmc.addon.repository" name="The_Silencer's KODI Addons">
+		<info compressed="false">https://raw.github.com/TheSilencer001/The_Silencer/master/addons.xml</info>
+		<checksum>https://raw.github.com/TheSilencer001/The_Silencer/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.github.com/TheSilencer001/The_Silencer/master/zips</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Install The_Silencer's Addons</summary>
+		<description>Download and install addons from The_Silencer</description>
+		<platform>all</platform>
+	</extension>
+</addon>

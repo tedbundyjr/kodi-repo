@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.Vinnydude" name="Addons by Vinnydude" version="1.1" provider-name="Vinnydude">
+	<extension point="xbmc.addon.repository" name="Addons From Vinnydude">
+		<info compressed="false">http://raw.github.com/vinnydude/vinnydude.repo/master/addons.xml</info>
+		<checksum>http://raw.github.com/vinnydude/vinnydude.repo/master/addons.xml.md5</checksum>
+		<datadir zip="true">http://raw.github.com/vinnydude/vinnydude.repo/master/zips</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Repo for Dailyflix</summary>
+		<description>Download and install addons from Vinnydude.......For OFFICIAL !! Support Visit XBMCHUB.COM</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
