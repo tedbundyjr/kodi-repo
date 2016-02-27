@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <addon id="repository.vms" name="VMS" version="0.9" provider-name="tedbundyjr">
+    <addon id="repository.vms" name="VMS" version="1.0" provider-name="tedbundyjr">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
