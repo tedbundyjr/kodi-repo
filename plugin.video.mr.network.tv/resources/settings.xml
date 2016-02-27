@@ -1,0 +1,9 @@
+﻿<settings>
+  <category label="General">
+    <setting id="use_thumb" type="bool" label="Use Thumbnails as Fanart" default="false" />
+    <setting id="auto-view" type="bool" label="Enable Automatic View" default="false"/>
+    <setting id="default" type="number" label="Default View" default="500" enable="!eq(-1,false)"/>
+    <setting id="debug" type="bool" label="Enable Add-on Debugging" default="false"/>
+    <setting id="donotshowbychannels" label="Do Not show items under channel name" type="bool" default="false"/>
+  </category>  
+</settings>

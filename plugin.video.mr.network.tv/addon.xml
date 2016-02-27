@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.mr.network.tv" 
+       name="MR NETWORK TV" 
+       version="1.1.0" 
+       provider-name="Indiecrew, MalayRevolution Network">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" />
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />  
+  </requires>
+
+  <extension point="xbmc.python.pluginsource" library="mrnetworktv.py">
+        <provides>video</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">World Best TV Channel from MalayRevolution Network TV</summary>
+    <description lang="en">Putting together live TV channel all around the world from variety of sources. MalayRevolution Network TV is an open source project. Just click, play and stream because IPTV just got simple and easy. This add-on is not for sale but for education only.</description>
+    <disclaimer lang="en">We DO NOT host any videos on this addon. All content is copyright of their respective owners. We urge all copyright owners, to recognize that links contained within this addon are located somewhere else on the web. The embedded link points to the location of the video on the web. Please direct all copyright infringement issues to the companies that host these files. If you notice something irregular or some copyright abuse please send email to indiecrewteam[at]gmail.com</disclaimer>
+    <platform>all</platform>    
+  </extension>
+</addon>

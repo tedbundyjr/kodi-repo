@@ -1,0 +1,59 @@
+V1.1.9 - TheHighway
+- type="splash" coding for Text Splash message.
+- Handling for PromptFile.com.
+- Handling for MrFile.me.
+- Testing for many different hosts.
+- Removed mediafire coding.
+- Url handling for "mediafire://id" as optional mediafire method.
+- Handling for MediaFire host resolving.
+- time.sleep(2) to xbmc.sleep(4000) to prevent "not responding" window issue.
+- Local links.txt usage for Testing.
+- requiredhosts.py gets downloaded each package install.
+- made requiredhosts.py and wizardmain.py
+- Got rid of /resources/modules/*.*.
+- Handling for a Custom URL to a custom zip file.
+- Url handling for "firedrive://id" as optional firedrive method.
+- Url handling for "host://" to use optional urlresolver import.
+- Other skin settings are now optional (Addon Settings)
+- Home screen shortcuts are now optional (Addon Settings)
+
+V1.1.8 - TheHighway
+...
+
+V1.1.7 - TheHighway, Eleazar Coding, Showgun, BlazeTamer
+- Setup for new site domain.
+
+V1.1.6 - TheHighway, TKNoris, and crzen
+1Channel / FireDrive fixes.
+
+V1.1.5 =Blazetamer
+Android Dialog Bug fix
+
+V1.1.4 - TheHighway
+XBMC Version check
+OS Check
+Button Suggestions
+Adjusts a few more skin settings.
+Skin and Background Adjustments.
+
+V1.1.3 - Blazetamer & TheHighway
+File Host Compatibility for FireDrive
+
+V1.1.2 
+
+V1.1.1 - Blazetamer
+Added new link set 
+
+V1.0.9 - TheHighway
+packaged imports
+spacing cleanup
+fixes to addon.xml
+
+V1.0.8 
+New Format allows Shortcuts to be added 
+requiring less input from end user to enjoy XBMC
+to its fullest 
+
+V1.0.0
+Initial Release
+

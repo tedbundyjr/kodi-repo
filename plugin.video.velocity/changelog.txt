@@ -1,0 +1,58 @@
+Official Velocity addon For Kodi
+v1.0.0
+Initial Release
+
+
+
+
+
+Velocity BETA addon for Kodi
+
+V1.0.1k
+Added MultiThreading to Tv Scrapers
+Fixed remaining context menus
+Added Auto Views
+
+V1.0.1j
+Added multiThreading to speed up Source returns
+Bug Fix on some returns
+
+V1.0.1i
+Added "On Deck" Tv Shows,  works with Collected series
+More Context menu additions
+Increased speed of addon
+Real Debrid works now
+
+
+V1.0.1h
+Bug fixes 
+Watched history context adds and deletes for movies
+
+
+V1.0.1g
+Added Notifications,
+Mute Notifications from settings
+Global Scraper Timeout added
+Added 9Movies for HD Movie Support
+Other fixes
+
+V1.0.1f
+Beta
+Added Watchlist Support for TV
+Add/Remove Items from Watchlists
+Added Calendar Support
+Added Anticipated Shows
+Added Debug Printing for failures andf Errors
+Added Manual Refesh Authorization button in case Refresh token fails
+Added Movie Watch History
+
+V1.0.1e
+Beta
+Added Afdah movie scrape
+
+V1.0.1d
+Beta
+Added first Primewire TV Scrapers and resolvers
+
+V1.0.0
+Initial Beta Release

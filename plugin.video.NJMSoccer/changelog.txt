@@ -1,0 +1,12 @@
+Version 1.0
+Robin Hood was born in m3u8 format.
+
+Version 2.0 
+Robin Hood updated to xml format.
+
+Version 3.0
+Robin Hood is Reborn Still xml format only a massive update on the softwear side of things.
+
+Version 3.0.4
+Thank you to Shadow Crew and Hakamac for letting me use their code to create this addon
+

@@ -1,0 +1,54 @@
+<settings>
+
+	<category label="Auto-View">
+		<setting id="auto-view" type="bool" label="Enable Auto View" default="true"/>
+		<setting id="movies-view" type="number" label="Movie View" default="515" enable="!eq(-1,false)"/>
+		<setting id="tvshows-view" type="number" label="TV Show View" default="503" enable="!eq(-2,false)"/>
+		<setting id="seasons-view" type="number" label="Seasons View" default="504" enable="!eq(-3,false)"/>
+		<setting id="episodes-view" type="number" label="Episode View" default="503" enable="!eq(-4,false)"/>
+		<setting id="default-view" type="number" label="Default View" default="50" enable="!eq(-5,false)"/>
+   	</category>
+
+
+<category label="TBA ">>
+		<setting id="download_folder" type="folder" label="Downloads Folder N/A in < V2.0" default="" visible="false"/>
+</category>
+
+
+<category label="Trakt.tv">
+		<setting id="get_pin" label="Click here to Authorize Trakt.tv " type="action" action="RunPlugin(plugin://plugin.video.velocity/?mode=pininput)" option="close" visible="true"/>
+		<setting id="use_https" type="bool" label="Use Https" default="false" visible="false"/>
+		<setting id="list_size" type="slider" label="Page Size" default="20" range="1,100" option="int"/>
+		<setting id="timeout" type="slider" label="Timeout" default="10" range="1,30" option="int"/>
+		<setting id="TV_sub_slug" type="text" visible="false"/>
+		<setting id="Movies_sub_slug" type="text" visible="false"/>
+		<setting id="TV_fav_slug" type="text" visible="false"/>
+		<setting id="Movies_fav_slug" type="text" visible="false"/>
+		<setting id="trakt_oauth_token" label="AO TOKEN" type="text" default="" visible="false"/>
+		<setting id="trakt_refresh_token" label="REFRESH TOKEN" type="text" default="" visible="false"/>
+		<setting id="trakt_authorized" type="bool" default="false" visible="false"/>
+</category>
+
+
+<category label="Enable Scrapers">
+
+		<setting id="primewire" type="bool" label="PrimeWire" default="true"/>
+		<setting id="afdah" type="bool" label="Afdah" default="true"/>
+		<setting id="twomovies" type="bool" label="Two Movies" default="true"/>
+		<setting id="merdb" type="bool" label="MerDb" default="true"/>
+		<setting id="zmovies" type="bool" label="ZMovies" default="true"/>
+		<setting id="9movies" type="bool" label="9Movies" default="true"/>
+		<setting id="scraper_timeout" type="slider" label="9Movies  Timeout" default="10" range="1,30" option="int" visible="false"/>
+
+</category>
+
+<category label="Personalization">
+		<setting id="debug" type="bool" label="Debugging" default="false"/>
+		<setting id="error_notify" type="bool" label="Non Fatal Error Notifications" default="false"/>
+		<setting id="mute_notifications" type="bool" label="Mute Notifications" default="true"/>
+</category>
+
+</settings>
+
+
+

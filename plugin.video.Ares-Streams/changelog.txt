@@ -1,0 +1,8 @@
+Version 1.0
+Ares - Streams was released
+
+1.1.0 - changes made to not install our other addons (Dramanice, ZopTV & 123Movies)
+
+
+We would like to thank all the developers who's code is used within our addon.
+

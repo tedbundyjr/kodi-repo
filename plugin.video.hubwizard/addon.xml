@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.hubwizard" version="1.1.9"
+	name="Config Wizard" provider-name="tvaddons.ag">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0"/>
+		<import addon="script.module.addon.common" optional="true" />
+		<import addon="script.module.t0mm0.common" optional="true" />
+		<import addon="script.module.urlresolver" optional="true" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Config Wizard</summary>
+		<description>Instantly configure your Kodi experience with all the best add-ons and goodies from the TVADDONS.AG community!  </description>
+		<platform>all</platform>
+		<forum>http://forums.tvaddons.ag/forums/106-CONFIG-WIZARD</forum>
+		<website>http://www.tvaddons.ag/</website>
+	</extension>
+</addon>
