@@ -1,0 +1,14 @@
+TODO list:
+
+* favourites (menu item)
+* Most played last 7 days / last month
+* Cover art per song/artist
+* Dynamically add *** NEW *** and *** FEATURED *** to certain categories
+* Check version during startup
+* Aliases (clean up db - artists with slightly different spelling)
+* Featured top 10 (from people that post it on the website)
+* Add question to QR code menu (if you want to see a tutorial video)
+
+
+DONE:
+* Message popup (news, links, features list etc..)

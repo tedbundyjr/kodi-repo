@@ -1,3 +1,51 @@
+[B]Version 14.2.2[/B]
+- adjusted list refresh after record, delete, and recurring actions
+- set Recordings, Scheduled, and Recurring lists to be sorted alphabetically
+- fixed typo in quick quality change dialogs
+- seperated Stream Quality into Live TV Quality and Recordings Quality
+- since Recordings are only availabe in SD it made more sense to have the ability to set the quality independently
+- added quick quality change option to context menu for Live TV and Recordings
+- renamed stream 'Quality' in Settings to Low, Medium, High, and HD
+- very minor update to settings text
+
+[B]Version 14.2.1[/B]
+- Free Accounts now able to stream in HD for the first 45 days after account activation
+- PBS and My9 are not available in HD so they will be SD
+- added 'Account Info' to settings
+- this gives information on the USTVnow Account including Account Status, total DVR Points, etc
+- udpated addon description to be more accurate
+- added 'Version Info' to settings
+- will hopefully make it easier for users to know what version they are using
+- added option in 'Advanced Settings' to force clear the current token
+- added option in 'Advanced Settings' to view/edit the current token
+- fixed issue with special characters in show/movie data
+
+[B]Version 14.2.0[/B]
+- forgot to clear out the invalid tokens in the last update.
+- added code to clear out all previous tokens to ensure that a fresh one is grabbed
+- code clean-up
+
+[B]Version 14.1.9[/B]
+- updated login and alternate login methods to fix token issues seen by Free Account users
+
+[B]Version 14.1.8[/B]
+- added option to use "Alternate" stream option for Live TV (old stream method)
+- added option to use "Alternate" stream option for Recordings (old stream method)
+
+[B]Version 14.1.7[/B]
+- more streaming function fixes for live streams and recordings streams
+- there are multiple variations on what accounts return via the API
+- this release addresses all known cases
+
+[B]Version 14.1.6[/B]
+- added stream check to ensure that token can pull in streams
+- added alternate login method to use if stream check fails
+
+[B]Version 14.1.5[/B]
+- updated glossy skin with larger icons
+- updated outline skin with larger icons
+- added "No Icons" skin
+
 [B]Version 14.1.4[/B]
 - major update to Live TV streaming functions
 - live streams are now pulled using playlist.m3u8 files directly from the USTVnow API
@@ -42,6 +90,70 @@
 Below is the changelog from the BETA releases
 -----------------------------------------------------------
 -----------------------------------------------------------
+
+[B]Version 1.5.4[/B]
+- adjusted list refresh after record, delete, and recurring actions
+- set Recordings, Scheduled, and Recurring lists to be sorted alphabetically
+
+[B]Version 1.5.3[/B]
+- fixed typo in quick quality change dialogs
+
+[B]Version 1.5.2[/B]
+- seperated Stream Quality into Live TV Quality and Recordings Quality
+- since Recordings are only availabe in SD it made more sense to have the ability to set the quality independently
+- added quick quality change option to context menu for Live TV and Recordings
+
+[B]Version 1.5.1[/B]
+- renamed stream 'Quality' in Settings to Low, Medium, High, and HD
+
+[B]Version 1.5.0[/B]
+- very minor update to settings text
+
+[B]Version 1.4.9[/B]
+- Free Accounts now able to stream in HD for the first 45 days after account activation
+- PBS and My9 are not available in HD so they will be SD
+
+[B]Version 1.4.8[/B]
+- added 'Account Info' to settings
+- this gives information on the USTVnow Account including Account Status, total DVR Points, etc
+- udpated addon description to be more accurate
+
+[B]Version 1.4.7[/B]
+- added 'Version Info' to settings
+- will hopefully make it easier for users to know what version they are using
+
+[B]Version 1.4.6[/B]
+- added option in 'Advanced Settings' to force clear the current token
+- added option in 'Advanced Settings' to view/edit the current token
+
+[B]Version 1.4.5[/B]
+- fixed issue with special characters in show/movie data
+
+[B]Version 1.4.4[/B]
+- forgot to clear out the invalid tokens in the last update.
+- added code to clear out all previous tokens to ensure that a fresh one is grabbed
+- code clean-up
+
+[B]Version 1.4.3[/B]
+- updated login and alternate login methods to fix token issues seen by Free Account users
+
+[B]Version 1.4.2[/B]
+- added option to use "Alternate" stream option for Live TV (old stream method)
+- added option to use "Alternate" stream option for Recordings (old stream method)
+
+[B]Version 1.4.1[/B]
+- more streaming function fixes for live streams and recordings streams
+- there are multiple variations on what accounts return via the API
+- this release addresses all known cases
+
+[B]Version 1.4.0[/B]
+- added stream check to ensure that token can pull in streams
+- added alternate login method to use if stream check fails
+
+[B]Version 1.3.9[/B]
+- updated glossy skin with larger icons
+- updated outline skin with larger icons
+- added "No Icons" skin
 
 [B]Version 1.3.8[/B]
 - major update to Recordings streaming functions

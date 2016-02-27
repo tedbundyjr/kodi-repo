@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1fa762b6-c9ec-474f-9ad6-2704d7a0f5d7}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>Default.py</StartupFile>
+    <SearchPath>..\..\..\kodistubs\</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <InterpreterVersion />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="art\themes\Default\ArtistInfoDiscography.jpg" />
+    <Content Include="art\themes\Default\Back.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtists.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtists0.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsA.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsB.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsC.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsD.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsE.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsF.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsG.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsH.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsI.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsJ.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsK.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsL.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsM.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsN.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsO.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsP.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsQ.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsR.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsS.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsT.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsU.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsV.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsW.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsX.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsY.jpg" />
+    <Content Include="art\themes\Default\BrowseAllArtistsZ.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongs.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongs0.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsA.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsB.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsC.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsD.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsE.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsF.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsG.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsH.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsI.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsJ.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsK.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsL.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsM.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsN.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsO.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsP.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsQ.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsR.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsS.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsT.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsU.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsV.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsW.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsX.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsY.jpg" />
+    <Content Include="art\themes\Default\BrowseAllSongsZ.jpg" />
+    <Content Include="art\themes\Default\fanart.jpg" />
+    <Content Include="art\themes\Default\FeaturedFeelingLucky.jpg" />
+    <Content Include="art\themes\Default\FeaturedLatestSongs.jpg" />
+    <Content Include="art\themes\Default\FeaturedMostPopular.jpg" />
+    <Content Include="art\themes\Default\MobilePlayQueue.jpg" />
+    <Content Include="art\themes\Default\MobileScanQR.jpg" />
+    <Content Include="art\themes\Default\SearchArtistName.jpg" />
+    <Content Include="art\themes\Default\SearchListID.jpg" />
+    <Content Include="art\themes\Default\SearchSongName.jpg" />
+    <Content Include="changelog.txt" />
+    <Content Include="fanart.jpg" />
+    <Content Include="icon.png" />
+    <Content Include="TODO.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.py" />
+    <Compile Include="library\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="art\" />
+    <Folder Include="art\themes\" />
+    <Folder Include="art\themes\Default" />
+    <Folder Include="library\" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>

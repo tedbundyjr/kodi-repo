@@ -548,7 +548,7 @@
          <setting id="wso.ch-sub_check" type="bool" label="    Include in Page Existence checks?" default="true" visible="eq(-2,true)"/>
          <setting id="wso.ch_last_results" type="number" default="0" visible="false"/>
          <setting id="xmovies8-enable" type="bool" label="xmovies8 Enabled" default="true" visible="true"/>
-         <setting id="xmovies8-base_url" type="text" label="    Base Url" default="https://xmovies8.org" visible="eq(-1,true)"/>
+         <setting id="xmovies8-base_url" type="text" label="    Base Url" default="http://genvideos.com" visible="eq(-1,true)"/>
          <setting id="xmovies8-sub_check" type="bool" label="    Include in Page Existence checks?" default="true" visible="eq(-2,true)"/>
          <setting id="xmovies8_last_results" type="number" default="0" visible="false"/>
          <setting id="xmovies8-default_url" type="string" visible="false"/>

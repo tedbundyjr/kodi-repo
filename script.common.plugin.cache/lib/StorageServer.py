@@ -259,7 +259,7 @@ class StorageServer():
         self._log("Closing down")
         sock.close()
         # self.conn.close()
-        if not self._usePosixSockets():
+        if self._usePosixSockets():
             if self.xbmcvfs.exists(self.socket):
                 self._log("Deleting socket file")
                 self.xbmcvfs.delete(self.socket)

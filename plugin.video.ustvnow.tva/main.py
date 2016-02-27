@@ -25,7 +25,7 @@
 
 from resources.lib import Addon, ustvnow_plus
 import sys, os, urllib, urllib2
-import json, random
+import json
 import xbmc, xbmcgui, xbmcplugin, xbmcaddon
 
 addon       = xbmcaddon.Addon()
@@ -51,7 +51,19 @@ Addon.log('plugin url: ' + Addon.plugin_url)
 Addon.log('plugin queries: ' + str(Addon.plugin_queries))
 Addon.log('plugin handle: ' + str(Addon.plugin_handle)) 
 
+if int(Addon.get_setting('quality')) < 0:
+    Addon.set_setting('quality', '0')
+elif int(Addon.get_setting('quality')) > 3:
+    Addon.set_setting('quality', '3')
+
+if int(Addon.get_setting('rec_quality')) < 0:
+    Addon.set_setting('rec_quality', '0')
+elif int(Addon.get_setting('rec_quality')) > 2:
+    Addon.set_setting('rec_quality', '2')
+
 quality_type = int(Addon.get_setting('quality'))
+
+rec_quality_type = int(Addon.get_setting('rec_quality'))
 
 if setup != 'true':
     dlg.ok(Addon.get_string(30000),Addon.get_string(20002),Addon.get_string(20003))
@@ -112,10 +124,24 @@ elif mode == 'live':
             cm_rec = (Addon.get_string(30008), 
                       'XBMC.RunPlugin(%s/?mode=record&rec=%s&set=%s&mt=%s)' % 
                            (Addon.plugin_url, urllib.quote(c['rec_url']),urllib.quote(c['set_url']),urllib.quote(c['mediatype'])))
-            if Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true':
-                cm_menu = [cm_refresh, cm_rec]
-            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and name in ['CW','ABC','FOX','PBS','CBS','NBC','My9']:
-                cm_menu = [cm_refresh, cm_rec]
+            cm_increase = (Addon.get_string(30105) + Addon.qualityName(quality_type + 1), 
+                          'XBMC.RunPlugin(%s/?mode=increase)' % 
+                               (Addon.plugin_url))
+            cm_decrease = (Addon.get_string(30107)  + Addon.qualityName(quality_type - 1), 
+                          'XBMC.RunPlugin(%s/?mode=decrease)' % 
+                               (Addon.plugin_url))
+            if Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and quality_type == 3:
+                cm_menu = [cm_refresh, cm_decrease, cm_rec]
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and quality_type <= 2 and quality_type >= 1:
+                cm_menu = [cm_refresh, cm_increase, cm_decrease, cm_rec]
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and quality_type == 0:
+                cm_menu = [cm_refresh, cm_increase, cm_rec]
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and name in ['CW','ABC','FOX','PBS','CBS','NBC','My9'] and quality_type == 3:
+                cm_menu = [cm_refresh, cm_decrease, cm_rec]
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and name in ['CW','ABC','FOX','PBS','CBS','NBC','My9'] and quality_type <= 2 and quality_type >= 1:
+                cm_menu = [cm_refresh, cm_increase, cm_decrease, cm_rec]
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and name in ['CW','ABC','FOX','PBS','CBS','NBC','My9'] and quality_type == 0:
+                cm_menu = [cm_refresh, cm_increase, cm_rec]
             else:
                 cm_menu = [cm_refresh]
             if Addon.get_setting('extended_context') == 'true':
@@ -135,7 +161,7 @@ elif mode == 'recordings':
     recordings = ustv.get_recordings('recordings')
         
     if recordings:
-        for r in recordings:
+        for r in sorted(recordings, reverse=True):
             rURL = "plugin://plugin.video.ustvnow.tva/?scheduleid=" + str(r['scheduleid']) + "&mode=play_dvr"
             channel = r['channel']
             if r['channel'] == 'AE':
@@ -165,14 +191,36 @@ elif mode == 'recordings':
             cm_del = (Addon.get_string(30004), 
                       'XBMC.RunPlugin(%s/?mode=delete&del=%s)' % 
                            (Addon.plugin_url, urllib.quote(r['del_url'])))
-            if Addon.get_setting('rec_live') == 'true' and dvrtimertype == 0 and Addon.get_setting('dvr') == 'true' and mediatype != 'MV':
-                cm_menu = [cm_refresh, cm_set_recurring, cm_del]
-            elif  Addon.get_setting('rec_live') == 'true' and dvrtimertype != 0 and Addon.get_setting('dvr') == 'true' and mediatype != 'MV':
-                cm_menu = [cm_refresh, cm_del_recurring]
-            elif  Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and mediatype == 'MV':
-                cm_menu = [cm_refresh, cm_del]
-            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false':
-                cm_menu = [cm_refresh, cm_del]
+            cm_increase = (Addon.get_string(30105) + Addon.qualityName(rec_quality_type + 1), 
+                          'XBMC.RunPlugin(%s/?mode=increase_rec)' % 
+                               (Addon.plugin_url))
+            cm_decrease = (Addon.get_string(30107) + Addon.qualityName(rec_quality_type - 1), 
+                          'XBMC.RunPlugin(%s/?mode=decrease_rec)' % 
+                               (Addon.plugin_url))
+            if Addon.get_setting('rec_live') == 'true' and dvrtimertype == 0 and Addon.get_setting('dvr') == 'true' and mediatype != 'MV' and rec_quality_type == 2:
+                cm_menu = [cm_refresh, cm_decrease, cm_set_recurring, cm_del]
+            elif Addon.get_setting('rec_live') == 'true' and dvrtimertype == 0 and Addon.get_setting('dvr') == 'true' and mediatype != 'MV' and rec_quality_type == 1:
+                cm_menu = [cm_refresh, cm_increase, cm_decrease, cm_set_recurring, cm_del]
+            elif Addon.get_setting('rec_live') == 'true' and dvrtimertype == 0 and Addon.get_setting('dvr') == 'true' and mediatype != 'MV' and rec_quality_type == 0:
+                cm_menu = [cm_refresh, cm_increase, cm_set_recurring, cm_del]
+            elif  Addon.get_setting('rec_live') == 'true' and dvrtimertype != 0 and Addon.get_setting('dvr') == 'true' and mediatype != 'MV' and rec_quality_type == 2:
+                cm_menu = [cm_refresh, cm_decrease, cm_del_recurring]
+            elif  Addon.get_setting('rec_live') == 'true' and dvrtimertype != 0 and Addon.get_setting('dvr') == 'true' and mediatype != 'MV' and rec_quality_type == 1:
+                cm_menu = [cm_refresh, cm_increase, cm_decrease, cm_del_recurring]
+            elif  Addon.get_setting('rec_live') == 'true' and dvrtimertype != 0 and Addon.get_setting('dvr') == 'true' and mediatype != 'MV' and rec_quality_type == 0:
+                cm_menu = [cm_refresh, cm_increase, cm_del_recurring]
+            elif  Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and mediatype == 'MV' and rec_quality_type == 2:
+                cm_menu = [cm_refresh, cm_decrease, cm_del]
+            elif  Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and mediatype == 'MV' and rec_quality_type == 1:
+                cm_menu = [cm_refresh, cm_increase, cm_decrease, cm_del]
+            elif  Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and mediatype == 'MV' and rec_quality_type == 0:
+                cm_menu = [cm_refresh, cm_increase, cm_del]
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and rec_quality_type == 2:
+                cm_menu = [cm_refresh, cm_decrease, cm_del]
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and rec_quality_type == 1:
+                cm_menu = [cm_refresh, cm_increase, cm_decrease, cm_del]
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and rec_quality_type == 0:
+                cm_menu = [cm_refresh, cm_increase, cm_del]
             else:
                 cm_menu = [cm_refresh]
             Addon.add_video_item(rURL, {'title': title, 
@@ -187,7 +235,7 @@ elif mode == 'scheduled':
     recordings = ustv.get_recordings('scheduled')
         
     if recordings:
-        for r in recordings:
+        for r in sorted(recordings, reverse=True):
             channel = r['channel']
             if r['channel'] == 'AE':
                 channel = 'A&E'
@@ -235,7 +283,7 @@ elif mode == 'recurring':
     recordings = ustv.get_recordings('recurring')
         
     if recordings:
-        for r in recordings:
+        for r in sorted(recordings, reverse=True):
             cm_del_recurring = (Addon.get_string(30022), 
                       'XBMC.RunPlugin(%s/?mode=remove&remove=%s)' % 
                            (Addon.plugin_url, urllib.quote(r['remove_url'])))
@@ -285,10 +333,30 @@ elif mode == 'movies_now':
             cm_rec = (Addon.get_string(30008), 
                       'XBMC.RunPlugin(%s/?mode=record&rec=%s&mt=%s)' % 
                            (Addon.plugin_url, urllib.quote(r['rec_url']),urllib.quote(r['mediatype'])))
-            if Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true':
-                cm_menu = [cm_refresh, cm_rec]
-            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and channel in ['CW','ABC','FOX','PBS','CBS','NBC','My9']:
-                cm_menu = [cm_refresh, cm_rec]
+            cm_increase = (Addon.get_string(30105) + Addon.qualityName(quality_type + 1), 
+                          'XBMC.RunPlugin(%s/?mode=increase)' % 
+                               (Addon.plugin_url))
+            cm_decrease = (Addon.get_string(30107)  + Addon.qualityName(quality_type - 1), 
+                          'XBMC.RunPlugin(%s/?mode=decrease)' % 
+                               (Addon.plugin_url))
+            if Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and quality_type == 3:
+                cm_menu = [cm_refresh, cm_decrease, cm_rec]
+
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and quality_type <= 2 and quality_type >= 1:
+                cm_menu = [cm_refresh, cm_increase, cm_decrease, cm_rec]
+
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and quality_type == 0:
+                cm_menu = [cm_refresh, cm_increase, cm_rec]
+
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and channel in ['CW','ABC','FOX','PBS','CBS','NBC','My9'] and quality_type == 3:
+                cm_menu = [cm_refresh, cm_decrease, cm_rec]
+
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and channel in ['CW','ABC','FOX','PBS','CBS','NBC','My9'] and quality_type <= 2 and quality_type >= 1:
+                cm_menu = [cm_refresh, cm_increase, cm_decrease, cm_rec]
+
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and channel in ['CW','ABC','FOX','PBS','CBS','NBC','My9'] and quality_type == 0:
+                cm_menu = [cm_refresh, cm_increase, cm_rec]
+
             else:
                 cm_menu = [cm_refresh]
             Addon.add_video_item(rURL, {'title': title,'plot': r['plot']},
@@ -393,10 +461,30 @@ elif mode == 'sports_now':
             cm_rec = (Addon.get_string(30008), 
                       'XBMC.RunPlugin(%s/?mode=record&rec=%s&set=%s&mt=%s)' % 
                            (Addon.plugin_url, urllib.quote(c['rec_url']),urllib.quote(c['set_url']),urllib.quote(c['mediatype'])))
-            if Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true':
-                cm_menu = [cm_refresh, cm_rec]
-            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and name in ['CW','ABC','FOX','PBS','CBS','NBC','My9']:
-                cm_menu = [cm_refresh, cm_rec]
+            cm_increase = (Addon.get_string(30105) + Addon.qualityName(quality_type + 1), 
+                          'XBMC.RunPlugin(%s/?mode=increase)' % 
+                               (Addon.plugin_url))
+            cm_decrease = (Addon.get_string(30107)  + Addon.qualityName(quality_type - 1), 
+                          'XBMC.RunPlugin(%s/?mode=decrease)' % 
+                               (Addon.plugin_url))
+            if Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and quality_type == 3:
+                cm_menu = [cm_refresh, cm_decrease, cm_rec]
+
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and quality_type <= 2 and quality_type >= 1:
+                cm_menu = [cm_refresh, cm_increase, cm_decrease, cm_rec]
+
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and quality_type == 0:
+                cm_menu = [cm_refresh, cm_increase, cm_rec]
+
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and channel in ['CW','ABC','FOX','PBS','CBS','NBC','My9'] and quality_type == 3:
+                cm_menu = [cm_refresh, cm_decrease, cm_rec]
+
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and channel in ['CW','ABC','FOX','PBS','CBS','NBC','My9'] and quality_type <= 2 and quality_type >= 1:
+                cm_menu = [cm_refresh, cm_increase, cm_decrease, cm_rec]
+
+            elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and channel in ['CW','ABC','FOX','PBS','CBS','NBC','My9'] and quality_type == 0:
+                cm_menu = [cm_refresh, cm_increase, cm_rec]
+
             else:
                 cm_menu = [cm_refresh]
             Addon.add_video_item(rURL,
@@ -506,10 +594,24 @@ elif mode == 'tvguide':
                 cm_rec = (Addon.get_string(30008), 
                           'XBMC.RunPlugin(%s/?mode=record&rec=%s&set=%s&mt=%s)' % 
                            (Addon.plugin_url, urllib.quote(listings[l][9]),urllib.quote(listings[l][10]),urllib.quote(listings[l][8])))
-                if Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true':
-                    cm_menu = [cm_refresh, cm_rec]
-                elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and name in ['CW','ABC','FOX','PBS','CBS','NBC','MY9']:
-                    cm_menu = [cm_refresh, cm_rec]
+                cm_increase = (Addon.get_string(30105) + Addon.qualityName(quality_type + 1), 
+                          'XBMC.RunPlugin(%s/?mode=increase)' % 
+                               (Addon.plugin_url))
+                cm_decrease = (Addon.get_string(30107)  + Addon.qualityName(quality_type - 1), 
+                          'XBMC.RunPlugin(%s/?mode=decrease)' % 
+                               (Addon.plugin_url))
+                if Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and quality_type == 3:
+                    cm_menu = [cm_refresh, cm_decrease, cm_rec]
+                elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and quality_type <= 2 and quality_type >= 1:
+                    cm_menu = [cm_refresh, cm_increase, cm_decrease, cm_rec]
+                elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true' and quality_type == 0:
+                    cm_menu = [cm_refresh, cm_increase, cm_rec]
+                elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and name in ['CW','ABC','FOX','PBS','CBS','NBC','My9'] and quality_type == 3:
+                    cm_menu = [cm_refresh, cm_decrease, cm_rec]
+                elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and name in ['CW','ABC','FOX','PBS','CBS','NBC','My9'] and quality_type <= 2 and quality_type >= 1:
+                    cm_menu = [cm_refresh, cm_increase, cm_decrease, cm_rec]
+                elif Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'false' and name in ['CW','ABC','FOX','PBS','CBS','NBC','My9'] and quality_type == 0:
+                    cm_menu = [cm_refresh, cm_increase, cm_rec]
                 else:
                     cm_menu = [cm_refresh]
                 if listings[l][11] == '0':
@@ -552,24 +654,24 @@ elif mode == 'delete':
     if ret == 1:
         xbmc.executebuiltin("ActivateWindow(busydialog)")
         ustv.delete_recording(Addon.plugin_queries['del'])
-        xbmc.executebuiltin('Container.Refresh')
         xbmc.executebuiltin("Dialog.Close(busydialog)")
+        xbmc.executebuiltin('Container.Refresh')
 
 elif mode == 'remove':
     ret = dlg.yesno(Addon.get_string(30000), Addon.get_string(30019))
     if ret == 1:
         xbmc.executebuiltin("ActivateWindow(busydialog)")
         ustv.remove_recurring(Addon.plugin_queries['remove'])
-        xbmc.executebuiltin('Container.Refresh')
         xbmc.executebuiltin("Dialog.Close(busydialog)")
+        xbmc.executebuiltin('Container.Refresh')
 
 elif mode == 'set':
     ret = dlg.yesno(Addon.get_string(30000), Addon.get_string(30023))
     if ret == 1:
         xbmc.executebuiltin("ActivateWindow(busydialog)")
         ustv.set_recurring(Addon.plugin_queries['set'])
-        xbmc.executebuiltin('Container.Refresh')
         xbmc.executebuiltin("Dialog.Close(busydialog)")
+        xbmc.executebuiltin('Container.Refresh')
 
 elif mode == 'record':
     ret = dlg.yesno(Addon.get_string(30000), Addon.get_string(30009))
@@ -588,7 +690,71 @@ elif mode == 'record':
 elif mode == 'refresh':
     xbmc.executebuiltin('Container.Refresh')
 
+elif mode == 'increase':
+    ret = dlg.yesno(Addon.get_string(30000), Addon.get_string(30104))
+    if ret == 1:
+        xbmc.executebuiltin("ActivateWindow(busydialog)")
+        Addon.set_setting('quality',str((quality_type + 1)))
+        xbmc.executebuiltin("Dialog.Close(busydialog)")
+        xbmc.executebuiltin('Container.Refresh')
+
+elif mode == 'decrease':
+    ret = dlg.yesno(Addon.get_string(30000), Addon.get_string(30106))
+    if ret == 1:
+        xbmc.executebuiltin("ActivateWindow(busydialog)")
+        Addon.set_setting('quality',str((quality_type - 1)))
+        xbmc.executebuiltin("Dialog.Close(busydialog)")
+        xbmc.executebuiltin('Container.Refresh')
+
+elif mode == 'increase_rec':
+    ret = dlg.yesno(Addon.get_string(30000), Addon.get_string(30108))
+    if ret == 1:
+        xbmc.executebuiltin("ActivateWindow(busydialog)")
+        Addon.set_setting('rec_quality',str((rec_quality_type + 1)))
+        xbmc.executebuiltin("Dialog.Close(busydialog)")
+        xbmc.executebuiltin('Container.Refresh')
+
+elif mode == 'decrease_rec':
+    ret = dlg.yesno(Addon.get_string(30000), Addon.get_string(30109))
+    if ret == 1:
+        xbmc.executebuiltin("ActivateWindow(busydialog)")
+        Addon.set_setting('rec_quality',str((rec_quality_type - 1)))
+        xbmc.executebuiltin("Dialog.Close(busydialog)")
+        xbmc.executebuiltin('Container.Refresh')
+
 elif mode == 'settings':
+
+    version = xbmcaddon.Addon(id=addonid).getAddonInfo('version')
+    addon_name = xbmcaddon.Addon(id=addonid).getAddonInfo('name')
+    Addon.set_setting('version', version)
+    Addon.set_setting('addon_name', addon_name)
+
+    token_check = ustv._get_json('gtv/1/live/getcustomerkey', {'token': Addon.get_setting('token')})['username']
+    if token_check != Addon.get_setting('email'):
+        ustv.token = ustv._login()
+    else:
+        ustv.token = Addon.get_setting('token')
+
+    customer_key = ustv._get_json('gtv/1/live/getcustomerkey', {'token': Addon.get_setting('token')})['customerkey']
+        
+    account_fname = ustv._get_json('gtv/1/live/getaccountsubscription', {'username': Addon.get_setting('email'), 'customerkey': customer_key})['fname']
+
+    account_lname = ustv._get_json('gtv/1/live/getaccountsubscription', {'username': Addon.get_setting('email'), 'customerkey': customer_key})['lname']
+    account_name = account_fname + ' ' + account_lname
+    Addon.set_setting('account_name',account_name)
+
+    account_plan = ustv._get_json('gtv/1/live/getaccountsubscription', {'username': Addon.get_setting('email'), 'customerkey': customer_key})['subscription']
+    Addon.set_setting('account_plan',account_plan)
+
+    account_status = ustv._get_json('gtv/1/live/getaccountsubscription', {'username': Addon.get_setting('email'), 'customerkey': customer_key})['ocaccountstatus']
+    Addon.set_setting('account_status',account_status)
+
+    date_opened = ustv._get_json('gtv/1/live/getaccountsubscription', {'username': Addon.get_setting('email'), 'customerkey': customer_key})['dateopened']
+    Addon.set_setting('date_opened',date_opened)
+
+    dvr_points = ustv._get_json('gtv/1/live/getaccountsubscription', {'username': Addon.get_setting('email'), 'customerkey': customer_key})['dvrpoints']
+    Addon.set_setting('dvr_points',str(dvr_points))
+
     Addon.show_settings()
 
 elif mode=='play':
@@ -607,17 +773,17 @@ elif mode=='play':
 
 elif mode=='play_dvr':
     scheduleid = Addon.plugin_queries['scheduleid']
-    if quality_type == 0:
+    if rec_quality_type == 0:
         recordings_quality = '350'
-    elif quality_type == 1:
+    elif rec_quality_type == 1:
         recordings_quality = '650'
-    elif quality_type == 2:
+    elif rec_quality_type == 2:
         recordings_quality = '950'
     else:
         recordings_quality = '950'
     Addon.log(scheduleid)
     channels = []
-    channels = ustv.get_dvr_link(recordings_quality)
+    channels = ustv.get_dvr_link(rec_quality_type,recordings_quality)
     if channels:
         Addon.log(str(channels))
         for c in channels:

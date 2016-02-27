@@ -264,7 +264,7 @@ class MyHandler(BaseHTTPRequestHandler):
         # Do we have to send a normal response or a range response?
         portionLen=0
         print 'download_mode',download_mode
-        if str(download_mode)==2: #if its download only then do not stream
+        if str(download_mode)=='2': #if its download only then do not stream
             print 'got download request'
             downloader = downloadManager.start_downloading(download_id,file_url, file_dest, file_name, 0,download_mode ,True,connections,rtype) #either create downloader or return exiting one
             print 'download started'
@@ -465,7 +465,7 @@ class ProxyHelper():
         self.play_in_XBMC(finalUrl,name,download_id,keep_file)
 
     def download(self,url,name='',connections=2,dest_path=''):
-        finalUrl,download_id = self.create_proxy_url(url,connections=connections,downloadmode=2,keep_file=True,name=name,dest_folder_path=dest_folder_path)
+        finalUrl,download_id = self.create_proxy_url(url,connections=connections,downloadmode=2,keep_file=True,name=name,dest_folder_path=dest_path)
         self.call_page(finalUrl)
         return download_id
         

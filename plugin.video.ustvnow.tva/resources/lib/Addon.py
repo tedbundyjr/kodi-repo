@@ -33,6 +33,9 @@ from xml.etree import ElementTree as ET
 from datetime import date
 from datetime import timedelta
 
+reload(sys)  
+sys.setdefaultencoding('utf8')
+
 addon = xbmcaddon.Addon(id='plugin.video.ustvnow.tva')
 plugin_path = addon.getAddonInfo('path')
 ICON = os.path.join(plugin_path, 'icon.png')
@@ -67,6 +70,10 @@ def cleanChanName(string):
     string = string.replace('APL','Animal Planet').replace('TOON','Cartoon Network').replace('DSC','Discovery').replace('Discovery ','Discovery').replace('BRAVO','Bravo').replace('SYFY','Syfy').replace('HISTORY','History').replace('NATIONAL GEOGRAPHIC','National Geographic')
     string = string.replace('COMEDY','Comedy Central').replace('FOOD','Food Network').replace('NIK','Nickelodeon').replace('LIFE','Lifetime').replace('SPIKETV','SPIKE TV').replace('FNC','Fox News').replace('NGC','National Geographic').replace('Channel','')
     return cleanChannel(string)
+
+def qualityName(string):
+    string = str(string).replace('0','Low').replace('1','Med').replace('2','High').replace('3','HD')
+    return string
           
 def cleanChannel(string):
     string = string.replace('WLYH','CW').replace('WHTM','ABC').replace('WPMT','FOX').replace('WPSU','PBS').replace('WHP','CBS').replace('WGAL','NBC').replace('My9','MY9').replace('AETV','AE').replace('USA','USA Network').replace('Channel','').replace('Network Network','Network')
@@ -138,17 +145,17 @@ def add_directory(url_queries, title, img=ICON, fanart=FANART, total_items=0):
     url = build_plugin_url(url_queries)
     log('adding dir: %s' % (title))
     if title == 'Live TV':
-        img = addon.getAddonInfo('path') + '/resources/images/skin/' + get_setting('skin') + '/tv.png'
+        img = addon.getAddonInfo('path') + '/resources/images/skins/' + get_setting('skin') + '/tv.png'
     if title == 'TV Guide':
-        img = addon.getAddonInfo('path') + '/resources/images/skin/' + get_setting('skin') + '/tvguide.png'
+        img = addon.getAddonInfo('path') + '/resources/images/skins/' + get_setting('skin') + '/tvguide.png'
     if title == 'Movies On Now' or title == 'Movies Later Today' or title == 'Upcoming Movies':
-        img = addon.getAddonInfo('path') + '/resources/images/skin/' + get_setting('skin') + '/movies.png'
+        img = addon.getAddonInfo('path') + '/resources/images/skins/' + get_setting('skin') + '/movies.png'
     if title == 'Sports On Now' or title == 'Sports Later Today' or title == 'Upcoming Sports':
-        img = addon.getAddonInfo('path') + '/resources/images/skin/' + get_setting('skin') + '/sports.png'
+        img = addon.getAddonInfo('path') + '/resources/images/skins/' + get_setting('skin') + '/sports.png'
     if title == 'Recordings' or title == 'Scheduled' or title == 'Recurring':
-        img = addon.getAddonInfo('path') + '/resources/images/skin/' + get_setting('skin') + '/recordings.png'
+        img = addon.getAddonInfo('path') + '/resources/images/skins/' + get_setting('skin') + '/recordings.png'
     if title == 'Settings':
-        img = addon.getAddonInfo('path') + '/resources/images/skin/' + get_setting('skin') + '/settings.png'
+        img = addon.getAddonInfo('path') + '/resources/images/skins/' + get_setting('skin') + '/settings.png'
     listitem = xbmcgui.ListItem(decode(title), iconImage=img, thumbnailImage=img)
     if not fanart:
         fanart = addon.getAddonInfo('path') + '/fanart.jpg'
@@ -178,6 +185,7 @@ def parse_query(query, clean=True):
     if clean:
         q['mode'] = q.get('mode', 'main')
         q['play'] = q.get('play', '')
+        q['play_dvr'] = q.get('play_dvr', '')
 
     return q
 

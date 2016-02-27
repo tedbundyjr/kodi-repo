@@ -25,7 +25,7 @@
 
 import sys, os, re
 import urllib, urllib2, socket, cookielib
-import json
+import json, random
 import xbmcgui, xbmc, xbmcvfs
 import Addon
 
@@ -63,7 +63,11 @@ class Ustvnow:
         if Addon.get_setting('rec_live') == 'true' and Addon.get_setting('dvr') == 'true':
             Addon.add_directory({'mode': 'recurring'}, Addon.get_string(30006))
         if Addon.get_setting('show_settings_option') == 'true':
-            Addon.add_directory({'mode': 'settings'}, Addon.get_string(30002)) 
+            Addon.add_directory({'mode': 'settings'}, Addon.get_string(30002))
+
+        if Addon.get_setting('clear_token') == 'true':
+            Addon.set_setting('token', '')
+            Addon.set_setting('clear_token', 'false')
 
     def get_channels(self, quality):
         Addon.log('get_channels,' + str(quality))
@@ -72,6 +76,11 @@ class Ustvnow:
             self.token = self._login()
         else:
             self.token = Addon.get_setting('token')
+        passkey = self._get_json('gtv/1/live/viewdvrlist', {'token': self.token})['globalparams']['passkey']
+        try:
+            stream_check = self._get_json('stream/1/live/view', {'token': self.token, 'key': passkey, 'scode': 'whtm'})['domain']
+        except:
+            self.token = self._login_alt()
         dvr_check = self._get_json('gtv/1/live/getuserbytoken', {'token': self.token})['data']['plan_name']
         if 'DVR' in dvr_check:
             Addon.set_setting('dvr', 'true')
@@ -80,8 +89,6 @@ class Ustvnow:
         account_type = self._get_json('gtv/1/live/getuserbytoken', {'token': self.token})['data']['plan_free']
         if account_type == 1 and dvr_check != 'Nittany Plan':
             Addon.set_setting('free_package', 'true')
-            if Addon.get_setting('quality') == '3':
-                Addon.set_setting('quality', '2')
         else:
             Addon.set_setting('free_package', 'false')
         content = self._get_json('gtv/1/live/channelguide', {'token': self.token})
@@ -136,23 +143,30 @@ class Ustvnow:
             self.token = self._login()
         else:
             self.token = Addon.get_setting('token')
+        passkey = self._get_json('gtv/1/live/viewdvrlist', {'token': self.token})['globalparams']['passkey']
+        try:
+            stream_check = self._get_json('stream/1/live/view', {'token': self.token, 'key': passkey, 'scode': 'whtm'})['domain']
+        except:
+            self.token = self._login_alt()
         content = self._get_json('gtv/1/live/channelguide', {'token': self.token})
         channels = []
         results = content['results'];
-        passkey = self._get_json('gtv/1/live/viewdvrlist', {'token': self.token})['globalparams']['passkey']
         quality = (quality + 1)
+        #used for alternate stream options
+        src = random.choice(['lv5', 'lv7', 'lv9'])
+        #used for alternate stream options
+        stream_type = 'rtmp'
         for i in results:
             try:
                 if i['order'] == 1:
                     if quality == 4 and i['scode'] == 'whvl':
                         quality = (quality - 1)
                     name = Addon.cleanChanName(i['stream_code'])
-                    if Addon.get_setting('free_package') == 'true':
-                        src = self._get_json('stream/1/live/view', {'token': self.token, 'key': passkey, 'scode': i['scode']})['domain']
-                        url = 'http://' + str(src) + '/dvrtest/mp4:' + i['streamname'] + str(quality) + '/playlist.m3u8?key=' + passkey
+                    stream = self._get_json('stream/1/live/view', {'token': self.token, 'key': passkey, 'scode': i['scode']})['stream']
+                    if Addon.get_setting('live_stream_option') == '0':
+                        url = stream.replace('smil:', 'mp4:').replace('USTVNOW1', 'USTVNOW').replace('USTVNOW', 'USTVNOW' + str(quality))
                     else:
-                        stream = self._get_json('stream/1/live/view', {'token': self.token, 'key': passkey, 'scode': i['scode']})['stream']
-                        url = stream.replace('smil:', 'mp4:').replace('USTVNOW', 'USTVNOW' + str(quality))
+                        url = stream_type + '://' + str(src) + '.ustvnow.com:1935/dvrtest?key=' + passkey + '/mp4:' + i['streamname'] + str(quality)
                     if Addon.get_setting('free_package') == 'true':
                         if name in ['CW','ABC','FOX','PBS','CBS','NBC','MY9']:
                             channels.append({ 
@@ -168,27 +182,34 @@ class Ustvnow:
                 pass
         return channels 
 
-    def get_dvr_link(self, quality):
-        Addon.log('get_dvr_link,' + str(quality))
+    def get_dvr_link(self, quality_type, recordings_quality):
+        Addon.log('get_dvr_link,' + str(recordings_quality))
         token_check = self._get_json('gtv/1/live/getcustomerkey', {'token': Addon.get_setting('token')})['username']
         if token_check != Addon.get_setting('email'):
             self.token = self._login()
         else:
             self.token = Addon.get_setting('token')
+        passkey = self._get_json('gtv/1/live/viewdvrlist', {'token': self.token})['globalparams']['passkey']
+        try:
+            stream_check = self._get_json('stream/1/live/view', {'token': self.token, 'key': passkey, 'scode': 'whtm'})['domain']
+        except:
+            self.token = self._login_alt()
         content = self._get_json('gtv/1/live/viewdvrlist', {'token': self.token})
         channels = []
         results = content['results'];
-        passkey = self._get_json('gtv/1/live/viewdvrlist', {'token': self.token})['globalparams']['passkey']
+        #used for alternate stream options
+        app_name = 'dvrrokuplay'
+        #used for alternate stream options
+        stream_type = 'rtsp'
         for i in results:
             try:
                 name = Addon.cleanChanName(i['stream_code'])
                 scheduleid = str(i['scheduleid'])
-                if Addon.get_setting('free_package') == 'true':
-                    stream = self._get_json('stream/1/dvr/play', {'token': self.token, 'key': passkey, 'scheduleid': i['scheduleid']})['stream']
-                    url = stream.replace('350', str(quality))
+                stream = self._get_json('stream/1/dvr/play', {'token': self.token, 'key': passkey, 'scheduleid': i['scheduleid']})['stream']
+                if Addon.get_setting('recordings_stream_option') == '0':
+                    url = stream.replace('smil:', 'mp4:').replace('.smil', '_' + str(recordings_quality) + '.mp4').replace('350', str(recordings_quality))
                 else:
-                    stream = self._get_json('stream/1/dvr/play', {'token': self.token, 'key': passkey, 'scheduleid': i['scheduleid']})['stream']
-                    url = stream.replace('smil:', 'mp4:').replace('.smil', '_' + str(quality) + '.mp4')
+                    url = stream_type + '://' + i['dvrlocation'] + '.ustvnow.com:1935/' + app_name + '/mp4:' + [i['filename_low'], i['filename_med'], i['filename_high']][quality_type]
                 if Addon.get_setting('free_package') == 'true':
                     if name in ['CW','ABC','FOX','PBS','CBS','NBC','MY9']:
                         channels.append({ 
@@ -212,6 +233,11 @@ class Ustvnow:
             self.token = self._login()
         else:
             self.token = Addon.get_setting('token')
+        passkey = self._get_json('gtv/1/live/viewdvrlist', {'token': self.token})['globalparams']['passkey']
+        try:
+            stream_check = self._get_json('stream/1/live/view', {'token': self.token, 'key': passkey, 'scode': 'whtm'})['domain']
+        except:
+            self.token = self._login_alt()
         dvr_check = self._get_json('gtv/1/live/getuserbytoken', {'token': self.token})['data']['plan_name']
         if 'DVR' in dvr_check:
             Addon.set_setting('dvr', 'true')
@@ -220,8 +246,6 @@ class Ustvnow:
         account_type = self._get_json('gtv/1/live/getuserbytoken', {'token': self.token})['data']['plan_free']
         if account_type == 1 and dvr_check != 'Nittany Plan':
             Addon.set_setting('free_package', 'true')
-            if Addon.get_setting('quality') == '3':
-                Addon.set_setting('quality', '2')
         else:
             Addon.set_setting('free_package', 'false')
         content = self._get_json('gtv/1/live/viewdvrlist', {'token': self.token})
@@ -338,6 +362,11 @@ class Ustvnow:
             self.token = self._login()
         else:
             self.token = Addon.get_setting('token')
+        passkey = self._get_json('gtv/1/live/viewdvrlist', {'token': self.token})['globalparams']['passkey']
+        try:
+            stream_check = self._get_json('stream/1/live/view', {'token': self.token, 'key': passkey, 'scode': 'whtm'})['domain']
+        except:
+            self.token = self._login_alt()
         dvr_check = self._get_json('gtv/1/live/getuserbytoken', {'token': self.token})['data']['plan_name']
         if 'DVR' in dvr_check:
             Addon.set_setting('dvr', 'true')
@@ -346,8 +375,6 @@ class Ustvnow:
         account_type = self._get_json('gtv/1/live/getuserbytoken', {'token': self.token})['data']['plan_free']
         if account_type == 1 and dvr_check != 'Nittany Plan':
             Addon.set_setting('free_package', 'true')
-            if Addon.get_setting('quality') == '3':
-                Addon.set_setting('quality', '2')
         else:
             Addon.set_setting('free_package', 'false')
         content = self._get_json('gtv/1/live/upcoming', {'token': self.token})
@@ -498,6 +525,11 @@ class Ustvnow:
             self.token = self._login()
         else:
             self.token = Addon.get_setting('token')
+        passkey = self._get_json('gtv/1/live/viewdvrlist', {'token': self.token})['globalparams']['passkey']
+        try:
+            stream_check = self._get_json('stream/1/live/view', {'token': self.token, 'key': passkey, 'scode': 'whtm'})['domain']
+        except:
+            self.token = self._login_alt()
         dvr_check = self._get_json('gtv/1/live/getuserbytoken', {'token': self.token})['data']['plan_name']
         if 'DVR' in dvr_check:
             Addon.set_setting('dvr', 'true')
@@ -506,8 +538,6 @@ class Ustvnow:
         account_type = self._get_json('gtv/1/live/getuserbytoken', {'token': self.token})['data']['plan_free']
         if account_type == 1 and dvr_check != 'Nittany Plan':
             Addon.set_setting('free_package', 'true')
-            if Addon.get_setting('quality') == '3':
-                Addon.set_setting('quality', '2')
         else:
             Addon.set_setting('free_package', 'false')
         content = self._get_json('gtv/1/live/channelguide', {'token': self.token})
@@ -654,6 +684,11 @@ class Ustvnow:
             self.token = self._login()
         else:
             self.token = Addon.get_setting('token')
+        passkey = self._get_json('gtv/1/live/viewdvrlist', {'token': self.token})['globalparams']['passkey']
+        try:
+            stream_check = self._get_json('stream/1/live/view', {'token': self.token, 'key': passkey, 'scode': 'whtm'})['domain']
+        except:
+            self.token = self._login_alt()
         content = self._get_json('gtv/1/live/channelguide', {'token': self.token})
         results = content['results'];
         now = time();
@@ -827,7 +862,6 @@ class Ustvnow:
         else:
             return '%s/%s' % (self.mBASE_URL, path)
 
-            
     def _fetch(self, url, form_data=False):
         Addon.log('_fetch')
         opener = urllib2.build_opener()
@@ -842,7 +876,6 @@ class Ustvnow:
         except urllib2.URLError, e:
             return False
 
-            
     def _get_json(self, path, queries={}):
         Addon.log('_get_json')
         content = False
@@ -871,10 +904,30 @@ class Ustvnow:
         Addon.log('_login')
         self.cj = cookielib.CookieJar()
         opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cj)) 
+        opener.addheaders = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.127 Large Screen Safari/533.4 GoogleTV/162671')]
         urllib2.install_opener(opener)
         url = self._build_json('gtv/1/live/login', {'username': self.user, 
                                                'password': self.password, 
                                                'device':'gtv', 
+                                               'redir':'0'})
+        response = opener.open(url)
+        for cookie in self.cj:
+            if cookie.name == 'token':
+                Addon.set_setting('token', cookie.value)
+                return cookie.value
+            else:
+                self.dlg.ok(Addon.get_string(30000), Addon.get_string(30011))
+        return 'False'
+
+    def _login_alt(self):
+        Addon.log('_login_alt')
+        self.cj = cookielib.CookieJar()
+        opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cj)) 
+        opener.addheaders = [('User-agent', 'Mozilla/5.0 (iPad; CPU iPhone OS 501 like Mac OS X) AppleWebKit/534.46 (KHTML like Gecko) Version/5.1 Mobile/9A405 Safari/7534.48.3')]
+        urllib2.install_opener(opener)
+        url = self._build_json('iphone/1/live/login', {'username': self.user, 
+                                               'password': self.password, 
+                                               'device':'iphone', 
                                                'redir':'0'})
         response = opener.open(url)
         for cookie in self.cj:

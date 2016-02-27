@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.musicvideos.theaudiodb.com"
        name="TheAudioDb.com for Music Videos"
-       version="1.2.9"
+       version="1.3.0"
        provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0"/>
@@ -113,6 +113,5 @@
     <website></website>
     <email></email>
     <source></source>
-    <broken>Broken due to website overload. Please use other scraper.</broken>
   </extension>
 </addon>

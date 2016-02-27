@@ -95,9 +95,19 @@ def HELPWIZARD(name,url,description,filetype):
             xEBb('UseCustomBackground')
         #time.sleep(2)
         xbmc.sleep(4000)
-        xbmc.executebuiltin('UnloadSkin()'); xbmc.executebuiltin('ReloadSkin()'); xbmc.executebuiltin("LoadProfile(%s)" % proname)
-        dialog=xbmcgui.Dialog(); dialog.ok("Success!","Installation Complete","   [COLOR gold]Brought To You By %s[/COLOR]"%SiteDomain)
-        ##
+        dialog=xbmcgui.Dialog()
+        dialog.ok("Success!","Installation Complete","   [COLOR gold]Brought To You By %s[/COLOR]"%SiteDomain)
+
+        xbmc.executebuiltin('UnloadSkin()')
+        #print "UNLOADED SKIN"
+        xbmc.executebuiltin('ReloadSkin()')
+        #print "LOADED SKIN"
+        xbmc.executebuiltin("LoadProfile(%s)" % proname)
+        #print "LOADED PROFILE"
+        xbmc.executebuiltin('Action(back)')
+        xbmc.executebuiltin('ReplaceWindow("10000")')
+        #print "REPLACED WINDOW"
+
 #==========
 def DoA(a): xbmc.executebuiltin("Action(%s)" % a) #DoA('Back'); # to move to previous screen.
 def eod(): addon.end_of_directory()
