@@ -1,0 +1,43 @@
+v2.0.1
+- Made sure the latest QR code was used to grab the mobile queue
+- Added the graphic for the "latest songs", this wasn't included in the 2.0.0 zip file
+
+v2.0.0
+- New Functionality!!
+  From now on you can use your mobile phone to queue new songs!!
+  Just install a QR code scanner on your mobile phone like "QR barcode scanner", "QR Reader", "NeoReader"... and scan the QR code
+- Added "Latest Songs" option so people can browse the latest songs.
+- Launched mobile site
+
+v1.0.7
+- BETA!!!!
+
+v1.0.6
+- Changed the temp dir to solve the problem with certain android based systems. (they keep a lock on the dir so we can't delete it)
+
+v1.0.5
+- Changed addon path to reflect github's changes
+
+v1.0.4
+- Added addon module
+
+v1.0.3
+- Changed dependencies for Gotham
+
+v1.0.2
+- Fixed JSON import bug on certain machines (Raspberry PI, ouya...)
+
+v1.0.1
+- Minor adjustments
+
+v1.0.0
+- Public release: happy happy joy joy :-)
+
+v0.1.0
+- Beta release
+
+v0.0.1
+- Alpha release
+
+
+

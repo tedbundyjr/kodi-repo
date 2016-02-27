@@ -8,7 +8,6 @@ import xbmcplugin,xbmcgui,xbmc, xbmcaddon, downloader, extract, time
 import tools
 from libs import kodi
 from tm_libs import dom_parser
-from libs.trans_utils import i18n
 from libs import log_utils
 from t0mm0.common.net import Net
 from t0mm0.common.addon import Addon
@@ -56,8 +55,8 @@ RAND_UAS = ['Mozilla/5.0 ({win_ver}{feature}; rv:{br_ver}) Gecko/20100101 Firefo
             'Mozilla/5.0 ({win_ver}{feature}; Trident/7.0; rv:{br_ver}) like Gecko']
 
 
-base_url = 'http://afdah.tv/'
-
+#base_url = 'http://afdah.tv/'
+base_url = kodi.get_setting('afdah_base_url')
 
 def OPEN_URL (url,cookies=None, data=None, multipart_data=None, headers=None, allow_redirect=True, cache_limit=8):
     # form_data = {'login':'somename', 'password':'somepassword','remember_me':'on','submit_login':'Login', 'submit_login':''}
@@ -118,35 +117,40 @@ def OPEN_URL_REG(url):
 
 
 def afdah(name):
-    title = name[:-7]
-    movie_year = name[-6:]
-    year = movie_year.replace('(','').replace(')','')
-    video_type = 'movies'
-    search_url = urlparse.urljoin(base_url, '/wp-content/themes/afdah/ajax-search.php')
-    data = {'search': title, 'type': 'title'}
-    html = OPEN_URL(search_url, data=data, cache_limit=1)
-    pattern = '<li>.*?href="([^"]+)">([^<]+)\s+\((\d{4})\)'
-    results = []
-    for match in re.finditer(pattern, html, re.DOTALL | re.I):
-        url, title, match_year = match.groups('')
-        if not year or not match_year or year == match_year:
-            result = {'url': _pathify_url(url), 'title': title, 'year': year}
-            results.append(result)
-    for e in results:
+    try:
+        title = name[:-7]
+        movie_year = name[-6:]
+        year = movie_year.replace('(','').replace(')','')
+        video_type = 'movies'
+        search_url = urlparse.urljoin(base_url, '/wp-content/themes/afdah/ajax-search.php')
+        data = {'search': title, 'type': 'title'}
+        html = OPEN_URL(search_url, data=data, cache_limit=1)
+        pattern = '<li>.*?href="([^"]+)">([^<]+)\s+\((\d{4})\)'
+        results = []
+        for match in re.finditer(pattern, html, re.DOTALL | re.I):
+            url, title, match_year = match.groups('')
+            if not year or not match_year or year == match_year:
+                result = {'url': _pathify_url(url), 'title': title, 'year': year}
+                results.append(result)
+        for e in results:
 
-        url = e['url']
-        year = e['year']
-        name = e['title']
-        # print year
-        # print name
-        # print url
-        # srcurl = base_url+url
-        # link = OPEN_URL_REG(srcurl)
-        hosters=get_sources(url)
-        print hosters
+            url = e['url']
+            year = e['year']
+            name = e['title']
+            # print year
+            # print name
+            # print url
+            # srcurl = base_url+url
+            # link = OPEN_URL_REG(srcurl)
+            hosters=get_sources(url)
+            # print hosters
+            return hosters
+    except Exception as e:
+        hosters =[]
+        log_utils.log('Error [%s]  %s' % (str(e), ''), xbmc.LOGERROR)
+        if kodi.get_setting('error_notify') == "true":
+            kodi.notify(header='Afdah',msg='(error) %s  %s' % (str(e), ''),duration=5000,sound=None)
         return hosters
-
-
 
 def _get_ua():
     index = random.randrange(len(RAND_UAS))
@@ -245,8 +249,12 @@ def get_sources(source_url):
             for match in re.finditer(pattern, html, re.I):
                 url = match.group(1)
                 host = urlparse.urlparse(url).hostname
-                hoster = {'multi-part': False, 'url': url, 'linkname': host, 'quality': quality, 'rating': None, 'views': None, 'direct': False}
+                host = host.replace('www.','')
+                host = host.replace('http://','')
+                hoster = {'multi-part': False, 'url': url, 'host': host, 'quality': quality, 'rating': None, 'views': None, 'direct': False}
+                #hoster = {'url': url, 'host': host,'view':None,'quality':quality,'direct':False}
                 hosters.append(hoster)
+        hosters = main_scrape.apply_urlresolver(hosters)
         return hosters
 
 

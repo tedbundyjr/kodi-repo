@@ -1,4 +1,56 @@
 Official Velocity addon For Kodi
+
+V1.0.5
+Better Error notification
+Adjusted cache to deal with Trakt Timeouts
+Added SantaSeries TV
+Added Putlocker Movies/TV
+Temporarily Removed TwoMovies From Functions
+
+V1.0.4
+Bug fixes galore
+Watched list marks auto update
+Add to lists fixed
+Prepare for more TV Scrapers next update
+Sync for Velocity for Kids
+For sync to work you MUST make a custom List named "Kids" no quotes
+
+
+V1.0.3
+Bug fix
+Added ability to add to custom created lists
+in preperation for the upcoming Companion addon "Velocity for Kids"
+
+
+V1.0.2
+Improved Premium Hoster Tagging
+Added Custom Lists
+Added Special List Sections
+Added Ability to find other users lists
+Added IceFilms Movies & TV
+Added Caching to speed up results
+Better Meta information
+Trailers playable from Info Menu
+Other speed and Trakt Improvements
+Watched Checkmarks added (Requires Initialization)
+Optimized Download Functions
+Fixed Trakt Connection Login Dialog
+Bug Fixes
+
+
+V1.0.1
+Added Downloads
+Added download Status in context menu of download section
+You can now download more than one video at a time (still a bit slow)
+Added RD Tagging in sources
+Fixed “Loop” playback and failures due to
+incorrect playable status being passed to player
+Added a stable notification for Trakt Authorization
+Added Custom Domain naming
+added 123Movies to scraper list
+Other bug fixes
+
+
 v1.0.0
 Initial Release
 

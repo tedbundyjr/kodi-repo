@@ -1,0 +1,843 @@
+# Addon Name: Alluc
+# Addon id: plugin.video.alluc.api
+# Addon Provider: TV Addons
+# Translators:
+# dudehere, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Alluc.API\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-05-25 08:11+0000\n"
+"Last-Translator: dudehere\n"
+"Language-Team: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#30000"
+msgid "TV Shows"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Movies"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Set Language"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Quick Search"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Settings"
+msgstr ""
+
+msgctxt "#30005"
+msgid "Transmogrified"
+msgstr ""
+
+msgctxt "#30006"
+msgid "Update Now"
+msgstr ""
+
+msgctxt "#30007"
+msgid "Show Help"
+msgstr ""
+
+msgctxt "#30008"
+msgid "Calendar"
+msgstr ""
+
+msgctxt "#30009"
+msgid "Watchlist"
+msgstr ""
+
+msgctxt "#30010"
+msgid "Custom Lists"
+msgstr ""
+
+msgctxt "#30011"
+msgid "Genres"
+msgstr ""
+
+msgctxt "#30012"
+msgid "Recommended TV"
+msgstr ""
+
+msgctxt "#30013"
+msgid "Popular TV"
+msgstr ""
+
+msgctxt "#30014"
+msgid "Trending TV"
+msgstr ""
+
+msgctxt "#30015"
+msgid "Search"
+msgstr ""
+
+msgctxt "#30016"
+msgid "Recommended Movies"
+msgstr ""
+
+msgctxt "#30017"
+msgid "Popular Movies"
+msgstr ""
+
+msgctxt "#30018"
+msgid "Trending Movies"
+msgstr ""
+
+msgctxt "#30019"
+msgid "Add Source Folders"
+msgstr ""
+
+msgctxt "#30020"
+msgid "Manage Subscriptions"
+msgstr ""
+
+msgctxt "#30021"
+msgid "Manage Host List"
+msgstr ""
+
+msgctxt "#30022"
+msgid "Alluc Settings"
+msgstr ""
+
+msgctxt "#30023"
+msgid "Transmogrifier Settings"
+msgstr ""
+
+msgctxt "#30024"
+msgid "URLResolver Settings"
+msgstr ""
+
+msgctxt "#30025"
+msgid "Reset Alluc"
+msgstr ""
+
+msgctxt "#30026"
+msgid "Transmogfrified Shows"
+msgstr ""
+
+msgctxt "#30027"
+msgid "Transmogrified Movies"
+msgstr ""
+
+msgctxt "#30028"
+msgid "Manage Queue"
+msgstr ""
+
+msgctxt "#30029"
+msgid "Authorize Trakt.tv"
+msgstr ""
+
+msgctxt "#30030"
+msgid "Enable Basic Mode"
+msgstr ""
+
+msgctxt "#30031"
+msgid "Enable Advanced Mode"
+msgstr ""
+
+msgctxt "#30032"
+msgid "Settings"
+msgstr ""
+
+msgctxt "#30033"
+msgid "Set Language"
+msgstr ""
+
+msgctxt "#30034"
+msgid "Transmogrifier Queue"
+msgstr ""
+
+msgctxt "#30035"
+msgid "Find Similar Shows"
+msgstr ""
+
+msgctxt "#30036"
+msgid "Subscribe"
+msgstr ""
+
+msgctxt "#30037"
+msgid "Remove from Watchlist"
+msgstr ""
+
+msgctxt "#30038"
+msgid "Add to Watchlist"
+msgstr ""
+
+msgctxt "#30039"
+msgid "Remove from custom list"
+msgstr ""
+
+msgctxt "#30040"
+msgid "Add to custom list"
+msgstr ""
+
+msgctxt "#30041"
+msgid "Mark Watched"
+msgstr ""
+
+msgctxt "#30042"
+msgid "Mark Unwatched"
+msgstr ""
+
+msgctxt "#30043"
+msgid "Transmogrify"
+msgstr ""
+
+msgctxt "#30044"
+msgid "Go to Seasons"
+msgstr ""
+
+msgctxt "#30045"
+msgid "Watch Trailer"
+msgstr ""
+
+msgctxt "#30046"
+msgid "Find Similar Movies"
+msgstr ""
+
+msgctxt "#30047"
+msgid "Import Movie"
+msgstr ""
+
+msgctxt "#30048"
+msgid "Remove List Sync"
+msgstr ""
+
+msgctxt "#30049"
+msgid "Sync List"
+msgstr ""
+
+msgctxt "#30050"
+msgid "Delete Custom List"
+msgstr ""
+
+msgctxt "#30051"
+msgid "UnSubscribe"
+msgstr ""
+
+msgctxt "#30052"
+msgid "Advanced Search"
+msgstr ""
+
+msgctxt "#30054"
+msgid "Basic Mode"
+msgstr ""
+
+msgctxt "#30055"
+msgid "Advanced Mode"
+msgstr ""
+
+msgctxt "#30056"
+msgid "Search Shows"
+msgstr ""
+
+msgctxt "#30057"
+msgid "Season %s"
+msgstr ""
+
+msgctxt "#30058"
+msgid "Mark Season Watched"
+msgstr ""
+
+msgctxt "#30059"
+msgid "Search Movies"
+msgstr ""
+
+msgctxt "#30060"
+msgid "[COLOR %s]Next Page %s/%s >>[/COLOR]"
+msgstr ""
+
+msgctxt "#30061"
+msgid "Watched"
+msgstr ""
+
+
+msgctxt "#30062"
+msgid "Unwatched"
+msgstr ""
+
+msgctxt "#30063"
+msgid "Update Success"
+msgstr ""
+
+msgctxt "#30064"
+msgid "Update Complete"
+msgstr ""
+
+msgctxt "#30065"
+msgid "Subscription Added"
+msgstr ""
+
+msgctxt "#30066"
+msgid "Delete Subscription?"
+msgstr ""
+
+msgctxt "#30067"
+msgid "Subscription Canceld"
+msgstr ""
+
+msgctxt "#30068"
+msgid "Movie Imported"
+msgstr ""
+
+msgctxt "#30069"
+msgid "Sync List Added"
+msgstr ""
+
+msgctxt "#30070"
+msgid "Cancel List Sync?"
+msgstr ""
+
+msgctxt "#30071"
+msgid "Sync Canceled"
+msgstr ""
+
+msgctxt "#30072"
+msgid "List name:"
+msgstr ""
+
+msgctxt "#30073"
+msgid "Added custom list"
+msgstr ""
+
+msgctxt "#30074"
+msgid "Please check your log for details"
+msgstr ""
+
+msgctxt "#30075"
+msgid "Delete custom list"
+msgstr ""
+
+msgctxt "#30076"
+msgid "click Yes to continue"
+msgstr ""
+
+msgctxt "#30077"
+msgid "Remove from custom list?"
+msgstr ""
+
+msgctxt "#30078"
+msgid "Removed from custom list"
+msgstr ""
+
+msgctxt "#30079"
+msgid "Not found in custom list"
+msgstr ""
+
+msgctxt "#30080"
+msgid "Add to custom list"
+msgstr ""
+
+msgctxt "#30081"
+msgid "Added to custom list"
+msgstr ""
+
+msgctxt "#30082"
+msgid "Added to Watchlist"
+msgstr ""
+
+msgctxt "#30083"
+msgid "Already exists in Watchlist"
+msgstr ""
+
+msgctxt "#30084"
+msgid "Delete from Watchlist?"
+msgstr ""
+
+msgctxt "#30085"
+msgid "Removed from Watchlist"
+msgstr ""
+
+msgctxt "#30086"
+msgid "Not found in Watchlist"
+msgstr ""
+
+msgctxt "#30087"
+msgid "Select a Trailer"
+msgstr ""
+
+msgctxt "#30088"
+msgid "Help"
+msgstr ""
+
+msgctxt "#30089"
+msgid "Select a color"
+msgstr ""
+
+msgctxt "#30090"
+msgid "Source folders added"
+msgstr ""
+
+msgctxt "#30091"
+msgid "To complete the setup"
+msgstr ""
+
+msgctxt "#30092"
+msgid "1) Restart Kodi"
+msgstr ""
+
+msgctxt "#30093"
+msgid "2) Set the content type of the added folders"
+msgstr ""
+
+msgctxt "#30094"
+msgid "Quick Search"
+msgstr ""
+
+msgctxt "#30095"
+msgid "Rating: "
+msgstr ""
+
+msgctxt "#30096"
+msgid "Genre: "
+msgstr ""
+
+msgctxt "#30097"
+msgid "Keyword: "
+msgstr ""
+
+msgctxt "#30098"
+msgid "Actor: "
+msgstr ""
+
+msgctxt "#30099"
+msgid "Sorting: "
+msgstr ""
+
+msgctxt "#30100"
+msgid "My Favorites"
+msgstr ""
+
+msgctxt "#31000"
+msgid "Accounts"
+msgstr ""
+
+msgctxt "#31001"
+msgid "Alluc.com"
+msgstr ""
+
+msgctxt "#31002"
+msgid "Username"
+msgstr ""
+
+msgctxt "#31003"
+msgid "Passowrd"
+msgstr ""
+
+msgctxt "#31004"
+msgid "API url"
+msgstr ""
+
+msgctxt "#31005"
+msgid "Enable Result Caching"
+msgstr ""
+
+msgctxt "#31006"
+msgid "Sort Results"
+msgstr ""
+
+msgctxt "#31007"
+msgid "Cache Decay Time (hours)"
+msgstr ""
+
+msgctxt "#31008"
+msgid "Max Results"
+msgstr ""
+
+msgctxt "#31009"
+msgid "Language Filter"
+msgstr ""
+
+msgctxt "#31010"
+msgid "Display"
+msgstr ""
+
+msgctxt "#31011"
+msgid "Enable Custom Views"
+msgstr ""
+
+msgctxt "#31012"
+msgid "Default Folder View"
+msgstr ""
+
+msgctxt "#31013"
+msgid "Default List View"
+msgstr ""
+
+msgctxt "#31014"
+msgid "Default TV View"
+msgstr ""
+
+msgctxt "#31015"
+msgid "Default Season View"
+msgstr ""
+
+msgctxt "#31016"
+msgid "Default Episode View"
+msgstr ""
+
+msgctxt "#31017"
+msgid "Default Movie View"
+msgstr ""
+
+msgctxt "#31018"
+msgid "Enable Custom Colors"
+msgstr ""
+
+msgctxt "#31019"
+msgid "Enabled"
+msgstr ""
+
+msgctxt "#31020"
+msgid "Disabled"
+msgstr ""
+
+msgctxt "#31021"
+msgid "Watchlist"
+msgstr ""
+
+msgctxt "#31022"
+msgid "Sync"
+msgstr ""
+
+msgctxt "#31023"
+msgid "Database"
+msgstr ""
+
+msgctxt "#31024"
+msgid "Database Type"
+msgstr ""
+
+msgctxt "#31025"
+msgid "SQLite File"
+msgstr ""
+
+msgctxt "#31026"
+msgid "Use MySQL"
+msgstr ""
+
+msgctxt "#31027"
+msgid "Host"
+msgstr ""
+
+msgctxt "#31028"
+msgid "MySQL Schema Name"
+msgstr ""
+
+msgctxt "#31029"
+msgid "MySQL Username"
+msgstr ""
+
+msgctxt "#31030"
+msgid "MySQL Password"
+msgstr ""
+
+msgctxt "#31031"
+msgid "MySQL Port"
+msgstr ""
+
+msgctxt "#31032"
+msgid "Directories"
+msgstr ""
+
+msgctxt "#31033"
+msgid "Custom Directory"
+msgstr ""
+
+msgctxt "#31034"
+msgid "Movies"
+msgstr ""
+
+msgctxt "#31035"
+msgid "TV Shows"
+msgstr ""
+
+msgctxt "#31036"
+msgid "Filter Future Episodes"
+msgstr ""
+
+msgctxt "#31037"
+msgid "Update Service"
+msgstr ""
+
+msgctxt "#31038"
+msgid "Enable Update Service"
+msgstr ""
+
+msgctxt "#31039"
+msgid "Update Interval"
+msgstr ""
+
+msgctxt "#31040"
+msgid "Update TV Subscriptions"
+msgstr ""
+
+msgctxt "#31041"
+msgid "Update Movies"
+msgstr ""
+
+msgctxt "#31042"
+msgid "Overwrite Stream Files"
+msgstr ""
+
+msgctxt "#31043"
+msgid "Misc"
+msgstr ""
+
+msgctxt "#31044"
+msgid "User Mode"
+msgstr ""
+
+msgctxt "#31045"
+msgid "Reset Alluc"
+msgstr ""
+
+msgctxt "#31046"
+msgid "Log Level"
+msgstr ""
+
+msgctxt "#31047"
+msgid "Verbose"
+msgstr ""
+
+msgctxt "#31048"
+msgid "Standard"
+msgstr ""
+
+msgctxt "#31049"
+msgid "Enable Transmogrifier"
+msgstr ""
+
+msgctxt "#31050"
+msgid "Results Bitrate"
+msgstr ""
+
+msgctxt "#31051"
+msgid "Results Hostname"
+msgstr ""
+
+msgctxt "#31052"
+msgid "Results File Size"
+msgstr ""
+
+msgctxt "#31053"
+msgid "Results Extension"
+msgstr ""
+
+msgctxt "#31054"
+msgid "Results Quality"
+msgstr ""
+
+msgctxt "#31055"
+msgid "Results Service"
+msgstr ""
+
+msgctxt "#31056"
+msgid "Next Page"
+msgstr ""
+
+msgctxt "#31057"
+msgid "Previous Page"
+msgstr ""
+
+msgctxt "#31058"
+msgid "Hide Watched Episodes"
+msgstr ""
+
+msgctxt "#32000"
+msgid "Results Service"
+msgstr ""
+
+msgctxt "#33000"
+msgid "Welcome to Alluc RC 1.\nThere have been several updates since Beta 3.\nThis wizard with walk you through getting Alluc back up and running.\n\n[B][COLOR yellow]This setup will overwrite some of your settings.\nIt will not delete your subscriptions.[/COLOR][/B]\n\nClick cancel if you want to back out.\n\nEnjoy Using Alluc."
+msgstr ""
+
+msgctxt "#33001"
+msgid "Alluc can run in Basic or Advanced Mode.\nAdvanced Mode enables a few more features and settings.\nAdvanced mode supports library integration and some performance settings.\nYou can change your mind later."
+msgstr ""
+
+msgctxt "#33002"
+msgid "Select a language filter for Alluc search results"
+msgstr ""
+
+msgctxt "#33003"
+msgid "Alluc.com requires a username and password to access its site.\nGo to [COLOR blue]http://accounts.alluc.com[/COLOR] for a free account."
+msgstr ""
+
+msgctxt "#33004"
+msgid "Username: "
+msgstr ""
+
+msgctxt "#33005"
+msgid "Password:"
+msgstr ""
+
+msgctxt "#33006"
+msgid "Login Error!"
+msgstr ""
+
+msgctxt "#33007"
+msgid "Please verify your account information."
+msgstr ""
+
+msgctxt "#33008"
+msgid "[B]Alluc is even better with a Trakt.tv account.\nIf you have one, you may authorize it now.\nOtherwise you can use Alluc without Trakt.\nYou can always authorize or re-authorize Alluc.\nJust look in the Settings Menu.[/B]"
+msgstr ""
+
+msgctxt "#33009"
+msgid "Scan the QR Code or open a browser and navigate to:\n[B][COLOR red]%s[/COLOR][/B]"
+msgstr ""
+
+msgctxt "#33010"
+msgid "YayaH!\n\nAll set. Enjoy using Alluc.\n\nFor questions or support go to:\n\n[COLOR blue]http://tvaddons.ag[/COLOR]"
+msgstr ""
+
+msgctxt "#33011"
+msgid "Next >>"
+msgstr ""
+
+msgctxt "#33012"
+msgid "<< Previous"
+msgstr ""
+
+msgctxt "#33013"
+msgid "Cancel"
+msgstr ""
+
+msgctxt "#33014"
+msgid "ACCEPT"
+msgstr ""
+
+msgctxt "#33015"
+msgid "I Decline"
+msgstr ""
+
+msgctxt "#33016"
+msgid "Finish Setup"
+msgstr ""
+
+msgctxt "#33017"
+msgid "Authorize"
+msgstr ""
+
+msgctxt "#33018"
+msgid "Trakt Authorization"
+msgstr ""
+
+msgctxt "#33019"
+msgid "Success"
+msgstr ""
+
+msgctxt "#33020"
+msgid "Failed"
+msgstr ""
+
+msgctxt "#33021"
+msgid "Welcome to Alluc: v%s!"
+msgstr ""
+
+msgctxt "#33022"
+msgid "Disclosures: v%s!"
+msgstr ""
+
+msgctxt "#33023"
+msgid "Usage Mode: v%s!"
+msgstr ""
+
+msgctxt "#33024"
+msgid "Language: v%s!"
+msgstr ""
+
+msgctxt "#33025"
+msgid "Alluc.com: v%s!"
+msgstr ""
+
+msgctxt "#33026"
+msgid "Trakt.tv: v%s!"
+msgstr ""
+
+msgctxt "#33027"
+msgid "Setup Complete!"
+msgstr ""
+
+msgctxt "#33028"
+msgid "Error"
+msgstr ""
+
+msgctxt "#33029"
+msgid "Select a language"
+msgstr ""
+
+msgctxt "#33031"
+msgid "If you are sure you want to reset your Alluc setup:"
+msgstr ""
+
+msgctxt "#33032"
+msgid "1) Type 'RESET' in the field below"
+msgstr ""
+
+msgctxt "#33033"
+msgid "2) Click the 'Confirm Reset' button"
+msgstr ""
+
+msgctxt "#33034"
+msgid "This will reset your database and settings to the default."
+msgstr ""
+
+msgctxt "#33035"
+msgid "Enter Reset"
+msgstr ""
+
+msgctxt "#33036"
+msgid "Cancel"
+msgstr ""
+
+msgctxt "#33037"
+msgid "Reset"
+msgstr ""
+
+msgctxt "#33039"
+msgid "Confirmation Error"
+msgstr ""
+
+msgctxt "#33040"
+msgid "Please enter RESET to confirm"
+msgstr ""
+
+msgctxt "#33041"
+msgid "Final Confirmation"
+msgstr ""
+
+msgctxt "#33042"
+msgid "Are you sure?"
+msgstr ""
+
+msgctxt "#33043"
+msgid "This is your last chance to cancel!"
+msgstr ""
+
+msgctxt "#33044"
+msgid "Reset Alluc?"
+msgstr ""
+
+msgctxt "#33045"
+msgid "Trakt Authorization"
+msgstr ""
+
+msgctxt "#33046"
+msgid "Authorize Trakt.tv"
+msgstr ""
+
+msgctxt "#33047"
+msgid "Search"
+msgstr "Movie Advanced Search"
+

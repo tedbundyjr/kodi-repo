@@ -24,7 +24,7 @@ cookiejar = os.path.join(cookiepath,'cookies.lwp')
 cj = cookielib.LWPCookieJar()
 cookie_file = os.path.join(cookiepath,'cookies.lwp')
 
-base_url = 'http://www.zmovie.tw/'
+base_url = kodi.get_setting('zmovies_base_url')
 
 def LogNotify(title,message,times,icon):
 		xbmc.executebuiltin("XBMC.Notification("+title+","+message+","+times+","+icon+")")
@@ -39,59 +39,67 @@ def OPEN_URL(url):
   return link
 
 def zmovies(name):
-    #dp = xbmcgui.DialogProgressBG()
-    #dp.create('ZMovies', 'Loading Sources ...')
-    sources = []
-    movie_name = name[:-6]
-    movie_name_short = name[:-7]
-    movie_year = name[-6:]
-    movie_year = movie_year.replace('(','').replace(')','')
-    sname = movie_name.replace(" ","+")
-    movie_match =movie_name.replace(" ","-").replace(":","")
-    year_movie_match = movie_match+movie_year
-    direct_movie_match = movie_match[:-1]
-    tmurl = base_url+'movies/view/'+direct_movie_match
-    ytmurl = base_url+'movies/view/'+year_movie_match
-    #dp.update(25)
-    #For links that are direct
-    link = OPEN_URL(tmurl)
-    match=re.compile('target="_blank"   href="(.+?)"> <b> Watch Full </b></a> </td>').findall(link)
-    for url in match:
-        hmf = urlresolver.HostedMediaFile(url)
-        if hmf:
+    try:
+        sources = []
+        movie_name = name[:-6]
+        movie_name_short = name[:-7]
+        movie_year = name[-6:]
+        movie_year = movie_year.replace('(','').replace(')','')
+        sname = movie_name.replace(" ","+")
+        movie_match =movie_name.replace(" ","-").replace(":","")
+        year_movie_match = movie_match+movie_year
+        direct_movie_match = movie_match[:-1]
+        tmurl = base_url+'movies/view/'+direct_movie_match
+        ytmurl = base_url+'movies/view/'+year_movie_match
+        #dp.update(25)
+        #For links that are direct
+        link = OPEN_URL(tmurl)
+        match=re.compile('target="_blank"   href="(.+?)"> <b> Watch Full </b></a> </td>').findall(link)
+        for url in match:
+            hmf = urlresolver.HostedMediaFile(url)
+            if hmf:
 
-        #linkname= hmf.get_host()
+            #linkname= hmf.get_host()
+                linkname = tools.get_hostname(url)
+                host = linkname
+                source = {'url': url, 'host': host, 'direct':False}
+                sources.append(source)
+        #Fro Links that need year added
+        link = OPEN_URL(ytmurl)
+        #dp.update(80)
+        match=re.compile('target="_blank"   href="(.+?)"> <b> Watch Full </b></a> </td>').findall(link)
+        for url in match:
             linkname = tools.get_hostname(url)
-            source = {'url': url, 'linkname': linkname}
+            host = linkname
+            source = {'url': url, 'host': host, 'direct':False}
             sources.append(source)
-    #Fro Links that need year added
-    link = OPEN_URL(ytmurl)
-    #dp.update(80)
-    match=re.compile('target="_blank"   href="(.+?)"> <b> Watch Full </b></a> </td>').findall(link)
-    for url in match:
-        linkname = tools.get_hostname(url)
-        source = {'url': url, 'linkname': linkname}
-        sources.append(source)
-    #dp.close()
-    return sources
+        #dp.close()
+        sources = main_scrape.apply_urlresolver(sources)
+        return sources
+    except Exception as e:
+        hosters =[]
+        log_utils.log('Error [%s]  %s' % (str(e), ''), xbmc.LOGERROR)
+        if kodi.get_setting('error_notify') == "true":
+            kodi.notify(header='Zee Moviess',msg='(error) %s  %s' % (str(e), ''),duration=5000,sound=None)
+        return hosters
 
 
 
-def playzmovieslink(url,name,thumb):
-                   hmf = urlresolver.HostedMediaFile(url)
-                  ##########################################
-                   #print 'URLS is ' +url
-                   if hmf:
-                       try:
-                                main_scrape.playlink(name,url,thumb)
-                       except:
-                            LogNotify('Try another Link! ', 'Link has been removed or is invalid', '5000', '')
-                            #print "NO MATCH"
-                   else:
-									LogNotify('Try another Link! ', 'Link has been removed or is invalid', '5000', '')
-									#print "NO MATCH"
-                          #except:
-                                  #pass
+# def playzmovieslink(url,name,thumb):
+#                    hmf = urlresolver.HostedMediaFile(url)
+#                   ##########################################
+#                    #print 'URLS is ' +url
+#                    if hmf:
+#                        try:
+#                                 main_scrape.playlink(name,url,thumb)
+#                        except:
+#                             LogNotify('Try another Link! ', 'Link has been removed or is invalid', '5000', '')
+#                             #print "NO MATCH"
+#                    else:
+# 									LogNotify('Try another Link! ', 'Link has been removed or is invalid', '5000', '')
+# 									#print "NO MATCH"
+#                           #except:
+#                                   #pass
 
 
 

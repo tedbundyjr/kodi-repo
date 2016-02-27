@@ -49,7 +49,7 @@ def pininput():
 	vq = _get_keyboard( heading="Enter Pin# found at http://trakt.tv/pin/7558" )
 	if ( not vq ): return False, 0
 	title = urllib.quote_plus(vq)
-	trakt_api._authorize(pin=title)
+	trakt_api.authorize(pin=title)
 
 
 def OLDpininput():

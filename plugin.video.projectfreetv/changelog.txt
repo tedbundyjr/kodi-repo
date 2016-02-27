@@ -1,0 +1,58 @@
+[B]v2.4.0 (Monday, 18 August 2015):[/B]
+  - Updated to use layout of project-free-tv.sx
+
+[B]v2.3.0 (Friday, 19 June 2015):[/B]
+  - Add check on tv shows to ensure url starts with http
+  - Fix seasons that have multiple 'special' seasons
+
+[B]v2.2.3 (Wednesday, 11 March 2015):[/B]
+  - Correct regex for grabbing source media id
+  
+[B]v2.2.2 (Monday, 15 Dec 2014):[/B]
+  - Small bug fix for allowing proper subtitles/trakt for tv episodes
+
+[B]v2.2.1 (Friday, 09 May 2014):[/B]
+  - Python vesion bump for Gotham
+
+[B]v2.2.0 (Tuesday, 26 November 2013):[/B]
+  - Added proxy support to addon settings
+  - Added Domain selection and Custom URL entry
+
+[B]v2.1.0 (Sunday, 10 November 2013):[/B]
+  - Update to search functionality to allow use in The Collective
+  - Added Clear Search History option to Maintenance tab in Addon Settings
+
+[B]v2.0.0 (Wednesday, 10 July 2013):[/B]
+  - New Graphics! THANKS to XBMCHub user [B]tom_elkrider[/B]
+  - Fixed blank episode names
+  - Cleaned up code a bit, hopefully make meta data scraping faster
+  - Added TV Shows watched/unwatched counts
+  - Added search history
+  - Fixed adding tv shows to favorites - removed New Episode tag from getting added
+  - Added refresh tv show meta
+  - Fixed error with movies/tv shows with special characters attempting to add context menu items
+  - Fixed more special character encoding on all pages
+  - Added TV Shows - All listing
+  - Added TV Shows - Upcoming New Episodes
+  - Removed Movies - Popular, section is no longer on the site
+  - Added some maintenance options to Addon Settings - Delete Favourites
+
+[B]v1.0.2 (Thursday, 31 January 2013):[/B]
+  - Fixed stupid bug when meta data is disabled
+  
+[B]v1.0.1 (Wednesday, 30 January 2013):[/B]
+  - Quick fix for TV Episodes showing proper sources
+  
+v1.0.0 (Wednesday, 30 January 2013):
+  - Added search functionality for all sections
+  - Added Favorites
+  - Added meta data capabilities
+  - Now showing full episode names in listings
+  - Showing when new episodes will be aired
+  - Highlighting a tv show in the listings when a new episode has been added
+  - Fixed a number of bugs, script errors
+  
+v0.0.8 (Thursday, 26 January 2012):
+  - Updated to work with the latest t0mm0 common library
+  - Correct for site changes in url's
+ 

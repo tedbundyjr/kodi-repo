@@ -1,0 +1,103 @@
+<settings>
+	<category label="31000">
+		<setting id="advanced_mode_1" type="text" default="false" visible="false" />
+		<setting type="lsep" label="31001"/>
+		<setting id="alluc_api_username" type="text" label="31002" subsetting="true"/>
+		<setting id="alluc_api_password" type="text" label="31003" subsetting="true" option="hidden"/>	
+		<setting type="lsep" label="Trakt Account"/>
+		<setting id="trakt_account" label="Authorize Trakt" type="action" default="" action="RunScript(plugin.video.alluc.api, ?mode=authorize_trakt)"/>
+	</category>
+	<category label="31001">
+		<setting id="advanced_mode_2" type="text" default="false" visible="false" />
+		<setting id="alluc_url" type="text" label="31004" default="https://www.alluc.com/api/search/" />
+		<setting id="enable_result_caching" type="bool" label="31005" default="true" visible="!eq(-2,false)"/>
+		<setting id="sort_results" type="bool" label="31006" default="true" visible="!eq(-3,false)"/>
+		<setting id="decay_time" type="slider" label="31007" default="1" option="int" range="1,11" visible="!eq(-4,false)"/>
+		<setting id="max_results" type="number" label="31008" default="100"/>
+		<setting id="alluc_api_language" label="31009" type="action" default="" action="RunScript(plugin.video.alluc.api, ?mode=set_language)"/>
+	</category>
+	<category label="31010">
+		<setting id="advanced_mode_3" type="text" default="false" visible="false" />
+		<setting id="enable_default_views" type="bool" label="31011" default="true" visible="!eq(-1,false)"/>
+		<setting id="default_folder_view" type="number" label="31012" default="500" visible="!eq(-1,false) + !eq(-2,false)" enable="!eq(-1,false)" subsetting="true" />
+ 		<setting id="default_list_view" type="number" label="31013" default="50" visible="!eq(-2,false) + !eq(-3,false)" enable="!eq(-2,false)" subsetting="true" />
+ 		<setting id="default_tvshow_view" type="number" label="31014" default="515" visible="!eq(-3,false) + !eq(-4,false)" enable="!eq(-3,false)" subsetting="true" />
+  		<setting id="default_season_view" type="number" label="31015" default="50" visible="!eq(-4,false) + !eq(-5,false)" enable="!eq(-4,false)" subsetting="true" />
+  		<setting id="default_episode_view" type="number" label="31016" default="515" visible="!eq(-5,false) + !eq(-6,false)" enable="!eq(-5,false)" subsetting="true" />
+  		<setting id="default_movie_view" type="number" label="31017" default="515" visible="!eq(-6,false) + !eq(-7,false)" enable="!eq(-6,false)" subsetting="true" />
+		<setting id="use_custom_colors" type="bool" label="31018" default="false" />
+		<setting id="custom_color_enabled" type="action" label="31019" default="yellow" visible="!eq(-1,false)" enable="!eq(-1,false)" subsetting="true" action="RunPlugin(plugin://plugin.video.alluc.api/?mode=color_picker&type=enabled)"/>
+		<setting id="custom_color_disabled" type="action" label="31020" default="blue" visible="!eq(-2,false)" enable="!eq(-2,false)" subsetting="true" action="RunPlugin(plugin://plugin.video.alluc.api/?mode=color_picker&type=disabled)"/>
+		<setting id="custom_color_watchlist" type="action" label="31021" default="red" visible="!eq(-3,false)" enable="!eq(-3,false)" subsetting="true" action="RunPlugin(plugin://plugin.video.alluc.api/?mode=color_picker&type=watchlist)"/>
+		<setting id="custom_color_sync" type="action" label="31022" default="green" visible="!eq(-4,false)" enable="!eq(-4,false)" subsetting="true" action="RunPlugin(plugin://plugin.video.alluc.api/?mode=color_picker&type=sync)"/>
+		<setting id="custom_color_bitrate" type="action" label="31050" default="purple" visible="!eq(-5,false)" enable="!eq(-5,false)" subsetting="true" action="RunPlugin(plugin://plugin.video.alluc.api/?mode=color_picker&type=bitrate)"/>
+		<setting id="custom_color_hostname" type="action" label="31051" default="red" visible="!eq(-6,false)" enable="!eq(-6,false)" subsetting="true" action="RunPlugin(plugin://plugin.video.alluc.api/?mode=color_picker&type=hostname)"/>
+		<setting id="custom_color_filesize" type="action" label="31052" default="blue" visible="!eq(-7,false)" enable="!eq(-7,false)" subsetting="true" action="RunPlugin(plugin://plugin.video.alluc.api/?mode=color_picker&type=filesize)"/>
+		<setting id="custom_color_extension" type="action" label="31053" default="green" visible="!eq(-8,false)" enable="!eq(-8,false)" subsetting="true" action="RunPlugin(plugin://plugin.video.alluc.api/?mode=color_picker&type=extension)"/>
+		<setting id="custom_color_quality" type="action" label="31054" default="yellow" visible="!eq(-9,false)" enable="!eq(-9,false)" subsetting="true" action="RunPlugin(plugin://plugin.video.alluc.api/?mode=color_picker&type=quality)"/>
+		<setting id="custom_color_service" type="action" label="31055" default="white" visible="!eq(-10,false)" enable="!eq(-10,false)" subsetting="true" action="RunPlugin(plugin://plugin.video.alluc.api/?mode=color_picker&type=service)"/>
+		<setting id="custom_color_nextpage" type="action" label="31056" default="green" visible="!eq(-11,false)" enable="!eq(-11,false)" subsetting="true" action="RunPlugin(plugin://plugin.video.alluc.api/?mode=color_picker&type=nextpage)"/>
+		<setting id="custom_color_previouspage" type="action" label="31057" default="orange" visible="!eq(-12,false)" enable="!eq(-12,false)" subsetting="true" action="RunPlugin(plugin://plugin.video.alluc.api/?mode=color_picker&type=previouspage)"/>
+		<setting id="hide_watched_episodes" type="bool" label="31058" default="false" visible="!eq(-14,false)" enable="!eq(-14,false)"/>
+	</category>
+	<category label="31023">
+		<setting id="advanced_mode_4" type="text" default="false" visible="false" />
+		<setting id="database_sqlite_type" type="enum" label="31024" values="SQLite|MySQL" default="0"  enable="!eq(-1,false)"/>
+		<setting type="lsep" label="SQLite"/>
+		<setting id="database_sqlite_file" type="file" label="31025" default="special://userdata/addon_data/plugin.video.alluc.api/alluc.api.db" enable="eq(-2,0) + !eq(-3,false)" subsetting="true"/>	
+		<setting type="lsep" label="MySQL"/>
+		<setting id="database_mysql_host" type="text" label="31027" default="" enable="eq(-4,1)" subsetting="true" />
+		<setting id="database_mysql_name" type="text" label="31028" default="alluc" enable="eq(-5,1)" subsetting="true" />
+		<setting id="database_mysql_user" type="text" label="31029" default="" enable="eq(-6,1)" subsetting="true" />
+		<setting id="database_mysql_pass" type="text" label="31030" option="hidden" default="" enable="eq(-7,1)" subsetting="true" />
+		<setting id="database_mysql_port" type="number" label="31031" default="3306" enable="eq(-8,1)" subsetting="true" />
+		<setting id="database_sqlite_init" type="text" default="false" visible="false" />
+		<setting id="database_sqlite_init.cache" type="text" default="false" visible="false" />
+		<setting id="database_mysql_init" type="text" default="false" visible="false" />
+		<setting id="database_mysql_init.cache" type="text" default="false" visible="false" />
+		<setting id="database_sqlite_version" type="number" default="1" visible="false" />
+		<setting id="database_mysql_version" type="number" default="1" visible="false" />
+		<setting id="database_sqlite_version.cache" type="number" default="1" visible="false" />
+		<setting id="database_mysql_version.cache" type="number" default="1" visible="false" />
+	</category>
+	<category label="31032">
+		<setting id="advanced_mode_5" type="text" default="false" visible="false" />
+		<setting id="movie_custom_directory" type="bool" label="31033" default="false" visible="!eq(-1,false)"/>
+		<setting id="movie_directory" type="folder" label="31034" default="special://userdata/addon_data/plugin.video.alluc.api/movies" enable="!eq(-1,false)"  visible="!eq(-2,false)" subsetting="true"/>
+		<setting id="tv_show_custom_directory" type="bool" label="31033" default="false" visible="!eq(-3,false)"/>
+		<setting id="tv_show_directory" type="folder" label="31035" default="special://userdata/addon_data/plugin.video.alluc.api/tvshows" enable="!eq(-1,false)" subsetting="true" visible="!eq(-4,false)"/>
+		<setting id="import_aired_only" type="bool" label="31036" default="true" visible="!eq(-5,false)"/>
+	</category>
+	<category label="31037">
+		<setting id="advanced_mode_6" type="text" default="false" visible="false"/>
+		<setting id="auto_update" type="bool" label="31038" default="false" enable="!eq(-1,false)"/>
+	    <setting id="update_timer" type="enum" values="8h|12h|24h" label="31039" default="0" enable="!eq(-1,false)" visible="!eq(-1,false)" subsetting="true"/>
+		<setting id="update_tvshows" type="bool" label="31040" default="true" enable="!eq(-2,false)" visible="!eq(-2,false)" subsetting="true"/>
+		<setting id="update_movies" type="bool" label="31041" default="true" enable="!eq(-3,false)" visible="!eq(-3,false)" subsetting="true"/>
+		<setting id="overwrite_strm_files" type="bool" label="31042" default="false" enable="!eq(-4,false)" visible="!eq(-4,false)" subsetting="true"/>
+	</category>
+	<category label="31043">
+		<setting id="advanced_mode_7" type="text" default="false" visible="false"/>
+		<setting type="action" label="31044" option="close" action="RunScript(plugin.video.alluc.api, ?mode=advanced_mode)"/>
+		<setting type="action" label="31045" option="close" action="RunScript(plugin.video.alluc.api, ?mode=reset_alluc)"/>
+		<setting id="log_level" type="enum" lvalues="31047|31048" label="31046" default="1"/>
+		<setting id="smtp-notify" type="string" visible="false" default="false"/>
+		<setting id="smtp-address" type="string" visible="false" default=""/>
+		<setting id="smtp-server" type="string" visible="false" default=""/>
+		<setting id="smtp-login" type="string" visible="false" default=""/>
+		<setting id="smtp-passwd" type="string" visible="false" default=""/>
+		<setting id="smtp-ssl" type="string" visible="false" default="false"/>
+		<setting id="enable_transmogrifier" type="bool" label="31049" default="false" visible="System.HasAddon(service.transmogrifier)"/>
+		<setting id="trakt_authorized" type="text" default="false" visible="false" />
+		<setting id="trakt_oauth_token" type="text" default="" visible="false" />
+		<setting id="trakt_refresh_token" type="text" default="" visible="false" />
+		<setting id="trakt_client_id" type="text" label="Trakt Client ID" default="7fe0eea41783130c7c3c3c0a99153740e19964bcd84cc488ef0691881e2c5da9" visible="false"/>
+		<setting id="trakt_secret" type="text" label="Trakt Secret" default="d0858eff6524270fc1e5dfb6e32583b22aa1111cf5d097214b54f74cc207cce0" visible="false"/>
+		<setting id="trakt_pin_url" type="text" label="Trakt Pin URL" default="http://trakt.tv/pin/4428" visible="false"/>
+		<setting id="version" type="string" visible="false" default=""/>
+		<setting id="setup_run" type="string" visible="false" default="false"/>
+		<setting id="last_setup_notify" type="string" visible="false" default="false"/>
+		<setting id="trakt_refresh_token" type="text" default="" visible="false" />
+		<setting id="agent_refresh_time" type="text" default="" visible="false" />
+	</category>
+</settings>

@@ -18,6 +18,7 @@ import cookielib
 import json
 from StringIO import StringIO
 import gzip
+import main_scrape
 
 
 net = Net()
@@ -58,7 +59,7 @@ RAND_UAS = ['Mozilla/5.0 ({win_ver}{feature}; rv:{br_ver}) Gecko/20100101 Firefo
             'Mozilla/5.0 ({win_ver}{feature}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{br_ver} Safari/537.36',
             'Mozilla/5.0 ({win_ver}{feature}; Trident/7.0; rv:{br_ver}) like Gecko']
 
-base_url  = 'http://9movies.to'
+base_url = kodi.get_setting('9movies_base_url')
 hash_url = '/ajax/film/episode?hash_id=%s&f=&p=%s'
 Q_MAP = {'TS': QUALITIES.LOW, 'CAM': QUALITIES.LOW, 'HDTS': QUALITIES.LOW, 'HD 720P': QUALITIES.HD720}
 
@@ -67,7 +68,8 @@ Q_MAP = {'TS': QUALITIES.LOW, 'CAM': QUALITIES.LOW, 'HDTS': QUALITIES.LOW, 'HD 7
 
 class NoRedirection(urllib2.HTTPErrorProcessor):
     def http_response(self, request, response):
-        log_utils.log('Stopping Redirect', log_utils.LOGDEBUG)
+        if kodi.get_setting('debug') == "true":
+            log_utils.log('Stopping Redirect', log_utils.LOGDEBUG)
         return response
 
     https_response = http_response
@@ -91,7 +93,8 @@ def get_cooked_url(url, base_url, timeout, cookies=None, data=None, multipart_da
         if timeout == 0: timeout = None
         if headers is None: headers = {}
         referer = headers['Referer'] if 'Referer' in headers else url
-        log_utils.log('Getting Url: %s cookie=|%s| data=|%s| extra headers=|%s|' % (url, cookies, data, headers))
+        if kodi.get_setting('debug') == "true":
+            log_utils.log('Getting Url: %s cookie=|%s| data=|%s| extra headers=|%s|' % (url, cookies, data, headers))
         if data is not None:
             if isinstance(data, basestring):
                 data = data
@@ -204,9 +207,9 @@ def _caesar(plaintext, shift):
 def _get_direct_hostname(link):
         host = urlparse.urlparse(link).hostname
         if host and any([h for h in ['google', 'picasa'] if h in host]):
-            return 'gvideo'
+            return 'GVideo'
         else:
-            return 'Native'
+            return 'Host Native'
 
 
 def _height_get_quality(height):
@@ -310,27 +313,36 @@ def get_sources(suf_url):
                                         sources[result['file']] = quality
 
         for source in sources:
-            hoster = {'multi-part': False, 'linkname': _get_direct_hostname(source),  'quality': sources[source], 'view': None, 'rating': None, 'url': source, 'direct': True}
+            hoster = {'multi-part': False, 'host': _get_direct_hostname(source),  'quality': sources[source], 'view': None, 'rating': None, 'url': source, 'direct': True}
             hosters.append(hoster)
+    hosters = main_scrape.apply_urlresolver(hosters)
     return hosters
 
 
 def ninemovies(name):
-    title = name[:-7]
-    movie_year = name[-6:]
-    year = movie_year.replace('(','').replace(')','')
-    video_type = 'movies'
-    source = search(video_type,title,year)
-    #print source
-    for e in source:
-            # print e
-            url = e['url']
-            year = e['year']
-            name = e['title']
-            # print "SUF URL IS = "+url
-            srcurl =base_url+url
-            hosters=get_sources(srcurl)
-            return hosters
+    try:
+        title = name[:-7]
+        movie_year = name[-6:]
+        year = movie_year.replace('(','').replace(')','')
+        video_type = 'movies'
+        source = search(video_type,title,year)
+        #print source
+        for e in source:
+                # print e
+                url = e['url']
+                year = e['year']
+                name = e['title']
+                # print "SUF URL IS = "+url
+                srcurl =base_url+url
+                hosters=get_sources(srcurl)
+                hosters = main_scrape.apply_urlresolver(hosters)
+                return hosters
+    except Exception as e:
+        hosters=[]
+        log_utils.log('Error [%s]  %s' % (str(e), ''), xbmc.LOGERROR)
+        if kodi.get_setting('error_notify') == "true":
+            kodi.notify(header='Nine Movies',msg='(error) %s  %s' % (str(e), ''),duration=5000,sound=None)
+        return hosters
 
 
 def _set_cookies(base_url, cookies):

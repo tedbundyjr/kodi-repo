@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+	<addon
+        id="plugin.video.XBMCKaraoke" 
+        name="XBMC Karaoke addon" 
+        version="2.0.1" 
+        provider-name="Rodrigo">
+		<requires>
+			<import addon="xbmc.python"             	version="2.1.0"/>
+			<import addon="script.module.buggalo"   	version="1.1.5" />
+			<import addon="xbmc.addon"              	version="12.1.0"/>
+			<import addon="script.module.urlresolver"	version="1.1.0"/>
+			<import addon="script.module.simplejson"	version="2.0.10"/>
+            <import addon="script.module.addon.common"  version="2.0.0"/>
+		</requires>
+		<extension point="xbmc.python.pluginsource" library="default.py">
+			<provides>audio video</provides>
+		</extension>
+		<extension point="xbmc.addon.metadata">
+			<summary lang="en">XBMC Karaoke addon</summary>
+			<description lang="en">XBMC Karaoke addon developed by Rodrigo.[CR]For support, please visit the TVaddons forums.[CR][CR]Powered by [COLOR blue][B]TVaddons[/B].ag[/COLOR]</description>
+			<disclaimer lang="en">For bugs, requests or general questions contact Rodrigo on the TVaddons forum.</disclaimer>
+			<platform>all</platform>
+			<license>GNU GENERAL PUBLIC LICENSE. Version 3, June 2007</license>
+			<language>en</language>
+			<forum>http://forums.tvaddons.ag/threads/14164-RELEASE-XBMC-Karaoke-addon-by-Rodrigo</forum>
+			<website>http://www.tvaddons.ag</website>
+			<email></email>
+			<source>https://raw.github.com/rodrigoke/XBMC.repo/master/plugin.video.XBMCKaraoke/</source>
+		</extension>
+	</addon>

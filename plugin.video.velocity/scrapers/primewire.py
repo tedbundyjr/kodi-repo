@@ -24,7 +24,9 @@ cookiejar = os.path.join(cookiepath,'cookies.lwp')
 cj = cookielib.LWPCookieJar()
 cookie_file = os.path.join(cookiepath,'cookies.lwp')
 
-base_url = 'http://www.primewire.ag/'
+base_url = kodi.get_setting('primewire_base_url')
+#base_url = 'http://www.primewire.ag/'
+
 
 def LogNotify(title,message,times,icon):
 		xbmc.executebuiltin("XBMC.Notification("+title+","+message+","+times+","+icon+")")
@@ -39,44 +41,52 @@ def OPEN_URL(url):
   return link
 
 def primewire(name):
-        sources = []
-        searchUrl = 'http://www.primewire.ag/index.php?search_keywords='
-        movie_name = name[:-6]
-        movie_name_short = name[:-7]
-        movie_year_full = name[-6:]
-        movie_year = movie_year_full.replace('(','').replace(')','')
-        sname = movie_name.replace(" ","+")
-        primename = sname[:-1]
-        movie_match =movie_name.replace(" ","_")+movie_year
-        surl = searchUrl + primename
-        link = OPEN_URL(surl)
-        full_match  = movie_name+movie_year_full
-        match=re.compile('<a href="/(.+?)" title="Watch (.+?)">').findall(link)
-        for url, name in match:
-            if full_match == name:
-                link = OPEN_URL(base_url+url)
-                container_pattern = r'<table[^>]+class="movie_version[ "][^>]*>(.*?)</table>'
-                item_pattern = (
-                    r'quality_(?!sponsored|unknown)([^>]*)></span>.*?'
-                    r'url=([^&]+)&(?:amp;)?domain=([^&]+)&(?:amp;)?(.*?)'
-                    r'"version_veiws"> ([\d]+) views</')
-                max_index = 0
-                max_views = -1
-                for container in re.finditer(container_pattern, link, re.DOTALL | re.IGNORECASE):
-                    for i, source in enumerate(re.finditer(item_pattern, container.group(1), re.DOTALL)):
-                        qual, url, host, parts, views = source.groups()
-                        if kodi.get_setting('debug') == "true":
-                            print"PrimeWire Debug:"
-                            print "Quality is " + qual
-                            print "URL IS " + url.decode('base-64')
-                            print "HOST IS  "+host.decode('base-64')
-                            print "VIEWS ARE " +views
-                        if host == 'ZnJhbWVndGZv': continue  # filter out promo hosts
-                        linkname = tools.get_hostname(host.decode('base-64'))
-                        source = {'url': url.decode('base-64'), 'linkname': linkname,'view':views,'quality':qual}
-                        sources.append(source)
-        #print "MOVIE SOURCES ARE = "+str(sources)
-        return sources
+    try:
+            sources = []
+            searchUrl = base_url+'index.php?search_keywords='
+            movie_name = name[:-6]
+            movie_name_short = name[:-7]
+            movie_year_full = name[-6:]
+            movie_year = movie_year_full.replace('(','').replace(')','')
+            sname = movie_name.replace(" ","+")
+            primename = sname[:-1]
+            movie_match =movie_name.replace(" ","_")+movie_year
+            surl = searchUrl + primename
+            link = OPEN_URL(surl)
+            full_match  = movie_name+movie_year_full
+            match=re.compile('<a href="/(.+?)" title="Watch (.+?)">').findall(link)
+            for url, name in match:
+                if full_match == name:
+                    link = OPEN_URL(base_url+url)
+                    container_pattern = r'<table[^>]+class="movie_version[ "][^>]*>(.*?)</table>'
+                    item_pattern = (
+                        r'quality_(?!sponsored|unknown)([^>]*)></span>.*?'
+                        r'url=([^&]+)&(?:amp;)?domain=([^&]+)&(?:amp;)?(.*?)'
+                        r'"version_veiws"> ([\d]+) views</')
+                    max_index = 0
+                    max_views = -1
+                    for container in re.finditer(container_pattern, link, re.DOTALL | re.IGNORECASE):
+                        for i, source in enumerate(re.finditer(item_pattern, container.group(1), re.DOTALL)):
+                            qual, url, host, parts, views = source.groups()
+                            if kodi.get_setting('debug') == "true":
+                                print"PrimeWire Debug:"
+                                print "Quality is " + qual
+                                print "URL IS " + url.decode('base-64')
+                                print "HOST IS  "+host.decode('base-64')
+                                print "VIEWS ARE " +views
+                            if host == 'ZnJhbWVndGZv': continue  # filter out promo hosts
+                            #host = tools.get_hostname(host.decode('base-64'))
+                            source = {'url': url.decode('base-64'), 'host': host.decode('base-64'),'view':views,'quality':qual,'direct':False}
+                            sources.append(source)
+            #print "MOVIE SOURCES ARE = "+str(sources)
+            sources = main_scrape.apply_urlresolver(sources)
+            return sources
+    except Exception as e:
+        hosters =[]
+        log_utils.log('Error [%s]  %s' % (str(e), ''), xbmc.LOGERROR)
+        if kodi.get_setting('error_notify') == "true":
+            kodi.notify(header='PrimeWire',msg='(error) %s  %s' % (str(e), ''),duration=5000,sound=None)
+        return hosters
 
 
 
@@ -93,7 +103,7 @@ def primewire_tv(name,movie_title):
         #print "TV REAL TITLE IS = "+tv_title
         searchUrl = 'http://www.primewire.ag/index.php?search_keywords='
         surl = searchUrl + tv_title            ###########CHANGE THIS
-        print "SEARCH URL PRIME IS + " +surl
+        #print "SEARCH URL PRIME IS + " +surl
         link = OPEN_URL(surl+'&search_section=2')
         match=re.compile('<a href="/(.+?)" title="Watch (.+?)">').findall(link)
         for url, name in match:
@@ -117,8 +127,8 @@ def primewire_tv(name,movie_title):
                             print "HOST IS  "+host.decode('base-64')
                             print "VIEWS ARE " +views
                         if host == 'ZnJhbWVndGZv': continue  # filter out promo hosts
-                        linkname = tools.get_hostname(host.decode('base-64'))
-                        source = {'url': url.decode('base-64'), 'linkname': linkname,'view':views,'quality':qual}
+                        #host = tools.get_hostname(host.decode('base-64'))
+                        source = {'url': url.decode('base-64'), 'host':host.decode('base-64'),'view':views,'quality':qual,'direct':False}
                         tvso.append(source)
-
+        tvso = main_scrape.apply_urlresolver(tvso)
         return tvso

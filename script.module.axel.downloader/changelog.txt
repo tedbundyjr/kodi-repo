@@ -1,0 +1,8 @@
+[B]Version 0.2.1[/B]
+- Correct import failures in Helix, explicitly state lib folder
+
+[B]Version 0.2.0[/B]
+- Bug fix update
+
+[B]Version 0.1.0[/B]
+- Initial Release.

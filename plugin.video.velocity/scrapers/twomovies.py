@@ -24,6 +24,8 @@ cookiejar = os.path.join(cookiepath,'cookies.lwp')
 cj = cookielib.LWPCookieJar()
 cookie_file = os.path.join(cookiepath,'cookies.lwp')
 
+base_url = kodi.get_setting('twomovies_base_url')
+host_url = base_url.replace('http://','').replace('/','')
 
 def LogNotify(title,message,times,icon):
 		xbmc.executebuiltin("XBMC.Notification("+title+","+message+","+times+","+icon+")")
@@ -36,7 +38,7 @@ def OPEN_URLTM(url):
             req=urllib2.Request(url)
             req.add_header('User-Agent', 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1667.0 Safari/537.36')
             req.add_header('Content-Type','application/x-www-form-urlencoded')
-            req.add_header('Host','twomovies.us')
+            req.add_header('Host',host_url)
             req.add_header('Referer','')
             req.add_header('Connection','keep-alive')
             req.add_header('Accept','text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8')
@@ -69,7 +71,7 @@ def tmovies(name):
 
     try:
         sources = []
-        searchUrl = 'http://twomovies.us/watch_movie/'
+        searchUrl = base_url+'watch_movie/'
         movie_name = name[:-6]
         movie_name_short = name[:-7]
         movie_year = name[-6:]
@@ -78,34 +80,39 @@ def tmovies(name):
         movie_match =movie_name.replace(" ","_").replace(":","").replace("-","")
         year_movie_match = movie_match+movie_year
         direct_movie_match = movie_match[:-1]
-        tmurl = 'http://twomovies.us/watch_movie/'+direct_movie_match
-        ytmurl = 'http://twomovies.us/watch_movie/'+year_movie_match
+        tmurl = base_url+'watch_movie/'+direct_movie_match
+        ytmurl = base_url+'watch_movie/'+year_movie_match
         link = OPEN_URLTM(tmurl)
         names = dom_parser.parse_dom(link, 'a',{'class':"norm vlink"})
         urls = dom_parser.parse_dom(link, 'a',{'class':"norm vlink"}, ret='href')
-        for linkname, url in zip(names, urls):
-            linkname = tools.get_hostname(linkname)
-            source = {'url': url, 'linkname': linkname}
+        for host, url in zip(names, urls):
+            host = host.replace('www.','')
+            #host = tools.get_hostname(host)
+            source = {'url': url, 'host':host,'direct':False}
             sources.append(source)
         link = OPEN_URLTM(ytmurl)
         names = dom_parser.parse_dom(link, 'a',{'class':"norm vlink"})
         urls = dom_parser.parse_dom(link, 'a',{'class':"norm vlink"}, ret='href')
-        for linkname, url in zip(names, urls):
-            linkname = tools.get_hostname(linkname)
-            source = {'url': url, 'linkname': linkname}
+        for host, url in zip(names, urls):
+            host = host.replace('www.','')
+            #host = tools.get_hostname(host)
+            source = {'url': url, 'host':host,'direct':False}
             sources.append(source)
+        sources = main_scrape.apply_urlresolver(sources)
         return sources
     except Exception as e:
-            log_utils.log('Error [%s]  %s' % (str(e), ''), xbmc.LOGERROR)
-            if kodi.get_setting('error_notify') == "true":
-                kodi.notify(header='TwoMovies',msg='(error) %s  %s' % (str(e), ''),duration=5000,sound=None)
+        hosters =[]
+        log_utils.log('Error [%s]  %s' % (str(e), ''), xbmc.LOGERROR)
+        if kodi.get_setting('error_notify') == "true":
+            kodi.notify(header='TwoMovies',msg='(error) %s  %s' % (str(e), ''),duration=5000,sound=None)
+        return hosters
 
 
 def tmovies_tv(name,movie_title):
 
     try:
         sources = []
-        searchUrl = 'http://twomovies.us/watch_episode/'
+        searchUrl = base_url+'watch_episode/'
         # if 'House' in movie_title:
         #     movie_title = movie_title.replace('House','DR House')
         movie_name = movie_title[:-6]
@@ -121,15 +128,19 @@ def tmovies_tv(name,movie_title):
             link = OPEN_URLTM(tmurl)
             names = dom_parser.parse_dom(link, 'a',{'class':"norm vlink"})
             urls = dom_parser.parse_dom(link, 'a',{'class':"norm vlink"}, ret='href')
-            for linkname, url in zip(names, urls):
-                linkname = tools.get_hostname(linkname)
-                source = {'url': url, 'linkname': linkname}
+            for host, url in zip(names, urls):
+                host = host.replace('www.','')
+                #host = tools.get_hostname(host)
+                source = {'url': url, 'host':host,'direct':False}
                 sources.append(source)
+            sources = main_scrape.apply_urlresolver(sources)
             return sources
     except Exception as e:
-            log_utils.log('Error [%s]  %s' % (str(e), ''), xbmc.LOGERROR)
-            if kodi.get_setting('error_notify') == "true":
-                kodi.notify(header='TwoMovies',msg='(error) %s  %s' % (str(e), ''),duration=5000,sound=None)
+        hosters =[]
+        log_utils.log('Error [%s]  %s' % (str(e), ''), xbmc.LOGERROR)
+        if kodi.get_setting('error_notify') == "true":
+            kodi.notify(header='TwoMovies',msg='(error) %s  %s' % (str(e), ''),duration=5000,sound=None)
+        return hosters
 
 
 def tmlinkpage(url,movie_title,thumb,media):
@@ -144,7 +155,7 @@ def tmlinkpage(url,movie_title,thumb,media):
                                                 header_dict['Accept'] = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
                                                 header_dict['Connection'] = 'keep-alive'
                                                 header_dict['Content-Type'] = 'application/x-www-form-urlencoded'
-                                                header_dict['Origin'] = 'twomovies.us'
+                                                header_dict['Origin'] = host_url
                                                 header_dict['Referer'] = url
                                                 header_dict['User-Agent'] = 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1667.0 Safari/537.36'
                                                 form_data = {'confirm':'I understand, Let me watch the movie now!'}

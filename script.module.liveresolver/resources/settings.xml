@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+	<setting id="current_ua" type="text" visible="false"/>
+	<setting id="last_ua_create" type="number" default="0" visible="false"/>
+</settings>

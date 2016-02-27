@@ -5,7 +5,8 @@ import ssl
 import socket
 import urllib2
 import kodi
-
+from tm_libs import watched_cache
+from libs import log_utils
 
 MY_TOKEN = kodi.get_setting('trakt_oauth_token')  # GET WITH PIN CODE
 REFRESH_TOKEN = kodi.get_setting('trakt_refresh_token') #CHANGES # MONTH
@@ -37,6 +38,9 @@ def stop_movie_watch(name,year):
     #print stop_values
     request = Request('https://api-v2launch.trakt.tv/scrobble/stop', data=stop_values, headers=auth_headers)
     response_body = urlopen(request).read()
+    trakt_id=re.compile('"trakt":(.+?),').findall(response_body)
+    print trakt_id[0]
+    watched_cache.set_watch_cache(trakt_id[0],"movies")
     if kodi.get_setting('debug') == "true":
         print response_body
     #return
@@ -53,18 +57,29 @@ def start_tv_watch(name,media):
         response_body = urlopen(request).read()
         if kodi.get_setting('debug') == "true":
             print response_body
+            log_utils.log(response_body)
+            # for e in response_body:
+            #     print e
         #return
 
 
 def stop_tv_watch(name,media):
+    # log_utils.log(name)
+    print name
     seasons=re.compile('S(.+?)E(.+?) ').findall(media)
     for sea,epi in seasons:
+        # log_utils.log(sea,epi)
+        print sea + epi
         stop_values = """{"show": {"title": """+name+"""},"episode": {"season": """+sea+""","number": """+epi+"""},"progress": 99.9,"app_version": "1.0","app_date": "2014-09-22"}"""
         #print stop_values
         request = Request('https://api-v2launch.trakt.tv/scrobble/stop', data=stop_values, headers=auth_headers)
         response_body = urlopen(request).read()
+        trakt_id=re.compile('"trakt":(.+?),').findall(response_body)
+        print trakt_id[0]
+        watched_cache.set_watch_cache(trakt_id[0],"shows")
         if kodi.get_setting('debug') == "true":
             print response_body
+            log_utils.log(response_body)
         #return
 
 

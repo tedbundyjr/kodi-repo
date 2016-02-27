@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+		<setting id="start_time" type="bool" label="Display game's start time?" default="true" />
+		<setting id="status" type="bool" label="Display game's statuses?" default="true" />
+		<setting id="score" type="bool" label="Display game's scores?" default="true" />
+		<setting id="showsd" type="bool" label="Show SD streams?" default="true" />
+		<setting id="showhehe" type="bool" label="Check hehestreams for nba links?" default="true" />
+</settings>
