@@ -2730,7 +2730,7 @@ Addons Included
 	</extension>
 </addon>
 
-    <addon id="repository.vms" name="vms" version="1.0.1" provider-name="tedbundyjr">
+    <addon id="repository.vms" name="vms" version="1.0.4" provider-name="tedbundyjr">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
