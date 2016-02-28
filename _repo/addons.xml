@@ -1664,8 +1664,8 @@ Turns your XBMC into an instant free on-demand media-center. Stream and download
 
 <addon id="plugin.video.MoneySports"
        name="MoneySports"
-       version="1.0.2"
-       provider-name="Legends">
+       version="2.0.8"
+       provider-name="Mark Money">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -1685,7 +1685,7 @@ Turns your XBMC into an instant free on-demand media-center. Stream and download
   <extension point="xbmc.addon.metadata">
     <summary>The only add-on you need for all your sport needs...</summary>
     <description>
-            The only add-on you need for all your sport needs...
+            The only add-on you need for all your sport needs... Supported By The Legends
     </description>
     <platform>all</platform>
   </extension>
@@ -2042,7 +2042,7 @@ http://www.hometheater.co.il</description>
   </extension>
 </addon>
 
-<addon id="plugin.video.ustvnow.tva" name="USTVnow Plus" provider-name="mhancoc7" version="14.2.2">
+<addon id="plugin.video.ustvnow.tva" name="USTVnow Plus" provider-name="mhancoc7" version="14.2.4">
     <requires>
         <import addon="xbmc.python" version="2.1.0" />
     </requires>
@@ -2084,7 +2084,7 @@ http://www.hometheater.co.il</description>
 </addon>
 
 
-<addon id="plugin.video.watch1080" name="Watch 1080p" version="1.0.2" provider-name="MetalKettle">
+<addon id="plugin.video.watch1080" name="Watch 1080p" version="1.0.10" provider-name="MetalKettle">
 
   <requires>
 
@@ -3358,7 +3358,7 @@ Addons Included
   </extension>
 </addon>
 
-<addon id="script.module.youtube.dl" name="youtube-dl Control" version="15.318.0" provider-name="Rick Phillips (ruuk)">
+<addon id="script.module.youtube.dl" name="youtube-dl Control" version="15.1223.0" provider-name="Rick Phillips (ruuk)">
     <requires>
         <import addon="xbmc.python" version="2.1.0" />
         <import addon="script.module.addon.signals" version="0.0.1"/>
