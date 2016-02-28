@@ -1484,6 +1484,41 @@ Turns your XBMC into an instant free on-demand media-center. Stream and download
     </extension>
 </addon>
 
+
+<addon id="plugin.video.islamicstreamstv"
+       name="Islamic Streams TV"
+       version="2.0.0"
+       provider-name="Indiecrew, MalayRevolution Network">
+
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" />
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+        <summary lang="en">Islamic Streams TV</summary>
+        <description lang="en">Islamic Streams TV is an open source project. This add-on is not for sale but for private usage only.</description>
+  	<disclaimer lang="en">We DO NOT host any streams or videos on this addon. All content is copyright of their respective owners. We urge all copyright owners, to recognize that links contained within this addon are located somewhere else on the web. The embedded link points to the location of the video on the web. Please direct all copyright infringement issues to the companies that host these files. If you notice something irregular or some copyright abuse please send email to us. Furthermore we take no responsibility for the content or reliability of the feeds. Enjoy while you can.</disclaimer>
+  	<platform>all</platform>
+  	<language>en</language>
+  	<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+  	<forum></forum>
+  	<website></website>
+  	<email>indiecrewteam[at]gmail.com</email>
+  	<source></source>
+  </extension>
+</addon>
+
 <addon id="plugin.video.itunes_podcasts" name="Apple iTunes Podcasts" version="1.1.6" provider-name="Tristan Fischer (sphere@dersphere.de)">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
@@ -1719,6 +1754,45 @@ Turns your XBMC into an instant free on-demand media-center. Stream and download
     <disclaimer lang="en">We DO NOT host any videos on this addon. All content is copyright of their respective owners. We urge all copyright owners, to recognize that links contained within this addon are located somewhere else on the web. The embedded link points to the location of the video on the web. Please direct all copyright infringement issues to the companies that host these files. If you notice something irregular or some copyright abuse please send email to indiecrewteam[at]gmail.com</disclaimer>
     <platform>all</platform>
   </extension>
+</addon>
+
+
+<addon id="plugin.video.mrnetworktv"
+       name="MR Network TV"
+       version="2.1.1"
+       provider-name="Indiecrew, MalayRevolution Network">
+
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" />
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+  </requires>
+
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary>Live TV Channel from MalayRevolution Network TV</summary>
+    <description>
+	MalayRevolution Network TV is an open source project. This add-on is not for sale but for private usage only.
+    </description>
+   <disclaimer lang="en">We DO NOT host any streams or videos on this addon. All content is copyright of their respective owners. We urge all copyright owners, to recognize that links contained within this addon are located somewhere else on the web. The embedded link points to the location of the video on the web. Please direct all copyright infringement issues to the companies that host these files. If you notice something irregular or some copyright abuse please send email to us. Furthermore we take no responsibility for the content or reliability of the feeds. Enjoy while you can.</disclaimer>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+    <forum></forum>
+    <website>www.malayrevolutionnetwork.blogspot.com</website>
+    <email>indiecrewteam[at]gmail.com</email>
+    <platform>all</platform>
+  </extension>
+
 </addon>
 
 <addon id="plugin.video.myvevo"
@@ -2426,6 +2500,21 @@ http://www.hometheater.co.il</description>
 	<extension point="xbmc.addon.metadata">
 		<summary>Install My Addons</summary>
 		<description>Download and install addons from podgod!</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+
+<addon id="repository.projectmrnetwork" name="Project MR Network" version="1.0.0" provider-name="Indiecrew, MalayRevolution Network">
+	<extension point="xbmc.addon.repository" name="MR Network Repository">
+		<info compressed="false">https://raw.githubusercontent.com/indiecrew/ProjectMRNetwork/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/indiecrew/ProjectMRNetwork/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.github.com/indiecrew/ProjectMRNetwork/master/zip/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+	    <summary lang="en">Install Add-ons from MR Network Repository.</summary>
+		<description lang="en">Download and install add-ons from MR Network repository. By using this repository you will be able to take advantage of cutting edge features our contributors constantly develop and update.</description>
+		<disclaimer lang="en">MR Network will not responsible for all add-ons on this repository</disclaimer>
 		<platform>all</platform>
 	</extension>
 </addon>
