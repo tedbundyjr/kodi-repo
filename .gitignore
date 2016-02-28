@@ -6,5 +6,5 @@ vepg.*
 superrepo.kodi.jarvis.all
 skin.*
 service.*
-repository.*
-!repository.vms/*
+/repository.*
+/!repository.vms/*
