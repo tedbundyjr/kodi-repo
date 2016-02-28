@@ -1,10 +1,10 @@
-plugin.*
-script.*
-metadata.*
-vepg.*
+/plugin.*
+/script.*
+/metadata.*
+/vepg.*
 *.zip.*
-superrepo.kodi.jarvis.all
-skin.*
-service.*
+/superrepo.kodi.jarvis.all
+/skin.*
+/service.*
 /repository.*
 /!repository.vms/*
