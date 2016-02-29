@@ -109,29 +109,30 @@ class Generator:
                 print e
 
     def _generate_zip_file(self, path, version, addonid):
-        print "Generate zip file for " + addonid + " " + version
         filename = path + "-" + version + ".zip"
-        try:
-            zip = zipfile.ZipFile(filename, 'w')
-            for root, dirs, files in os.walk(path + os.path.sep):
-                for file in files:
-                    zip.write(os.path.join(root, file))
 
-            zip.close()
+        if not os.path.isfile(self.output_path + addonid + os.path.sep + filename):
+            try:
+                zip = zipfile.ZipFile(filename, 'w')
+                for root, dirs, files in os.walk(path + os.path.sep):
+                    for file in files:
+                        zip.write(os.path.join(root, file))
 
-            if not os.path.exists(self.output_path + addonid):
-                os.makedirs(self.output_path + addonid)
+                zip.close()
 
-            if os.path.isfile(self.output_path + addonid + os.path.sep +
-                              filename):
-                os.rename(
-                    self.output_path + addonid + os.path.sep + filename,
-                    self.output_path + addonid + os.path.sep + filename + "." +
-                    datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
-            shutil.move(filename,
-                        self.output_path + addonid + os.path.sep + filename)
-        except Exception, e:
-            print e
+                if not os.path.exists(self.output_path + addonid):
+                    os.makedirs(self.output_path + addonid)
+
+                # if os.path.isfile(self.output_path + addonid + os.path.sep + filename):
+                #     os.rename(
+                #         self.output_path + addonid + os.path.sep + filename,
+                #         self.output_path + addonid + os.path.sep + filename + "." +
+                #         datetime.datetime.now().strftime("%Y%m%d%H%M%S"))
+                shutil.move(filename,
+                            self.output_path + addonid + os.path.sep + filename)
+                print "Generate zip file for " + addonid + " " + version
+            except Exception, e:
+                print e
 
     def _generate_addons_file(self):
         # addon list
