@@ -2039,7 +2039,7 @@ http://www.hometheater.co.il</description>
   </extension>
 </addon>
 
-<addon id="plugin.video.ted.talks" name="TED Talks" version="4.2.6" provider-name="rwparris2, moreginger">
+<addon id="plugin.video.ted.talks" name="TED Talks" version="4.2.7" provider-name="rwparris2, moreginger">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.elementtree" version="1.2.7"/>
@@ -2616,7 +2616,20 @@ Addons Included
     </extension>
 </addon>
 
-    <addon id="repository.vms" name="VMS Repository" version="1.0.7" provider-name="tedbundyjr">
+<addon id="repository.tva.common" name="TVADDONS.ag Libraries Repository" version="1.0.1" provider-name="tvaddons.ag">
+    <extension point="xbmc.addon.repository" name="TVADDONS.ag Libraries Repository">
+        <info compressed="false">https://offshoregit.com/tvaresolvers/tva-common-repository/raw/master/addons.xml</info>
+        <checksum>https://offshoregit.com/tvaresolvers/tva-common-repository/raw/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://offshoregit.com/tvaresolvers/tva-common-repository/raw/master/zips/</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Faster Updating of Common Libraries for Kodi</summary>
+        <description>This repository contains intermediate builds of libraries commonly used by TVAddons Kodi addons, Brought to you by TVADDONS.ag</description>
+        <platform>all</platform>
+    </extension>
+</addon>
+
+    <addon id="repository.vms" name="VMS Repository" version="1.0.8" provider-name="tedbundyjr">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
@@ -2628,7 +2641,7 @@ Addons Included
         </extension>
         <extension point="xbmc.addon.metadata">
             <summary>Compilation of used addons</summary>
-            <description>Best plugin in single repository.</description>
+            <description>Best plugin in single repository. Contact twitter @tedbundyjr for request or to report broken link.</description>
             <platform>all</platform>
     </extension>
 </addon>
