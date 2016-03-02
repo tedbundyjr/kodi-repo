@@ -1176,7 +1176,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.castaway" name="Castaway" version="0.1.0" provider-name="natko1412">
+<addon id="plugin.video.castaway" name="Castaway" version="0.1.1" provider-name="natko1412">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -1204,7 +1204,7 @@
 
 <addon id="plugin.video.ccloudtv"
        name="cCloud TV"
-       version="1.4.4"
+       version="1.4.5"
        provider-name="podgod, Coder Alpha">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1224,7 +1224,7 @@
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary>All the best from cCloud TV</summary>
-    <description>cCloud is an open source cloud based social IPTV service. It is built by the community for the community, where streaming is just a click away. Just click, play and stream yup it's that simple. Just go to http://ccloudtv.org  and enjoy:) Please report any channels that are down here http://www.tiny.cc/reportchs
+    <description>cCloud is an open source cloud based social IPTV service. It is built by the community for the community, where streaming is just a click away. Just click, play and stream. Yes, it's that simple. Just go to http://ccloudtv.org  and enjoy:) Please report any channels that are down here http://www.tiny.cc/reportchs Users can now check servers status which can be found at http://ccloudtv.org/status
     </description>
 	<license>http://www.gnu.org/licenses/</license>
     <forum>http://ccloudtv.org/forum</forum>
@@ -1265,6 +1265,24 @@
 	This addon is based on code from LiveStreamspro from Shani. All credit to Shani and other devs involved.
 
     </description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.citerkita"
+	   name="Citer Kita"
+	   version="1.0.0"
+	   provider-name="2uk3y-Kodim-Ares-Streams">
+  <requires>
+    <import addon="script.module.requests" version="1.0.0" />
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+			 library="citerkita.py">
+    	<provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Watch Malaysian Movies</summary>
+    <description>Watch Malaysian Movies</description>
     <platform>all</platform>
   </extension>
 </addon>
@@ -1898,7 +1916,7 @@ Turns your XBMC into an instant free on-demand media-center. Stream and download
 	</extension>
 </addon>
 
-<addon id="plugin.video.phstreams" name="Phoenix" version="2.8.8" provider-name="Blazetamer, lambda">
+<addon id="plugin.video.phstreams" name="Phoenix" version="2.8.9" provider-name="Blazetamer">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.pyxbmct" version="1.1.4" />
@@ -1956,7 +1974,7 @@ http://www.hometheater.co.il</description>
   </extension>
 </addon>
 
-<addon id="plugin.video.prosport" name="Pro Sport" version="0.29" provider-name="gerikss, podgod">
+<addon id="plugin.video.prosport" name="Pro Sport" version="0.30" provider-name="gerikss, podgod">
   <requires>
     <import addon="xbmc.python" version="2.1.0" />
      <import addon="script.module.requests" version="2.9.1" />
@@ -2152,7 +2170,7 @@ http://halowtv.com/[/COLOR]</description>
   </extension>
 </addon>
 
-<addon id="plugin.video.ustvnow.tva" name="USTVnow Plus" provider-name="mhancoc7" version="14.2.7">
+<addon id="plugin.video.ustvnow.tva" name="USTVnow Plus" provider-name="mhancoc7" version="14.2.8">
     <requires>
         <import addon="xbmc.python" version="2.1.0" />
     </requires>
@@ -3236,7 +3254,7 @@ Addons Included
 
 <addon id="script.module.liveresolver"
      name="LiveResolver"
-     version="0.1.23"
+     version="0.1.24"
      provider-name="natko1412">
   <requires>
     <import addon="xbmc.python" version="2.1.0" />
@@ -3593,7 +3611,7 @@ Addons Included
   </extension>
 </addon>
 
-<addon id="script.trakt" name="Trakt" version="3.1.1" provider-name="Trakt.tv, Razzeee">
+<addon id="script.trakt" name="Trakt" version="3.1.2" provider-name="Trakt.tv, Razzeee">
 	<requires>
         <import addon="xbmc.python" version="2.24.0"/>
         <import addon="script.module.simplejson" version="3.3.0"/>
