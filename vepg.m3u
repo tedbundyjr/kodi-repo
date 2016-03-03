@@ -84,4 +84,99 @@ http://edge.nim.mivo.tv/mp17pjqx1esapruf/lbsindrama_all/playlist.m3u8
 #EXTINF:0, MIVO TV
 http://edge.nim.mivo.tv/mp17pjqx1esapruf/mivotv_all/playlist.m3u8
 
+#EXTINF:-1 tvg-logo="https://t1.ftcdn.net/jpg/00/31/16/46/500_F_31164619_DcToVrQxCDK2PxJ3As3O4k4Mj5pXrTLu.jpg", >>> RADIO (Depeli)
+https://#
+ 
+#EXTINF:-1 tvg-logo="http://www.beyondinsights.net/wp-content/uploads/2014/05/bfm-logo.png" radio="true" group-title="Radio", Business FM
+http://8343.live.streamtheworld.com/BFMMEDIAAAC
+
+#EXTINF:-1 tvg-logo="https://lh4.ggpht.com/MPqEbnx4ZM79zRJMhkhzpV_KVwTggS8aUMLDOMTqYHigl91E6J30m0c42Ql6-OFseA=w300" radio="true" group-title="Radio", This Habbo Radio
+http://sc.thishabbo.com:8080/;stream.nsv 
+
+#EXTINF:-1 tvg-logo="http://cdn-radiotime-logos.tunein.com/s54689q.png" radio="true" group-title="DiGi&MF", HOT FM
+http://14013.live.streamtheworld.com/HOTFMAAC
+ 
+#EXTINF:-1 tvg-logo="" tvg-logo="http://2.bp.blogspot.com/-YHSGOL1oPI0/UOOnPxK2bHI/AAAAAAAABq0/gknsiNf65Po/s1600/img_kelate_black.png" radio="true" group-title="Radio",HOT FM KELATE
+http://2633.live.streamtheworld.com/HOTFMKELATEAAC
+ 
+#EXTINF:-1 tvg-logo="" tvg-logo="http://apps.hotfm.com.my/streaming/Hot-FM-Tganu-Logo-White.jpg" radio="true" group-title="Radio",HOT FM GANU
+http://2173.live.streamtheworld.com/HOTFMTGANUAAC
+ 
+#EXTINF:-1 radio="true" tvg-logo="http://www.astro.com.my/whats-on/logoimages/ChannelLogo/Pos/856_300.png", ERA
+http://astro2.rastream.com/era?type=.flv/;stream.mp3
+
+#EXTINF:-1 tvg-logo="http://3.bp.blogspot.com/-oePC3ktHT4c/UmWRQLHXIdI/AAAAAAAAEBE/vJFhhDfxA-w/s1600/manis-fm-image-250x250px.jpg" group-title="DiGi&MF", MANIS FM 
+http://radio.manis.fm:8000/;stream.nsv
+ 
+#EXTINF:-1 tvg-logo="http://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/11032793_234914920012432_1780427240_n.jpg" group-title="DiGi&MF", KELANTAN FM
+http://72.20.10.34:8000/;stream.mp3
+
+#EXTINF:-1 tvg-logo="http://3.bp.blogspot.com/-TVbIR0010UA/Uj8xLFhKtiI/AAAAAAAAD44/FZSpsHFB8pE/s1600/terengganu-fm-image.jpg" group-title="Radio", Terengganu FM
+http://218.208.228.62:8000/;stream.mp3
+
+#EXTINF:-1 tvg-logo="http://www.malaysiaradio.net/wp-content/uploads/2014/09/Perlis-FM.jpg" group-title="Radio",PERLIS FM
+http://198.154.106.102:8453/;stream.mp3
+
+#EXTINF:-1 tvg-logo="http://www.malaysiaradio.net/wp-content/uploads/2014/09/Sabah_VFM-Malaysiaradio.jpg" group-title="Radio",Sabah VFM
+http://dkmgz1nucppmx.cloudfront.net/rtm-ch024/playlist.m3u8
+
+
+#EXTINF:-1 tvg-logo="http://1.bp.blogspot.com/-ES_Mcn0knrg/UlC5-gmSFWI/AAAAAAAAD7w/v4ie0L4Cw54/s1600/klasik-nasional-fm-rtm-image.jpg" group-title="Radio",Radio Klasik
+http://dkmgz1nucppmx.cloudfront.net/rtm-ch016/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="http://nasionalfm.rtm.gov.my/rasmi/images/template/logonasional.png" group-title="Radio",Nasional FM
+http://dkmgz1nucppmx.cloudfront.net/rtm-ch017/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="http://klfm.rtm.gov.my/kl/images/LOGOPROFILE/logo.png" group-title="Radio",KL FM
+http://dkmgz1nucppmx.cloudfront.net/rtm-ch018/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/e/e7/TraXX_FM.png" group-title="Radio",Traxx FM
+http://dkmgz1nucppmx.cloudfront.net/rtm-ch019/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="http://labuanfm.rtm.gov.my/labuan/images/minnal.jpg" group-title="Radio",Minnal FM
+http://dkmgz1nucppmx.cloudfront.net/rtm-ch021/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="http://1.bp.blogspot.com/-__zJvyVHrXY/UexLX_ihAhI/AAAAAAAAD2E/CzGVDYcFvcE/s1600/asyik-fm-rtm-image.jpg" group-title="Radio",Asyik FM
+http://dkmgz1nucppmx.cloudfront.net/rtm-ch022/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="http://www.liveonlineradio.net/wp-content/uploads/2011/06/ikim-fm.jpg" group-title="DiGi&MF", IKIM FM
+http://50.7.96.210:8285/;stream.mp3 
+ 
+#EXTINF:-1 tvg-logo="" tvg-logo="http://t1.gstatic.com/images?q=tbn:ANd9GcTsmze1RXvzfK2mgGGQVd7dPIkTkw3qfCHJ_baaoxyr2wHesalF" group-title="DiGi&MF",SURIA FM
+http://starrfm.rastream.com/starrfm-suria?type=.flv/;stream.mp3
+ 
+#EXTINF:-1 tvg-logo="" tvg-logo="https://radioactive-images.s3.amazonaws.com/gegar.png" group-title="DiGi&MF",THR GEGAR
+http://astro3.rastream.com/gegar?/;stream.mp3
+
+#EXTINF:-1 tvg-logo="https://radioactive-images.s3.amazonaws.com/raaga.png" group-title="DiGi&MF",THR RAAGA FM
+http://astro3.rastream.com/raaga?type=.flv/;stream.mp3
+ 
+#EXTINF:-1 tvg-logo="" tvg-logo="http://www.astro.com.my/whats-on/logoimages/ChannelLogo/Pos/857_300.png", Sinar FM
+http://astro2.rastream.com/sinar?type=.flv/;stream.mp3
+ 
+ 
+#EXTINF:-1 tvg-logo="http://a2.mzstatic.com/us/r1000/102/Purple/v4/40/2a/b9/402ab925-4556-dacb-0d33-2305509eeced/mzl.byxryzcw.175x175-75.jpg", hitz.fm
+http://astro1.rastream.com/hitz?type=.flv/;stream.mp3
+ 
+#EXTINF:-1 tvg-logo="http://www.logotypes101.com/logos/293/78E9FB2E4D27FFFC1EC587643CA29330/mix.png" group-title="DiGi&MF",MIX FM
+http://astro2.rastream.com/mix?type=.flv/;stream.mp3
+
+#EXTINF:-1 tvg-logo="http://3.bp.blogspot.com/-DsmmWuBqWic/Ulhaivz88FI/AAAAAAAAD-k/M8RIp2borfc/s1600/muzik-fm-stesen-muzik-anda-image.jpg" group-title="Radio",MUZIK FM
+http://69.197.60.122:8000/;stream.m3u8
+
+#EXTINF:-1 tvg-logo="http://cdn-radiotime-logos.tunein.com/s54528q.png" group-title="Radio",FLY FM
+http://7439.live.streamtheworld.com/FLYFMAAC?type=.flv/;stream.mp3
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Logo_of_LiteFM.svg/1015px-Logo_of_LiteFM.svg.png" group-title="DiGi&MF",LITE FM
+http://astro1.rastream.com/lite?type=.flv/;stream.mp3
+
+#EXTINF:-1 tvg-logo="https://s3-ap-southeast-1.amazonaws.com/radioactive-images/amp/myfm_logo_20150402.png" group-title="DiGi&MF",MY FM
+http://astro1.rastream.com/myfm?type=.flv/;stream.mp3
+
+#EXTINF:-1 tvg-logo="http://www.radioonlinestreaming.com/wp-content/uploads/2015/02/Warna-94.2-FM-Logo.jpg" group-title="Radio",WARNA 94.2FM (SINGAPORE)
+http://mediacorp.rastream.com/942fm?type=.mp3/;stream.mp3
+
+#EXTINF:-1 tvg-logo="radio.png" tvg-logo="http://d1i6vahw24eb07.cloudfront.net/s16407q.png" group-title="Radio",RIA 89.7FM (SINGAPORE)
+http://mediacorp.rastream.com/897fm?type=.mp3/;stream.mp3
+
 #EXTINF:0, by @tedbundyjr
