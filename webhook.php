@@ -58,8 +58,9 @@ switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
 case 'ping':
 	echo 'pong';
 	break;
-//    case 'push':
-//        break;
+case 'push':
+	passthru("/usr/bin/git pull origin master");
+        break;
 //    case 'create':
 //        break;
 default:
