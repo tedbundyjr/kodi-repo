@@ -6,6 +6,7 @@ set_time_limit(300); // 5mins
  *
  * @see  https://developer.github.com/webhooks/
  */
+ 
 $hookSecret = ''; # set NULL to disable check
 set_error_handler(function ($severity, $message, $file, $line) {
 	throw new \ErrorException($message, 0, $severity, $file, $line);
@@ -53,6 +54,7 @@ default:
 # Payload structure depends on triggered event
 # https://developer.github.com/v3/activity/events/types/
 $payload = json_decode($json);
+
 switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
 
 case 'ping':
