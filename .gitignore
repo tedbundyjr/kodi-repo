@@ -1,7 +1,7 @@
 /plugin.*
 /script.*
 /metadata.*
-/vepg.*
+/vepg.xml
 *.zip.*
 /superrepo.kodi.jarvis.all
 /skin.*
