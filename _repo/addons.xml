@@ -1974,7 +1974,7 @@ http://www.hometheater.co.il</description>
   </extension>
 </addon>
 
-<addon id="plugin.video.prosport" name="Pro Sport" version="0.30" provider-name="gerikss, podgod">
+<addon id="plugin.video.prosport" name="Pro Sport" version="0.33" provider-name="gerikss, podgod">
   <requires>
     <import addon="xbmc.python" version="2.1.0" />
      <import addon="script.module.requests" version="2.9.1" />
