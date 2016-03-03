@@ -34,11 +34,11 @@ if ($hookSecret !== null) {
 	// }
 }
 
-if (!isset($_SERVER['HTTP_CONTENT_TYPE'])) {
-	throw new \Exception("Missing HTTP 'Content-Type' header.");
-} elseif (!isset($_SERVER['HTTP_X_GITHUB_EVENT'])) {
-	throw new \Exception("Missing HTTP 'X-Github-Event' header.");
-}
+// if (!isset($_SERVER['HTTP_CONTENT_TYPE'])) {
+// 	throw new \Exception("Missing HTTP 'Content-Type' header.");
+// } elseif (!isset($_SERVER['HTTP_X_GITHUB_EVENT'])) {
+// 	throw new \Exception("Missing HTTP 'X-Github-Event' header.");
+// }
 
 switch ($_SERVER['HTTP_CONTENT_TYPE']) {
 case 'application/json':
