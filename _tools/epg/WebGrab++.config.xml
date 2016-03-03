@@ -131,6 +131,27 @@ WebGrab+Plus uses the xmltv_id to identify a channel in an existing xmltv file.
     <channel update="i" site="astro.com.my" site_id="80" xmltv_id="Astro SuperSport 3">Astro SuperSport 3</channel>
     <channel update="i" site="astro.com.my" site_id="199" xmltv_id="Bernama TV">Bernama TV</channel>
     <channel update="i" site="astro.com.my" site_id="50" xmltv_id="KBS World">KBS World</channel>
+
+    <!-- radio -->
+    <channel update="i" site="astro.com.my" site_id="15" xmltv_id="ERA">ERA</channel>
+    <channel update="i" site="astro.com.my" site_id="16" xmltv_id="MY FM">MY FM</channel>
+    <channel update="i" site="astro.com.my" site_id="17" xmltv_id="Opus">Opus</channel>
+    <channel update="i" site="astro.com.my" site_id="18" xmltv_id="hitz.fm">hitz.fm</channel>
+    <channel update="i" site="astro.com.my" site_id="19" xmltv_id="MIX FM">MIX FM</channel>
+    <channel update="i" site="astro.com.my" site_id="20" xmltv_id="LITE FM">LITE FM</channel>
+    <channel update="i" site="astro.com.my" site_id="21" xmltv_id="Classic Rock">Classic Rock</channel>
+    <channel update="i" site="astro.com.my" site_id="22" xmltv_id="Gold">Gold</channel>
+    <channel update="i" site="astro.com.my" site_id="23" xmltv_id="THR Gegar">THR Gegar</channel>
+    <channel update="i" site="astro.com.my" site_id="24" xmltv_id="India Beat">India Beat</channel>
+    <channel update="i" site="astro.com.my" site_id="25" xmltv_id="Jazz">Jazz</channel>
+    <channel update="i" site="astro.com.my" site_id="26" xmltv_id="NAS FM">NAS FM</channel>
+    <channel update="i" site="astro.com.my" site_id="27" xmltv_id="Sinar FM">Sinar FM</channel>
+    <channel update="i" site="astro.com.my" site_id="28" xmltv_id="Osai FM">Osai FM</channel>
+    <channel update="i" site="astro.com.my" site_id="29" xmltv_id="Melody FM">Melody FM</channel>
+    <channel update="i" site="astro.com.my" site_id="30" xmltv_id="V FM">V FM</channel>
+    <channel update="i" site="astro.com.my" site_id="31" xmltv_id="THR Raaga">THR Raaga</channel>
+    <channel update="i" site="astro.com.my" site_id="32" xmltv_id="Bayu FM">Bayu FM</channel>
+    <channel update="i" site="astro.com.my" site_id="33" xmltv_id="Kenyalang">Kenyalang</channel>
     
     <!-- indonesia -->
     <channel update="i" site="jkt.firstmedia.com" site_id="antv" xmltv_id="ANTV">ANTV</channel>
