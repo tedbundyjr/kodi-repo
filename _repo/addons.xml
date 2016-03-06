@@ -1311,7 +1311,7 @@
 
 <addon id="plugin.video.dfmalaystream"
        name="Malay Video Online"
-       version="3.0.2"
+       version="3.0.3"
        provider-name="TheOne">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -2010,7 +2010,7 @@ http://www.hometheater.co.il</description>
 	</extension>
 </addon>
 
-<addon id="plugin.video.specto" name="Specto - ... Fork"  version="2016.02.28.9" provider-name="mrknow" >
+<addon id="plugin.video.specto" name="Specto - ... Fork"  version="2016.03.03.1" provider-name="mrknow" >
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.requests" version="1.0.0" />
@@ -2170,7 +2170,7 @@ http://halowtv.com/[/COLOR]</description>
   </extension>
 </addon>
 
-<addon id="plugin.video.ustvnow.tva" name="USTVnow Plus" provider-name="mhancoc7" version="14.2.8">
+<addon id="plugin.video.ustvnow.tva" name="USTVnow Plus" provider-name="mhancoc7" version="14.2.9">
     <requires>
         <import addon="xbmc.python" version="2.1.0" />
     </requires>
@@ -3611,7 +3611,7 @@ Addons Included
   </extension>
 </addon>
 
-<addon id="script.trakt" name="Trakt" version="3.1.2" provider-name="Trakt.tv, Razzeee">
+<addon id="script.trakt" name="Trakt" version="3.1.3" provider-name="Trakt.tv, Razzeee">
 	<requires>
         <import addon="xbmc.python" version="2.24.0"/>
         <import addon="script.module.simplejson" version="3.3.0"/>
