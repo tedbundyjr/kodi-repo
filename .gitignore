@@ -3,9 +3,10 @@
 /metadata.*
 /vepg.xml
 *.zip.*
-/superrepo.kodi.jarvis.all
+/superrepo.kodi.*
 /skin.*
 /service.*
 /repository.*
+/resource.language.*
 /!repository.vms/*
 WebGrab++.log.txt
