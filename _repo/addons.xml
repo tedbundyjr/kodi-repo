@@ -1311,7 +1311,7 @@
 
 <addon id="plugin.video.dfmalaystream"
        name="Malay Video Online"
-       version="3.0.3"
+       version="3.0.5"
        provider-name="TheOne">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
