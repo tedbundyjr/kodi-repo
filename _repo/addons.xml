@@ -2669,7 +2669,7 @@ Addons Included
     </extension>
 </addon>
 
-    <addon id="repository.vms" name="VMS Repository" version="1.0.8" provider-name="tedbundyjr">
+    <addon id="repository.vms" name="VMS Repository" version="1.0.9" provider-name="tedbundyjr">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
@@ -2681,7 +2681,7 @@ Addons Included
         </extension>
         <extension point="xbmc.addon.metadata">
             <summary>Compilation of used addons</summary>
-            <description>Best plugin in single repository. Contact twitter @tedbundyjr for request or to report broken link.</description>
+            <description>Best plugin in single repository. Contact twitter @tedbundyjr to request or report broken link. Tested on Isengard v15.</description>
             <platform>all</platform>
     </extension>
 </addon>
@@ -3877,7 +3877,7 @@ Addons Included
 
 <addon id="script.module.liveresolver"
      name="LiveResolver"
-     version="0.1.24"
+     version="0.1.25"
      provider-name="natko1412">
   <requires>
     <import addon="xbmc.python" version="2.1.0" />
