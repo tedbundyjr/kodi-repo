@@ -52,7 +52,6 @@
     <channel update="i" site="astro.com.my" site_id="53" xmltv_id="Astro Xiao Tai Yang">Astro Xiao Tai Yang</channel>
     <channel update="i" site="astro.com.my" site_id="54" xmltv_id="Nickelodeon">Nickelodeon</channel>
     <channel update="i" site="astro.com.my" site_id="55" xmltv_id="Chutti TV">Chutti TV</channel>
-    <channel update="i" site="astro.com.my" site_id="56" xmltv_id="Astro Box Office Sport 1">Astro Box Office Sport 1</channel>
     <channel update="i" site="astro.com.my" site_id="58" xmltv_id="Australia Plus TV">Australia Plus TV</channel>
     <channel update="i" site="astro.com.my" site_id="59" xmltv_id="Astro Warna">Astro Warna</channel>
     <channel update="i" site="astro.com.my" site_id="61" xmltv_id="Discovery Channel">Discovery Channel</channel>
@@ -126,7 +125,6 @@
     <channel update="i" site="astro.com.my" site_id="147" xmltv_id="Astro First SD 3">Astro First SD 3</channel>
     <channel update="i" site="astro.com.my" site_id="148" xmltv_id="Astro First SD 4">Astro First SD 4</channel>
     <channel update="i" site="astro.com.my" site_id="149" xmltv_id="Astro First SD 5">Astro First SD 5</channel>
-    <channel update="i" site="astro.com.my" site_id="150" xmltv_id="Astro First SD 6">Astro First SD 6</channel>
     <channel update="i" site="astro.com.my" site_id="151" xmltv_id="Astro First SD 7">Astro First SD 7</channel>
     <channel update="i" site="astro.com.my" site_id="152" xmltv_id="Astro First SD 8">Astro First SD 8</channel>
     <channel update="i" site="astro.com.my" site_id="153" xmltv_id="Astro Tutor TV PT3">Astro Tutor TV PT3</channel>
@@ -177,11 +175,11 @@
     <channel update="i" site="astro.com.my" site_id="221" xmltv_id="Astro On Demand HD">Astro On Demand HD</channel>
     <channel update="i" site="astro.com.my" site_id="223" xmltv_id="Astro Best SD 10">Astro Best SD 10</channel>
     <channel update="i" site="astro.com.my" site_id="224" xmltv_id="Astro PPV Movies HD">Astro PPV Movies HD</channel>
-    <channel update="i" site="astro.com.my" site_id="225" xmltv_id="Astro First SD10">Astro First SD10</channel>
     <channel update="i" site="astro.com.my" site_id="226" xmltv_id="Astro Best SD 2">Astro Best SD 2</channel>
     <channel update="i" site="astro.com.my" site_id="227" xmltv_id="Astro Box Office Movies Tayangan Hebat">Astro Box Office Movies Tayangan Hebat</channel>
     <channel update="i" site="astro.com.my" site_id="228" xmltv_id="Astro Box Office Movie Thangathirai">Astro Box Office Movie Thangathirai</channel>
     <channel update="i" site="astro.com.my" site_id="251" xmltv_id="Astro BollyOne HD">Astro BollyOne HD</channel>
+    <channel update="i" site="astro.com.my" site_id="252" xmltv_id="AG1 HD">AG1 HD</channel>
     <channel update="i" site="astro.com.my" site_id="267" xmltv_id="HITS HD">HITS HD</channel>
     <channel update="i" site="astro.com.my" site_id="268" xmltv_id="FOX HD">FOX HD</channel>
     <channel update="i" site="astro.com.my" site_id="269" xmltv_id="DIVA HD">DIVA HD</channel>
