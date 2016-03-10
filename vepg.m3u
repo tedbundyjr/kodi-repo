@@ -1,10 +1,10 @@
 #EXTM3U
 
 #EXTINF:-1, tvg-logo="http://i376.photobucket.com/albums/oo204/indiecrew/Channel%20Logo/MY_tv1_zpsea9qcgvm.png", group-title="Malaysia", TV1 
-http://d203dgg5iimrq6.cloudfront.net/smil:rtm-ch001.smil/chunklist_w1150168136.m3u8
+http://rtm-live.glueapi.io/smil:rtm-ch001.smil/playlist.m3u8
 
 #EXTINF:-1, tvg-logo="http://i376.photobucket.com/albums/oo204/indiecrew/Channel%20Logo/MY_tv2_zpsk9cjp0q7.png", group-title="Malaysia", TV2
-http://d1dyjmgkbos6tr.cloudfront.net/ngrp:rtm-ch002_1080_all/playlist.m3u8
+http://rtm-live.glueapi.io/smil:rtm-ch002.smil/playlist.m3u8
 
 #EXTINF:-1, tvg-logo="http://i376.photobucket.com/albums/oo204/indiecrew/Channel%20Logo/MY_tv3_zpsr9dziuob.png", group-title="Malaysia", TV3
 http://www.layarku.tv/media/tv3web6.m3u8
@@ -13,16 +13,22 @@ http://www.layarku.tv/media/tv3web6.m3u8
 http://www.layarku.tv/media/2tv9.m3u8
 
 #EXTINF:-1, tvg-logo="http://i376.photobucket.com/albums/oo204/indiecrew/Channel%20Logo/MY_tvi_zpsbvg5jpcq.png", group-title="Malaysia", TVi
-http://d1dyjmgkbos6tr.cloudfront.net/ngrp:rtm-ch003_1080_all/playlist.m3u8
+http://rtm-live.glueapi.io/smil:rtm-ch003/playlist.m3u8
 
 #EXTINF:-1, tvg-logo="http://i376.photobucket.com/albums/oo204/indiecrew/Channel%20Logo/MY_muzikaktif_zpsnl2kq0e1.png", Muzik Aktif
-http://d1dyjmgkbos6tr.cloudfront.net/ngrp:rtm-ch004_1080_all/playlist.m3u8
+http://rtm-live.glueapi.io/smil:rtm-ch004.smil/playlist.m3u8
 
 #EXTINF:-1, tvg-logo="http://i376.photobucket.com/albums/oo204/indiecrew/Channel%20Logo/MY_alhijrah_zpsgxa7ek3g.png", Al-Hijrah
 http://d2f9tqsihrp4sc.cloudfront.net/livecf/smil:tvah_hypptv.smil/playlist.m3u8
 
 #EXTINF:-1, tvg-logo="http://i376.photobucket.com/albums/oo204/indiecrew/Channel%20Logo/MY_awani_zpstajxcomn.png", Astro Awani
 http://playback01.aotg-video.astro.com.my/AOTGHLS/master_AWANI.m3u8
+
+#EXTINF:-1, tvg-logo="http://i376.photobucket.com/albums/oo204/indiecrew/Channel%20Logo/MY_1news_zpsvnvqw6kd.png", 1NEWS
+http://rtm-live.glueapi.io/smil:rtm-ch006.smil/playlist.m3u8
+
+#EXTINF:0, tvg-logo="http://i376.photobucket.com/albums/oo204/indiecrew/Channel%20Logo/MY_bernamatv_zpsqyzrl7fo.png", Bernama TV
+http://d22b8vh21p20bg.cloudfront.net/mylive/smil:bernama2_all.smil/playlist.m3u8
 
 #EXTINF:-1, tvg-logo="http://i376.photobucket.com/albums/oo204/indiecrew/Channel%20Logo/MY_warna_zpswsggehjh.png", Astro Warna
 http://www.layarku.tv/media/warna6v.m3u8
@@ -41,12 +47,6 @@ http://playback01.aotg-video.astro.com.my/AOTGHLS/master_GOSHOP.m3u8
 
 #EXTINF:-1 tvg-logo="http://4.bp.blogspot.com/-j5Tr0sN7fKA/TxvEP-FLDdI/AAAAAAAAB-c/P0ZOUElTTuM/s1600/astro+logo.jpg" group-title="Malaysia", Astro Arena
 http://www.layarku.tv/media/areweb6.m3u8
-
-#EXTINF:0, tvg-logo="http://i376.photobucket.com/albums/oo204/indiecrew/Channel%20Logo/MY_bernamatv_zpsqyzrl7fo.png", Bernama TV
-http://d22b8vh21p20bg.cloudfront.net/mylive/smil:bernama2_all.smil/playlist.m3u8
-
-#EXTINF:-1, tvg-logo="http://i376.photobucket.com/albums/oo204/indiecrew/Channel%20Logo/MY_1news_zpsvnvqw6kd.png", 1NEWS
-http://rtm-live.glueapi.io/smil:rtm-ch006.smil/playlist.m3u8?t=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpIjoiMTAxNTMiLCJtIjoicHJvdmlzaW9uaW5nIiwiciI6Ind3dy5tYWxheXNpYTFuZXdzLm15IiwiZCI6MTQ1Njk5NjA4MH0.B3YWC4MsjkEjpp2pZmtEKrFB0HYqIDZPwT_ET41qtHbcgQ2abnTa4yC2eqcxZP9BMnQ-Dq5-I3__7M3Ztv-SfQ
 
 #EXTINF:-0, >>> INDONESIA
 http://#
