@@ -30,6 +30,9 @@ http://rtm-live.glueapi.io/smil:rtm-ch006.smil/playlist.m3u8
 #EXTINF:0, tvg-logo="http://i376.photobucket.com/albums/oo204/indiecrew/Channel%20Logo/MY_bernamatv_zpsqyzrl7fo.png", Bernama TV
 http://d22b8vh21p20bg.cloudfront.net/mylive/smil:bernama2_all.smil/playlist.m3u8
 
+#EXTINF:0, RTM Parlimen
+http://rtm-live.glueapi.io/smil:rtm-ch007.smil/chunklist_b620000_sleng.m3u8
+
 #EXTINF:-1, tvg-logo="http://i376.photobucket.com/albums/oo204/indiecrew/Channel%20Logo/MY_warna_zpswsggehjh.png", Astro Warna
 http://www.layarku.tv/media/warna6v.m3u8
 
