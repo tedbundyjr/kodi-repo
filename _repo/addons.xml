@@ -1113,6 +1113,34 @@
 	</extension>
 </addon>
 
+<addon id="plugin.video.icefilms"
+       name="Icefilms"
+       version="1.23.0"
+       provider-name="Eldorado (originator: anarchintosh)">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.simplejson" version="3.3.0"/>
+        <import addon="script.module.elementtree" />
+        <import addon="script.module.beautifulsoup" />
+        <import addon="script.module.metahandler" version="2.5.1" />
+        <import addon="script.module.addon.common" version="2.0.0" />
+        <import addon="script.module.axel.downloader" version="0.2.1" />
+        <!--import addon="script.module.pyxbmct" version="1.1.2" /-->
+        <import addon="script.common.plugin.cache" />
+    </requires>
+    <extension point="xbmc.python.pluginsource"
+               library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary>Stream and download scene releases from the links listed on Icefilms.info</summary>
+        <description>Visit www.tvaddons.ag for support.
+
+Turns your XBMC into an instant free on-demand media-center. Stream and download to your library DVD and HD720p quality videos. Browse and search the library of over 77,000 videos with metadata and posters. Never experience the frustration of dead video links!</description>
+    </extension>
+</addon>
+
 <addon id="plugin.video.islamicstreamstv"
        name="Islamic Streams TV"
        version="2.1.1"
@@ -1512,6 +1540,25 @@ report script error to facebook.com/tamilKODITV or cyberrule.mail@gmail.com</des
 </extension>
 </addon>
 
+<addon id="repository.eldorado" name="Eldorado's XBMC Addons" version="2.0.2" provider-name="eldorado">
+	<extension point="xbmc.addon.repository" name="Eldorado's XBMC Addon Repository">
+		<info compressed="false">http://raw.github.com/Eldorados/eldorado-xbmc-addons/master/addons.xml</info>
+		<checksum>http://raw.github.com/Eldorados/eldorado-xbmc-addons/master/addons.xml.md5</checksum>
+		<datadir zip="true">http://raw.github.com/Eldorados/eldorado-xbmc-addons/master/repo/</datadir>
+		<dir>
+			<info compressed="false">https://offshoregit.com/Eldorado/xbmc-addons/raw/master/addons.xml</info>
+			<checksum>https://offshoregit.com/Eldorado/xbmc-addons/raw/master/addons.xml.md5</checksum>
+			<datadir zip="true">https://offshoregit.com/Eldorado/xbmc-addons/raw/master/repo/</datadir>
+		</dir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Install Eldorado's Addons</summary>
+		<forum>http://forums.tvaddons.ag/forums/23-ELDORADO-S-XBMC-ADDONS</forum>
+		<description>Download and install addons by Eldorado</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
 <addon id="repository.exodus" version="1.0.0" name="Exodus repository" provider-name="l*m*d*">
 	<extension point="xbmc.addon.repository" name="Exodus repository">
 		<dir>
@@ -1894,10 +1941,8 @@ Addons Included
 	</extension>
 </addon>
 
-<addon id="script.areswizard" name="[COLOR black].[/COLOR] Ares Wizard" provider-name="AresTeam" version="0.0.35">
+<addon id="script.areswizard" name="[COLOR black].[/COLOR] Ares Wizard" provider-name="AresTeam" version="0.0.36">
  <requires>
- <import addon="script.module.pyxbmct" version="1.1.4"/>
- <import addon="script.module.elementtree" version="1.2.7"/>
  </requires>
  <extension library="default.py" point="xbmc.python.pluginsource">
  <provides>executable</provides>
@@ -2015,6 +2060,24 @@ Addons Included
     </extension>
 </addon>
 
+<addon id="script.module.axel.downloader"
+	     name="Axel Downloader"
+	     version="0.2.2"
+	     provider-name="Eldorado">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0" />
+    <import addon="script.module.addon.common" version="2.0.0" />
+  </requires>
+  <extension point="xbmc.python.script" library="controlpanel.py"/>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension library="default.py" point="xbmc.service" start="startup" />
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">Multi-connection/threaded Downloader</summary>
+    <description lang="en">Download a file using multiple connections to achieve the highest speed.</description>
+  </extension>
+</addon>
+
 <addon id="script.module.beautifulsoup"
        name="BeautifulSoup"
        version="3.2.1"
@@ -2072,6 +2135,20 @@ Addons Included
     <website>https://dateutil.readthedocs.org/en/latest/</website>
     <source>https://github.com/Razzeee/script.module.dateutil</source>
     <email></email>
+  </extension>
+</addon>
+
+<addon id="script.module.elementtree"
+       name="Elementtree XML parser"
+       version="1.2.8"
+       provider-name="http://effbot.org/zone/element-index.htm">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.module"
+             library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
   </extension>
 </addon>
 
