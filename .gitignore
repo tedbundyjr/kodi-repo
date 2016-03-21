@@ -6,6 +6,8 @@
 /superrepo.kodi.*
 /skin.*
 /service.*
+/metadata.*
+/rem/*
 /repository.*
 /resource.language.*
 /!repository.vms/*
