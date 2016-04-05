@@ -1203,21 +1203,6 @@ Turns your XBMC into an instant free on-demand media-center. Stream and download
   </extension>
 </addon>
 
-<addon id="plugin.video.livemix" name="Live Mix" version="1.0.2" provider-name="MetalKettle">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.addon.common" version="2.0.0" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en"></summary>
-    <description lang="en"></description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
 
 <addon id="plugin.video.mrnetworktv"
        name="MR Network TV"
@@ -1470,7 +1455,7 @@ report script error to facebook.com/tamilKODITV or cyberrule.mail@gmail.com</des
     </extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="5.1.17" provider-name="bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="5.1.20.4" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
@@ -1628,6 +1613,20 @@ report script error to facebook.com/tamilKODITV or cyberrule.mail@gmail.com</des
 		<disclaimer lang="en">Repository has non-comercial nature. Created by enthusiasts, acting in good faith.</disclaimer>
 		<disclaimer lang="pl">Zawartość repozytorium ma charakter niekomercyjny, wtyczki tworzone przez pasjonatów, .</disclaimer>
 		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="repository.icanuck" name="[COLOR FF005de5]iCanuck's [/COLOR]Kodi Repository" version="3.1.0" provider-name="iCanuck">
+	<extension point="xbmc.addon.repository" name="iCanuck's Kodi Repository">
+       <info>http://offshoregit.com/iCanuck/iCanuck-Repo/raw/master/addons.xml</info>
+       <checksum>http://offshoregit.com/iCanuck/iCanuck-Repo/raw/master/addons.xml.md5</checksum>
+       <datadir zip="true">http://offshoregit.com/iCanuck/iCanuck-Repo/raw/master/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Install iCanuck's Kodi Skins/Addons</summary>
+		<description>Download and install Kodi Skins and Addons by iCanuck and others.</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, June 2007</license>
 	</extension>
 </addon>
 
@@ -2214,7 +2213,7 @@ Addons Included
 
 <addon id="script.module.liveresolver"
      name="LiveResolver"
-     version="0.1.28"
+     version="0.1.29"
      provider-name="natko1412">
   <requires>
     <import addon="xbmc.python" version="2.1.0" />
