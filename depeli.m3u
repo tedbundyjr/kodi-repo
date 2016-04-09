@@ -4,7 +4,7 @@
 #EXTINF:-1 tvg-id=“TV 1” tvg-name=“TV_1” tvg-logo="http://3.bp.blogspot.com/-WkvxIvLwti8/VZMDUNG9ZtI/AAAAAAAAIwo/pT2GN4Ly2uo/s320/Screen%2BShot%2B2015-07-01%2Bat%2B4.55.41%2BAM.png",•Like Pages URL DePeli iptv•
 https://www.youtube.com/watch?v=x6NtpkIqOeA
 
-#EXTINF:-1 tvg-id=“TV 1” tvg-name=“TV_1” tvg-logo="http://blog.ezyinsights.com/wp-content/uploads/2014/09/link.png" ,•URL Ni FREE JER•
+#EXTINF:-1 tvg-id=“TV 1 tvg-name=“TV_1” tvg-logo="http://blog.ezyinsights.com/wp-content/uploads/2014/09/link.png" ,•URL Ni FREE JER•
 https://www.youtube.com/watch?v=x6NtpkIqOeA
 
 #EXTINF:-1 tvg-id=“TV 1” tvg-name=“TV_1” tvg-logo="http://blog.ezyinsights.com/wp-content/uploads/2014/09/link.png" ,•NOT FOR SALE!!!•
@@ -24,21 +24,21 @@ https://v0.sg.cptr-api.com/st/4/jobs/f2924b11-92a1-4ec5-847e-19b3e49d7bd9/files_
 
 
 #EXTINF:-1 tvg-logo="http://bit.ly/URLDePeliIPTV" group-title="Event", LIVE Event 1
-https://manifest.googlevideo.com/api/manifest/hls_variant/maudio/1/fexp/9405958,9416126,9420017,9420452,9422596,9423661,9423662,9427902,9428734,9428757,9428982,9430818,9431012,9431615,9431622,9431725,9432386/hfr/1/ipbits/0/ratebypass/yes/keepalive/yes/playlist_type/DVR/itag/0/key/yt6/source/yt_live_broadcast/sver/3/gcr/my/ip/124.13.71.161/sparams/gcr,go,hfr,id,ip,ipbits,itag,maudio,playlist_type,ratebypass,requiressl,source,expire/requiressl/yes/expire/1458562426/id/-NLnHCchWXs.1/signature/D42B3133E620ABA82639BA95F71672BCA5FE38F7.14225AE6DE4ECC041B557CA0B06A50DAC13C2DAF/upn/IINthIzq1jI/go/1/file/index.m3u8
+https://www.youtube.com/watch?v=y60wDzZt8yg
 
 #EXTINF:-1 tvg-logo="http://bit.ly/URLDePeliIPTV" group-title="Event", *LIVE Event 2
-rtmp://$OPT:rtmp-raw=rtmpe://162.253.131.34:1935/aqq/vch3lsh pageUrl=http://cdn.lshstream.com/hpgdisco  token=SECURET0KEN#yw%.?()@W
+rtmp://$OPT:rtmp-raw=rtmpe://104.254.90.226:1935/aqq/vch2lsh58 pageUrl=http://cdn.lshstream.com/hpgdisco  token=SECURET0KEN#yw%.?()@W
 
 #EXTINF:-1 tvg-logo="http://bit.ly/URLDePeliIPTV" group-title="Event", *LIVE Event 3
-rtmp://$OPT:rtmp-raw=rtmpe://162.253.130.26:1935/aqq/skysports3lsh pageUrl=http://cdn.lshstream.com/hpgdisco  token=SECURET0KEN#yw%.?()@W
+rtmp://$OPT:rtmp-raw=rtmpe://104.254.90.228:1935/aqq/stream122 pageUrl=http://cdn.lshstream.com/hpgdisco  token=SECURET0KEN#yw%.?()@W
 
 
 #EXTINF:-1 tvg-logo="http://bit.ly/URLDePeliIPTV" group-title="Event", *LIVE Event 4
-rtmp://$OPT:rtmp-raw=rtmpe://104.254.90.230:1935/aqq/btsports2lsh pageUrl=http://cdn.lshstream.com/hpgdisco  token=SECURET0KEN#yw%.?()@W
+rtmp://$OPT:rtmp-raw=rtmpe://162.253.131.34:1935/aqq/vch2lsh58 pageUrl=http://cdn.lshstream.com/hpgdisco  token=SECURET0KEN#yw%.?()@W
 
+#EXTINF:-1 tvg-logo="http://bit.ly/URLDePeliIPTV" group-title="Event", *LIVE Event 4
+rtmp://$OPT:rtmp-raw=rtmpe://162.253.131.34:1935/aqq/vch2lsh58 pageUrl=http://cdn.lshstream.com/hpgdisco  token=SECURET0KEN#yw%.?()@W
 
-#EXTINF:-1 tvg-logo="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpl1/v/t1.0-1/p160x160/12745470_1700976886782480_8689065096732247012_n.jpg?oh=fe779e3df5b455760dde294f785a9501&oe=5723E882&__gda__=1465969120_d9b4558fe003a49451741b1c330f4977" group-title="DiGi&MF",TRWtv
-http://cdnvideo.webvideocore.net/enc4_tnft3c5i9pe9mn6j4v5cln9o12guvccpbm09mhgrlc4u33eun1fbs9vkj1fn28o3de7i44455fgnhsrb9r5uvqk9pdtqca0ma1rnenckma85sko1jbqt5bgj7nu56rtve/index.m3u8
 
 
 #EXTINF:-1 tvg-logo="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpl1/v/t1.0-1/p160x160/12745470_1700976886782480_8689065096732247012_n.jpg?oh=fe779e3df5b455760dde294f785a9501&oe=5723E882&__gda__=1465969120_d9b4558fe003a49451741b1c330f4977" group-title="DiGi&MF",TRW tv2
@@ -60,17 +60,20 @@ http://rtm-live.glueapi.io/smil:rtm-ch003/playlist.m3u8
 #EXTINF:-1 tvg-logo="http://4.bp.blogspot.com/-DDyDxIBcuRU/VHu1RhbEAXI/AAAAAAAAEs4/16pP12IDr6U/s1600/muzik_aktif.png" group-title="DiGi&MF", Muzik Aktif 
 http://rtm-live.glueapi.io/smil:rtm-ch004.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="http://8.37.229.77:7080/group1/M01/03/73/ooYBAFQTaaSAHV2jAACl27joLzA957.jpg" group-title="Malaysia", OFFLINE
-http://www.layarku.tv/media/2tv3.m3u8
+#EXTINF:-1 tvg-logo="http://8.37.229.77:7080/group1/M01/03/73/ooYBAFQTaaSAHV2jAACl27joLzA957.jpg" group-title="Malaysia", TV3
+http://www.layarku.tv/media/tv3web6.m3u8
 
 #EXTINF:-1 tvg-logo="http://1.bp.blogspot.com/-bj-u8VT2n9o/VVsa5MABXbI/AAAAAAAAHqY/BtvLRwaehEo/s1600/NTV7.png" group-title="DiGi&MF",OFFLINE
-http://ntv7liveios-i.akamaihd.net/hls/live/205902/ios/ntv7live/master002.m3u8
+http://ntv7liveios-i.akamaihd.net/hls/live/205902/ios/ntv7live/master.m3u8
  
 #EXTINF:-1 tvg-id=“8TV” tvg-name=“8TV” tvg-logo="http://4.bp.blogspot.com/-Yxgmo2clb9E/TjoIHwjck-I/AAAAAAAABbo/hiBWZpBz5yk/s1600/8tv_logo.jpg" group-title="DiGi&MF",OFFLINE
-http://8tvliveios-i.akamaihd.net/hls/live/205901/ios/8tvlive/master002.m3u8
+http://8tvliveios-i.akamaihd.net/hls/live/205901/ios/8tvlive/master.m3u8
  
 #EXTINF:-1 tvg-id=“TV 9” tvg-name=“TV_9” tvg-logo="http://dev.mediaprima.com.my/wp-content/uploads/2014/05/tv9.png" group-title="DiGi&MF",OFFLINE
-http://tv9liveios-i.akamaihd.net/hls/live/205903/ios/tv9live/master002.m3u8
+http://www.layarku.tv/media/tv9web6.m3u8
+
+#EXTINF:-1 tvg-logo="http://www.astro.com.my/whats-on/logoimages/ChannelLogo/Pos/104_300.png" group-title="Malaysia", OFFLINE
+http://www.layarku.tv/media/riaweb6.m3u8
 
 
 #EXTINF:-1 tvg-logo="119_300.png" tvg-logo="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR6Zy4HZQWPYgaD2Kwel6U5RX1YuG4TwAcwkof8iCFvVBJLNcUtzSFKNA" group-title="DiGi&MF",TV Al Hijrah
