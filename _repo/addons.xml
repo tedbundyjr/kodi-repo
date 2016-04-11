@@ -1242,6 +1242,41 @@ Turns your XBMC into an instant free on-demand media-center. Stream and download
 
 </addon>
 
+<addon id="plugin.video.MyAnimasi"
+       name="[COLOR red][B]My Animasi[/B][/COLOR]"
+       version="1.0"
+       provider-name="nashadi">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+	<import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">kompilasi video animasi tempatan</summary>
+    <description lang="en">
+	Kompilasi animasi tempatan dan luar negara kegemaran tontonan kanak-kanak di Malaysia.
+	</description>
+	<disclaimer>Video Addon ini adalah percuma. Kompilasi video daripada sumber sedia ada youtube dan ripper tempatan yang disusun secara teratur bagi memudahkan tontonan.</disclaimer>
+    <email>k.kusanagi101@gmail.com</email>
+	<platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.NJMSoccer"
        name="NJM-Soccer"
        version="3.0.6"
@@ -1455,7 +1490,7 @@ report script error to facebook.com/tamilKODITV or cyberrule.mail@gmail.com</des
     </extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="5.1.20.4" provider-name="bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="5.1.20.6" provider-name="bromix">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 	</requires>
@@ -1464,13 +1499,13 @@ report script error to facebook.com/tamilKODITV or cyberrule.mail@gmail.com</des
 	</extension>
 	<extension point="xbmc.addon.metadata">
         <summary lang="en">Plugin for YouTube</summary>
-        <description lang="en">YouTube is a one of the biggest video-sharing websites of the world.</description>
+        <description lang="en">YouTube is one of the biggest video-sharing websites of the world.</description>
 		<summary lang="de">Plugin für YouTube</summary>
-        <description lang="de">YouTube ist ein eines der größten Video-Sharing-Websites der Welt.</description>
+        <description lang="de">YouTube ist eines der größten Video-Sharing-Websites der Welt.</description>
         <summary lang="pl">Wtyczka YouTube</summary>
         <description lang="pl">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>
 		<summary lang="hu">Kiegészítő  a YouTube-hoz</summary>
-        <description lang="hu">A YouTube a világ egyik legnagyobb videómegosztó weboldala.</description>
+        <description lang="hu">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
         <summary lang="es">Plugin para YouTube</summary>
         <description lang="es">YouTube es un uno de los mayores sitios web de intercambio de vídeos del mundo.</description>
         <summary lang="ru">Видеодополнение YouTube</summary>
@@ -1481,14 +1516,16 @@ report script error to facebook.com/tamilKODITV or cyberrule.mail@gmail.com</des
         <description lang="zh">「Youtube」是全世界最大的影片分享網站</description>
         <summary lang="bg">Добавка за YouTube</summary>
         <description lang="bg">YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят.</description>
+		<summary lang="el">Πρόσθετο YouTube</summary>
+        <description lang="el">Το YouTube είναι μία από τις μεγαλύτερες ιστοσελίδες διαμοιρασμού βίντεο στον κόσμο.</description>
 		<disclaimer lang="en"></disclaimer>
 		<language></language>
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-		<forum>http://forum.kodi.tv/showthread.php?tid=200735</forum>
+		<forum>http://forum.kodi.tv/showthread.php?tid=267160</forum>
 		<website>http://www.youtube.com</website>
-		<email>bromix at gmx dot net</email>
-		<source>https://github.com/bromix/plugin.video.youtube</source>
+		<email>ytplugin at datanet dot ws</email>
+		<source>https://github.com/Kolifanes/plugin.video.youtube</source>
 	</extension>
 </addon>
 
