@@ -1115,7 +1115,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.exodus" version="1.3.0" name="Exodus" provider-name="Exodus">
+<addon id="plugin.video.exodus" version="1.3.1" name="Exodus" provider-name="Exodus">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="repository.exodus" version="1.0.0" />
@@ -1300,7 +1300,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.phstreams" name="Phoenix" version="3.0.3" provider-name="tvaddons.ag">
+<addon id="plugin.video.phstreams" name="Phoenix" version="3.0.4" provider-name="tvaddons.ag">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.pyxbmct" version="1.1.4" />
@@ -1517,7 +1517,7 @@ report script error to facebook.com/tamilKODITV or cyberrule.mail@gmail.com</des
   </extension>
 </addon>
 
-<addon id="repository.aresproject" name="AresProject" version="0.0.1" provider-name="Ares Team">
+<addon id="repository.aresproject" name="AresProject" version="0.0.3" provider-name="Ares Team">
 	<extension point="xbmc.addon.repository" name="Simple Kodi">
 		<info compressed="false">http://repo.ares-project.com/plugins/addons.xml</info>
 		<checksum>http://repo.ares-project.com/plugins/addons.xml.md5</checksum>
@@ -1525,7 +1525,7 @@ report script error to facebook.com/tamilKODITV or cyberrule.mail@gmail.com</des
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>AresProject.</summary>
-		<description>Ares-Project Addons Source. Visit Us At http://ares-project.com/community/</description>
+		<description>Ares-Project Addons Source. Visit Us At https://ares-forum.com</description>
 		<platform>all</platform>
 	</extension>
 </addon>
@@ -2202,7 +2202,7 @@ Addons Included
 
 <addon id="script.module.liveresolver"
      name="LiveResolver"
-     version="0.1.29"
+     version="0.1.30"
      provider-name="natko1412">
   <requires>
     <import addon="xbmc.python" version="2.1.0" />
