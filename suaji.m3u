@@ -18,11 +18,8 @@ http://d2f9tqsihrp4sc.cloudfront.net/livecf/smil:tvah_hypptv.smil/playlist.m3u8
 #EXTINF:-1, AWANI
 http://playback01.aotg-video.astro.com.my/AOTGHLS/master_AWANI.m3u8
 
-#EXTINF:0, BERNAMA TV
+#EXTINF:0, BERNAMA
 http://d22b8vh21p20bg.cloudfront.net/mylive/smil:bernama2_all.smil/chunklist_w774237887_b878000_sleng.m3u8
-
-#EXTINF:0, Bernama (backup)
-http://d22b8vh21p20bg.cloudfront.net/mylive/smil:bernama2_all.smil/chunklist_w1145460817_b878000_sleng.m3u8
 
 #EXTINF:-1, 1NEWS
 http://rtm-live.glueapi.io/smil:rtm-ch006.smil/playlist.m3u8
@@ -30,7 +27,10 @@ http://rtm-live.glueapi.io/smil:rtm-ch006.smil/playlist.m3u8
 #EXTINF:-1, KBS WORLD
 rtmp://118.97.183.196/jhos//kbs
 
-#EXTINF:0, Arirang TV HD
+#EXTINF:0, Arirang TV World
+http://worldlive-ios.arirang.co.kr/cdnlive-hls/arirangwlive/_definst_/liveevent/tvworld1.m3u8
+
+#EXTINF:0, Arirang TV World HD
 http://worldlive-ios.arirang.co.kr/arirang/arirangtvworldios.mp4.m3u8
 
 #EXTINF:0, Korean Drama (ENG)
@@ -75,14 +75,8 @@ http://123.108.164.71/etv2sb/phd15/lihattv.m3u8
 #EXTINF:0, [COLOR aquamarine][B].....DOCUMENTARY.....[/B][/COLOR]
 http://50.7.96.210:8285
 
-#EXTINF:-1,DISCOVERY
-http://superiptvlista.dyndns.tv:80/live/55branko/55branko1/187.m3u8
-#EXTINF:-1,ANIMAL PLANET
-http://superiptvlista.dyndns.tv:80/live/55branko/55branko1/188.m3u8
-#EXTINF:-1,NAT.GEOG
-http://superiptvlista.dyndns.tv:80/live/55branko/55branko1/189.m3u8
-#EXTINF:-1,HISTORY
-http://superiptvlista.dyndns.tv:80/live/55branko/55branko1/190.m3u8
+#EXTINF:0, World Travel Channel
+http://stream.taksimbilisim.com:1935/wtc/bant1/WTC.m3u8
 
 #EXTINF:0, [COLOR springgreen][B].....FAMILY.....[/B][/COLOR]
 http://50.7.96.210:8285
@@ -96,17 +90,11 @@ http://dmi.mangomolo.com:1935/dubaione/smil:dubaione.smil/playlist.m3u8
 #EXTINF:0, PLAYY WEST
 http://123.108.164.71/etv2sb/phd743/lihattv.m3u8
 
-#EXTINF:0, [COLOR yellow][B].....VOD Malay.....[/B][/COLOR]
-http://pencurimovie.se/
+#EXTINF:0, FOX Action Movies
+http://vod.cdn.iutpcdn.com/LIVE/H01/CANAL416/PROFILE03.m3u8
 
-#EXTINF:0, Ola Bola (2016) HD
-http://bit.ly/1qvwFiH
-
-#EXTINF:0, Pelepas Saka (2016)
-http://bit.ly/1MU07sv
-
-#EXTINF:0, Mat Moto (2016) HD
-http://bit.ly/1XiIqDi
+#EXTINF:0, FOX Movies
+http://vod.cdn.iutpcdn.com/LIVE/H01/CANAL417/PROFILE03.m3u8
 
 #EXTINF:0, [COLOR cyan][B].....MUSIC.....[/B][/COLOR]
 http://50.7.96.210:8285
@@ -129,7 +117,7 @@ rtmp://edge1.everyon.tv/etv1/ playpath=phd71 swfUrl=http://www.widih.org/swf/jwp
 #EXTINF:0, [COLOR crimson][B].....SPORTS.....[/B][/COLOR]
 http://50.7.96.210:8285
 
-#EXTINF:0, [COLOR yellow][B]UPDATED : 07/04/2016[/B][/COLOR]
+#EXTINF:0, [COLOR yellow][B]UPDATED : 21/04/2016[/B][/COLOR]
 http://60.49.100.124:8001/1:0:1:59E2:CB:880:3930000:0:0:0:&name=WARNA
 
 #EXTINF:0, [B]*BACKUP BPL LIVE[/B]
@@ -140,6 +128,21 @@ http://50.7.96.210:8285
 
 #EXTINF:0, [B]http://bit.ly/1pAYEMX[/B]
 http://ow.ly/XzGG7
+
+#EXTINF:0, SKY SPORTS 1 UK
+http://51.255.81.190:8080/UK-Sky-Sports-1/mono.m3u8?token=3uvk_1xf83
+
+#EXTINF:0, SKY SPORTS 2 UK
+http://51.255.81.190:8080/UK-Sky-Sports-2/mono.m3u8?token=3uvk_1xf83
+
+#EXTINF:0, SKY SPORTS 3 UK
+http://51.255.81.190:8080/UK-Sky-Sports-3/mono.m3u8?token=3uvk_1xf83
+
+#EXTINF:0, SKY SPORTS 4 UK
+http://51.255.81.190:8080/UK-Sky-Sports-4/mono.m3u8?token=3uvk_1xf83
+
+#EXTINF:0, SKY SPORTS 5 UK
+http://51.255.81.190:8080/UK-Sky-Sports-5/mono.m3u8?token=3uvk_1xf83
 
 #EXTINF:-1,Sky Sports 1
 rtmp://lb.miplayer.net:1935/goLive/_definst_/ibrodtv21_6vhudlq8
@@ -155,14 +158,14 @@ rtmp://lb.miplayer.net:1935/goLive/_definst_/ibrodtv25_wt250ssk
 #EXTINF:0, BT Sport 2
 rtmp://185.63.255.18:80/live playpath=dodhs2j swfUrl=http://p.jwpcdn.com/6/12/jwplayer.flash.swf live=1 pageUrl=http://rocktv.co/embedu.php?live=dodhs2j&vw=688&vh=387 token=%Zrey(nKa@#Z
 
-#EXTINF:0, FOX SPORT 1 US HD
-http://ooyalahd2-f.akamaihd.net/i/eslax17_delivery@349499/master.m3u8
-
 #EXTINF:0, FOX SPORT 2 US
 rtmp://185.63.255.18:80/live playpath=fox2ree swfUrl=http://p.jwpcdn.com/6/12/jwplayer.flash.swf pageUrl=http://yotv.co/embedu.php?live=fox2ree&vw=620&vh=490 live=1 token=%Zrey(nKa@#Z
 
 #EXTINF:-1,USA: Fox Sports 2
 http://1sn.ns1.name:18800/live/gino/gino/2640.m3u8
+
+#EXTINF:-1,USA: Fox Sports 2 Malaysia
+http://1sn.ns1.name:18800/live/gino/gino/2636.ts
 
 #EXTINF:0, True Sport 2
 rtmp://216.185.103.158/live2 playpath=chthaipremier11 swfUrl=http://www.widih.org/swf/jwplayer.flash.swf pageUrl=http://www.widih.org/watchtv/3569/true-sport-2
@@ -223,20 +226,3 @@ http://dl.nfilm.org/DL/film/Collection-Film/
 
 #EXTINF:0, [COLOR yellow][B]suaji86@gmail.com[/B][/COLOR]
 http://60.49.100.124:8001/1:0:1:59E2:CB:880:3930000:0:0:0:&name=WARNA
-
-#EXTINF:-1,1sn.ns1
-http://1sn.ns1.name:18800/get.php?username=gino&password=gino&type=m3u
-
-#EXTINF:-1,USA: Fox Sports 2 Malaysia
-http://1sn.ns1.name:18800/live/gino/gino/2636.ts
-#EXTINF:-1,USA: Fox Sports 1 Malaysia
-http://1sn.ns1.name:18800/live/gino/gino/2635.ts
-
-#EXTINF:-1,USA: Astro SUPERSPORT 4
-http://1sn.ns1.name:18800/live/gino/gino/2630.m3u8
-#EXTINF:-1,USA: Astro SUPERSPORT 3
-http://1sn.ns1.name:18800/live/gino/gino/2629.m3u8
-#EXTINF:-1,USA: Astro SUPERSPORT 2
-http://1sn.ns1.name:18800/live/gino/gino/2628.m3u8
-#EXTINF:-1,USA: Astro SUPERSPORT 1
-http://1sn.ns1.name:18800/live/gino/gino/2627.m3u8

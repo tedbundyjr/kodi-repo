@@ -23,27 +23,6 @@ https://v0.sg.cptr-api.com/st/4/jobs/5169ce20-9561-4b3a-a7a9-168720a12d0a/files_
 https://v0.sg.cptr-api.com/st/4/jobs/f2924b11-92a1-4ec5-847e-19b3e49d7bd9/files_by_id/fde3c821-dd1e-4c40-b371-8db2201f9985/The%20Adventure%20Begins-%20Thomas%20And%20Friends.mp4?sub=v-high&amp;auth=&amp;key=KVEz-WDMsj
 
 
-#EXTINF:-1 tvg-logo="http://bit.ly/URLDePeliIPTV" group-title="Event", LIVE Event 1
-https://www.youtube.com/watch?v=y60wDzZt8yg
-
-#EXTINF:-1 tvg-logo="http://bit.ly/URLDePeliIPTV" group-title="Event", *LIVE Event 2
-rtmp://$OPT:rtmp-raw=rtmpe://104.254.90.226:1935/aqq/vch2lsh58 pageUrl=http://cdn.lshstream.com/hpgdisco  token=SECURET0KEN#yw%.?()@W
-
-#EXTINF:-1 tvg-logo="http://bit.ly/URLDePeliIPTV" group-title="Event", *LIVE Event 3
-rtmp://$OPT:rtmp-raw=rtmpe://104.254.90.228:1935/aqq/stream122 pageUrl=http://cdn.lshstream.com/hpgdisco  token=SECURET0KEN#yw%.?()@W
-
-
-#EXTINF:-1 tvg-logo="http://bit.ly/URLDePeliIPTV" group-title="Event", *LIVE Event 4
-rtmp://$OPT:rtmp-raw=rtmpe://162.253.131.34:1935/aqq/vch2lsh58 pageUrl=http://cdn.lshstream.com/hpgdisco  token=SECURET0KEN#yw%.?()@W
-
-#EXTINF:-1 tvg-logo="http://bit.ly/URLDePeliIPTV" group-title="Event", *LIVE Event 4
-rtmp://$OPT:rtmp-raw=rtmpe://162.253.131.34:1935/aqq/vch2lsh58 pageUrl=http://cdn.lshstream.com/hpgdisco  token=SECURET0KEN#yw%.?()@W
-
-
-
-#EXTINF:-1 tvg-logo="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpl1/v/t1.0-1/p160x160/12745470_1700976886782480_8689065096732247012_n.jpg?oh=fe779e3df5b455760dde294f785a9501&oe=5723E882&__gda__=1465969120_d9b4558fe003a49451741b1c330f4977" group-title="DiGi&MF",TRW tv2
-
-
 
 
 #EXTINF:-1 tvg-id=“TV 1” tvg-name=“TV_1” tvg-logo="http://1.bp.blogspot.com/-GPIwrae2jdg/VVsbIQ7nkbI/AAAAAAAAHus/jK5QMaNg_H8/s1600/TV1.png" group-title="DiGi&MF",TV1
@@ -60,20 +39,14 @@ http://rtm-live.glueapi.io/smil:rtm-ch003/playlist.m3u8
 #EXTINF:-1 tvg-logo="http://4.bp.blogspot.com/-DDyDxIBcuRU/VHu1RhbEAXI/AAAAAAAAEs4/16pP12IDr6U/s1600/muzik_aktif.png" group-title="DiGi&MF", Muzik Aktif 
 http://rtm-live.glueapi.io/smil:rtm-ch004.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="http://8.37.229.77:7080/group1/M01/03/73/ooYBAFQTaaSAHV2jAACl27joLzA957.jpg" group-title="Malaysia", TV3
+#EXTINF:-1 tvg-logo="http://8.37.229.77:7080/group1/M01/03/73/ooYBAFQTaaSAHV2jAACl27joLzA957.jpg" group-title="Malaysia", OFFLINE
 http://www.layarku.tv/media/tv3web6.m3u8
-
-#EXTINF:-1 tvg-logo="http://1.bp.blogspot.com/-bj-u8VT2n9o/VVsa5MABXbI/AAAAAAAAHqY/BtvLRwaehEo/s1600/NTV7.png" group-title="DiGi&MF",OFFLINE
-http://ntv7liveios-i.akamaihd.net/hls/live/205902/ios/ntv7live/master.m3u8
  
-#EXTINF:-1 tvg-id=“8TV” tvg-name=“8TV” tvg-logo="http://4.bp.blogspot.com/-Yxgmo2clb9E/TjoIHwjck-I/AAAAAAAABbo/hiBWZpBz5yk/s1600/8tv_logo.jpg" group-title="DiGi&MF",OFFLINE
-http://8tvliveios-i.akamaihd.net/hls/live/205901/ios/8tvlive/master.m3u8
- 
-#EXTINF:-1 tvg-id=“TV 9” tvg-name=“TV_9” tvg-logo="http://dev.mediaprima.com.my/wp-content/uploads/2014/05/tv9.png" group-title="DiGi&MF",OFFLINE
+#EXTINF:-1 tvg-id=“TV 9” tvg-name=“TV_9” tvg-logo="http://dev.mediaprima.com.my/wp-content/uploads/2014/05/tv9.png" group-title="DiGi&MF", OFFLINE
 http://www.layarku.tv/media/tv9web6.m3u8
 
-#EXTINF:-1 tvg-logo="http://www.astro.com.my/whats-on/logoimages/ChannelLogo/Pos/104_300.png" group-title="Malaysia", OFFLINE
-http://www.layarku.tv/media/riaweb6.m3u8
+#EXTINF:-1 tvg-logo="https://pbs.twimg.com/profile_images/581178667327352833/jaOJgGIy.jpg" group-title="Malaysia", ASTRO Arena
+http://www.layarku.tv/media/web6are.m3u8
 
 
 #EXTINF:-1 tvg-logo="119_300.png" tvg-logo="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR6Zy4HZQWPYgaD2Kwel6U5RX1YuG4TwAcwkof8iCFvVBJLNcUtzSFKNA" group-title="DiGi&MF",TV Al Hijrah
@@ -81,6 +54,9 @@ http://d2f9tqsihrp4sc.cloudfront.net/livecf/smil:tvah_hypptv.smil/playlist.m3u8
  
 #EXTINF:-1 tvg-logo="http://4.bp.blogspot.com/-n4lAk-IWmvI/VVsbN074wgI/AAAAAAAAHvs/f3jstIW7IVI/s1600/astroawani.png" , Astro AWANI
 http://playback01.aotg-video.astro.com.my/AOTGHLS/master_AWANI.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/zh/thumb/d/dd/Astro_AEC.jpg/200px-Astro_AEC.jpg" group-title="Malaysia",ASTRO AEC
+http://go.layarku.tv/aec.m3u8
 
 
 
