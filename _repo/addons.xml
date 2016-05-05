@@ -986,7 +986,7 @@
 
 <addon id="plugin.video.ccloudtv"
        name="cCloud TV"
-       version="1.4.6"
+       version="1.4.7"
        provider-name="podgod, Coder Alpha">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1251,7 +1251,7 @@
 
 <addon id="plugin.video.NJMSoccer"
        name="NJM-Soccer"
-       version="3.0.6"
+       version="3.0.9"
        provider-name="Ares Team">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -1320,7 +1320,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.specto" name="Specto - ... Fork"  version="2016.04.23.1" provider-name="mrknow" >
+<addon id="plugin.video.specto" name="Specto - ... Fork"  version="2016.05.8.3" provider-name="mrknow" >
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.requests" version="1.0.0" />
@@ -1485,7 +1485,7 @@ report script error to facebook.com/tamilKODITV or cyberrule.mail@gmail.com</des
 
 <addon id="plugin.video.zonkuliah"
        name="[COLOR=red]Zon[/COLOR] [COLOR=blue]Kuliah[/COLOR] [COLOR=yellow]Agama[/COLOR]"
-       version="2.1.2"
+       version="2.1.3"
        provider-name="Team A">
 
   <requires>
@@ -1500,21 +1500,22 @@ report script error to facebook.com/tamilKODITV or cyberrule.mail@gmail.com</des
     <import addon="script.module.urlresolver" optional="true"/>
     <import addon="script.module.simplejson" />
 	<import addon="script.module.livestreamer" optional="true"/>
+	<import addon="script.logviewer" optional="true"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="zonkuliah.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
         <summary lang="en">Zon Kuliah Agama</summary>
-        <description lang="en">Zon Kuliah Agama made by help from original owner and collaborators.Feedback at Malaysian Video Streamers (Haluan Kiri) FB Group.This add-on is not for sale and it's meant for education purposes only.</description>
+        <description lang="en">[COLOR=yellow]Zon Kuliah Agama[/COLOR] made by help from original owner and collaborators.Feedback at Malaysian Video Streamers (Haluan Kiri) FB Group.This add-on is not for sale and it's meant for education purposes only.</description>
   	<disclaimer lang="en">All content is copyright of their respective owners.</disclaimer>
   	<platform>all</platform>
   	<language>en</language>
   	<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-  	<forum></forum>
+  	<forum>https://www.facebook.com/groups/mvshaluankiri/</forum>
   	<website></website>
   	<email></email>
-  	<source></source>
+  	<source>https://github.com/azumimuo/Zon-Kuliah</source>
   </extension>
 </addon>
 
@@ -1971,7 +1972,7 @@ Addons Included
 	</extension>
 </addon>
 
-<addon id="script.areswizard" name="[COLOR black].[/COLOR] Ares Wizard" provider-name="AresTeam" version="0.0.39">
+<addon id="script.areswizard" name="[COLOR black].[/COLOR] Ares Wizard" provider-name="AresTeam" version="0.0.40">
  <requires>
  </requires>
  <extension library="default.py" point="xbmc.python.pluginsource">
