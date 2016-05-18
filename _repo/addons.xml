@@ -1178,7 +1178,7 @@
 
 <addon id="plugin.video.mrnetworktv"
        name="MR Network TV"
-       version="2.1.1"
+       version="2.1.6"
        provider-name="Indiecrew, MalayRevolution Network">
 
   <requires>
@@ -1320,7 +1320,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.specto" name="Specto - ... Fork"  version="2016.05.8.7" provider-name="mrknow" >
+<addon id="plugin.video.specto" name="Specto - ... Fork"  version="2016.05.10.5" provider-name="mrknow" >
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.requests" version="1.0.0" />
