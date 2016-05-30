@@ -1115,7 +1115,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.exodus" version="1.3.2" name="Exodus" provider-name="Exodus">
+<addon id="plugin.video.exodus" version="1.3.3" name="Exodus" provider-name="Exodus">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="repository.exodus" version="1.0.0" />
@@ -1133,6 +1133,21 @@
 		<disclaimer lang="en">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.</disclaimer>
 		<platform>all</platform>
 	</extension>
+</addon>
+
+<addon id="plugin.video.f4mTester" version="2.2.4" name="f4mTester" provider-name="Shani">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.video.F4mProxy" version="2.2.3"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>f4mTester</summary>
+        <description></description>
+        <platform>all</platform>
+    </extension>
 </addon>
 
 <addon id="plugin.video.islamicstreamstv"
@@ -1300,7 +1315,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.phstreams" name="Phoenix" version="3.0.5" provider-name="tvaddons.ag">
+<addon id="plugin.video.phstreams" name="Phoenix" version="3.0.7" provider-name="tvaddons.ag">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.pyxbmct" version="1.1.4" />
@@ -1700,6 +1715,49 @@ report script error to facebook.com/tamilKODITV or cyberrule.mail@gmail.com</des
 	</extension>
 </addon>
 
+<addon id="repository.seppius"
+       name="Seppius XBMC Add-ons"
+	   version="1.0.1"
+	   provider-name="seppius">
+<requires>
+  <import addon="xbmc.addon" version="12.0.0"/>
+</requires>
+	<extension point="xbmc.addon.repository" name="Seppius XBMC Add-ons">
+		<info compressed="false">https://github.com/seppius-xbmc-repo/ru/raw/master/addons.xml</info>
+		<checksum>https://github.com/seppius-xbmc-repo/ru/raw/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://github.com/seppius-xbmc-repo/ru/raw/master/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Install Add-ons from RUS Add-on Repository</summary>
+		<summary lang="ru">Дополнения и репозитории пользователей форума XBMC.ru</summary>
+		<description>Russian plug-ins and repository installer for XBMC</description>
+		<description lang="ru">Загружайте и устанавливайте плагины и репозитории разработчиков форума XBMC.ru.[CR]Если вы обнаружили нерабочее дополнение, сообщите об этом разработчикам плагина в разделе форума "Помощь по плагинам".</description>
+		<disclaimer lang="en">Team XBMC did not make all the add-ons on this repository and are not responsible for their content</disclaimer>
+		<disclaimer lang="ru">Разработчики XBMC не являются авторами этих дополнений и не несут ответственность за их содержимое.</disclaimer>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="repository.shani" name="Shanis Addon Repository" version="2.8" provider-name="Shani">
+	<extension point="xbmc.addon.repository" name="Shanis Addon Repository">
+    <dir>
+            <info compressed="false">https://raw.github.com/Shani-08/ShaniXBMCWork2/master/addons.xml</info>
+            <checksum>https://raw.github.com/Shani-08/ShaniXBMCWork2/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.github.com/Shani-08/ShaniXBMCWork2/master/zips</datadir>
+    </dir>
+
+    <info compressed="false">https://offshoregit.com/Shani-08/main/addons.xml</info>
+    <checksum>https://offshoregit.com/Shani-08/main/addons.xml.md5</checksum>
+    <datadir zip="true">https://offshoregit.com/Shani-08/main/zips</datadir>
+
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Addons related to XBMC for Zemtv etc</summary>
+		<description>Go though the plugins and see what you like</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
 <addon id="repository.tknorris.release" name="tknorris Release Repository" version="1.0.2" provider-name="tknorris">
     <extension point="xbmc.addon.repository" name="tknorris release repository">
         <dir>
@@ -1974,7 +2032,7 @@ Addons Included
 	</extension>
 </addon>
 
-<addon id="script.areswizard" name="[COLOR black].[/COLOR] Ares Wizard" provider-name="AresTeam" version="0.0.40">
+<addon id="script.areswizard" name="[COLOR black].[/COLOR] Ares Wizard" provider-name="AresTeam" version="0.0.41">
  <requires>
  </requires>
  <extension library="default.py" point="xbmc.python.pluginsource">
@@ -2250,7 +2308,7 @@ Addons Included
 
 <addon id="script.module.liveresolver"
      name="LiveResolver"
-     version="0.1.34"
+     version="0.1.35"
      provider-name="natko1412">
   <requires>
     <import addon="xbmc.python" version="2.1.0" />
@@ -2677,6 +2735,25 @@ Addons Included
 		<email></email>
 		<source>https://github.com/trakt/script.trakt</source>
 	</extension>
+</addon>
+
+<addon id="script.video.F4mProxy"
+	     name="F4mProxy"
+	     version="2.1.7"
+	     provider-name="Shani">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0" />
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+		<provides>executable</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">Proxy for f4m</summary>
+    <description lang="en">Use this addon to play F4m v1 and v2 streams</description>
+  </extension>
 </addon>
 
 <addon id="service.subtitles.opensubtitles"
